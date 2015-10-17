@@ -16,7 +16,7 @@
    
     if (self = [super init]) {
         
-        self.minTemp = daily[@"summary"];
+        self.minTemp = daily[@"temperatureMax"];
     
         return self;
     }

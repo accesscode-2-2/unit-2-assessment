@@ -35,7 +35,7 @@
         
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        NSArray *dailyForecast = json[@"daily"];
+        NSArray *dailyForecast = json[@"daily"][@"data"];
         
         // reset my array
         self.forecastResults = [[NSMutableArray alloc] init];
@@ -89,7 +89,7 @@
     
     WeatherPost *post = self.forecastResults[indexPath.section];
     
-    cell.minTempLabel.text = [NSString stringWithFormat:@"%f", post.minTemp];
+    cell.minTempLabel.text = [NSString stringWithFormat:@"%@", post.minTemp];
     
     
     return cell;
