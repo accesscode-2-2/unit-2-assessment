@@ -40,7 +40,6 @@
     
     // tell the table view to auto adjust the height of each cell
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 44.0;
 
     UINib *nib = [UINib nibWithNibName:@"U2ACustomTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TableVCCellIdentifier"];
@@ -76,8 +75,15 @@
     
     // Configure the cell...
     
-    cell.dayOfTheWeekLabel.text = [NSString stringWithFormat:@"%ld",[self.weekWeatherForecast[indexPath.row][@"time"]integerValue]];
-    cell.imageView.image = [UIImage imageNamed: [self.weekWeatherForecast[indexPath.row] objectForKey:@"icon"]];
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[self.weekWeatherForecast[indexPath.row][@"time"]integerValue]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *dateName = [dateFormatter stringFromDate:date];
+    
+    cell.dayOfTheWeekLabel.text = dateName;
+  
+    cell.weaterIconImage.image = [UIImage imageNamed: [self.weekWeatherForecast[indexPath.row] objectForKey:@"icon"]];
+   
     cell.temperatureLabel.text = [NSString stringWithFormat:@"%ld - %ld", [self.weekWeatherForecast[indexPath.row][@"temperatureMax"]integerValue], [self.weekWeatherForecast[indexPath.row][@"temperatureMin"]integerValue]];
     
     return cell;
