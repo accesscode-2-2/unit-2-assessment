@@ -11,9 +11,9 @@
 @interface SearchResult : NSObject
 
 // for table view
-@property (nonatomic) NSDate *weatherDate;
-@property (nonatomic) NSNumber *weatherHigh;
-@property (nonatomic) NSNumber *weatherLow;
+@property (nonatomic) NSString *weatherDate;
+@property (nonatomic) NSString *weatherHigh;
+@property (nonatomic) NSString *weatherLow;
 @property (nonatomic) NSString *weatherImage;
 
 // for detail view

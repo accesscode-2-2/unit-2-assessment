@@ -7,8 +7,15 @@
 //
 
 #import "DetailViewController.h"
+#import "SearchResult.h"
 
 @interface DetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
+@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailRainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailHumidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailWindLabel;
 
 @end
 
@@ -16,22 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.detailImageView.image = [UIImage imageNamed:self.dataPassed.weatherImage];
+    self.detailDescriptionLabel.text = self.dataPassed.weatherDescription;
+    self.detailRainLabel.text = [NSString stringWithFormat:@"Chances of Rain: %@", self.dataPassed.weatherChanceOfRain];
+    self.detailHumidityLabel.text = [NSString stringWithFormat:@"Humidity Level: %@", self.dataPassed.weatherHumidity];
+    self.detailWindLabel.text = [NSString stringWithFormat:@"Wind: %@mph", self.dataPassed.weatherWind];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

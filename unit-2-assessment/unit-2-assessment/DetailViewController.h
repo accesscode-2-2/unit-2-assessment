@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewController.h"
+#import "SearchResult.h"
 
 @interface DetailViewController : UIViewController
+
+@property (nonatomic) SearchResult *dataPassed;
 
 @end
