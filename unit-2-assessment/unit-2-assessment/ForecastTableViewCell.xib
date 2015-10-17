@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEa-ex-sKE" userLabel="day box">
-                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="168.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="189" height="168.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axd-5v-ege">
                                 <rect key="frame" x="8" y="74" width="47" height="20.5"/>
@@ -34,10 +34,10 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-qn-DIb" userLabel="range box">
-                        <rect key="frame" x="330" y="0.0" width="141.5" height="168.5"/>
+                        <rect key="frame" x="282.5" y="0.0" width="189" height="168.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 - 212" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zb-Ev-nCc">
-                                <rect key="frame" x="39" y="74" width="64" height="20.5"/>
+                                <rect key="frame" x="63" y="74" width="64" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -51,16 +51,22 @@
                             <constraint firstItem="2zb-Ev-nCc" firstAttribute="centerY" secondItem="fnf-qn-DIb" secondAttribute="centerY" id="cZm-C3-Vw8"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-mB-j3z" userLabel="icon box">
-                        <rect key="frame" x="141" y="0.0" width="188.5" height="168.5"/>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-mB-j3z" userLabel="icon box">
+                        <rect key="frame" x="188.5" y="0.0" width="93.5" height="168.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMC-0x-eI4">
-                                <rect key="frame" x="69" y="60" width="50" height="50"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMC-0x-eI4">
+                                <rect key="frame" x="21.5" y="60" width="50" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vMC-0x-eI4" secondAttribute="height" multiplier="1:1" id="Vma-qw-fhx"/>
+                                    <constraint firstAttribute="height" constant="50" id="akC-ZY-eXt"/>
                                     <constraint firstAttribute="width" constant="50" id="hNu-M1-rlh"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Vma-qw-fhx"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -84,7 +90,7 @@
                     <constraint firstItem="aQ7-mB-j3z" firstAttribute="leading" secondItem="ZEa-ex-sKE" secondAttribute="trailing" id="ldJ-Hw-ecu"/>
                     <constraint firstItem="fnf-qn-DIb" firstAttribute="leading" secondItem="aQ7-mB-j3z" secondAttribute="trailing" id="n1H-r5-uXo"/>
                     <constraint firstItem="fnf-qn-DIb" firstAttribute="width" secondItem="ZEa-ex-sKE" secondAttribute="width" id="tq8-Do-r3C"/>
-                    <constraint firstItem="ZEa-ex-sKE" firstAttribute="width" secondItem="7LX-YX-6Wa" secondAttribute="width" multiplier="0.3" id="yTG-YX-02o"/>
+                    <constraint firstItem="ZEa-ex-sKE" firstAttribute="width" secondItem="7LX-YX-6Wa" secondAttribute="width" multiplier="0.4" id="yTG-YX-02o"/>
                     <constraint firstItem="fnf-qn-DIb" firstAttribute="width" secondItem="ZEa-ex-sKE" secondAttribute="width" id="z3A-05-Qnu"/>
                 </constraints>
                 <variation key="default">

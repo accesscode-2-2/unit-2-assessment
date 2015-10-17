@@ -26,6 +26,7 @@
 		694874191BD2AB27007C4DCE /* sleet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948740D1BD2AB27007C4DCE /* sleet@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6948741A1BD2AB27007C4DCE /* snow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948740E1BD2AB27007C4DCE /* snow@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6948741B1BD2AB27007C4DCE /* wind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948740F1BD2AB27007C4DCE /* wind@2x.png */; settings = {ASSET_TAGS = (); }; };
+		697172231BD2BDA400DD0D42 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697172221BD2BDA400DD0D42 /* OptionsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
 		8D6765AF1BD289BC00B30411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6765AD1BD289BC00B30411 /* Main.storyboard */; };
@@ -63,6 +64,8 @@
 		6948740D1BD2AB27007C4DCE /* sleet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sleet@2x.png"; sourceTree = "<group>"; };
 		6948740E1BD2AB27007C4DCE /* snow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow@2x.png"; sourceTree = "<group>"; };
 		6948740F1BD2AB27007C4DCE /* wind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@2x.png"; sourceTree = "<group>"; };
+		697172211BD2BDA400DD0D42 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		697172221BD2BDA400DD0D42 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D6765A71BD289BC00B30411 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +109,42 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		6971721E1BD2BC0300DD0D42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				693639581BD29A7C0053281D /* ForecastManager.h */,
+				693639591BD29A7C0053281D /* ForecastManager.m */,
+				694873FB1BD2A2DF007C4DCE /* ForecastDay.h */,
+				694873FC1BD2A2DF007C4DCE /* ForecastDay.m */,
+				694873F81BD2A089007C4DCE /* ForecastWeatherData.h */,
+				694873F91BD2A089007C4DCE /* ForecastWeatherData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6971721F1BD2BC2800DD0D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				694873FE1BD2A90E007C4DCE /* ForecastDayTableViewCell.h */,
+				694873FF1BD2A90E007C4DCE /* ForecastDayTableViewCell.m */,
+				694874011BD2A973007C4DCE /* ForecastTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		697172201BD2BC4000DD0D42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				692790911BD2942700E1AE82 /* MasterWeatherTableViewController.h */,
+				692790921BD2942700E1AE82 /* MasterWeatherTableViewController.m */,
+				692790941BD2944200E1AE82 /* DetailWeatherViewController.h */,
+				692790951BD2944200E1AE82 /* DetailWeatherViewController.m */,
+				697172211BD2BDA400DD0D42 /* OptionsViewController.h */,
+				697172221BD2BDA400DD0D42 /* OptionsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		7815DDCED4FB399E35AF4509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,21 +174,11 @@
 		8D6765A31BD289BC00B30411 /* unit-2-assessment */ = {
 			isa = PBXGroup;
 			children = (
+				6971721E1BD2BC0300DD0D42 /* Model */,
+				6971721F1BD2BC2800DD0D42 /* View */,
+				697172201BD2BC4000DD0D42 /* Controller */,
 				8D6765A71BD289BC00B30411 /* AppDelegate.h */,
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
-				693639581BD29A7C0053281D /* ForecastManager.h */,
-				693639591BD29A7C0053281D /* ForecastManager.m */,
-				694873FB1BD2A2DF007C4DCE /* ForecastDay.h */,
-				694873FC1BD2A2DF007C4DCE /* ForecastDay.m */,
-				694873F81BD2A089007C4DCE /* ForecastWeatherData.h */,
-				694873F91BD2A089007C4DCE /* ForecastWeatherData.m */,
-				692790911BD2942700E1AE82 /* MasterWeatherTableViewController.h */,
-				692790921BD2942700E1AE82 /* MasterWeatherTableViewController.m */,
-				694873FE1BD2A90E007C4DCE /* ForecastDayTableViewCell.h */,
-				694873FF1BD2A90E007C4DCE /* ForecastDayTableViewCell.m */,
-				694874011BD2A973007C4DCE /* ForecastTableViewCell.xib */,
-				692790941BD2944200E1AE82 /* DetailWeatherViewController.h */,
-				692790951BD2944200E1AE82 /* DetailWeatherViewController.m */,
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
@@ -303,6 +332,7 @@
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				694873FD1BD2A2DF007C4DCE /* ForecastDay.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
+				697172231BD2BDA400DD0D42 /* OptionsViewController.m in Sources */,
 				694874001BD2A90E007C4DCE /* ForecastDayTableViewCell.m in Sources */,
 				694873FA1BD2A089007C4DCE /* ForecastWeatherData.m in Sources */,
 			);
