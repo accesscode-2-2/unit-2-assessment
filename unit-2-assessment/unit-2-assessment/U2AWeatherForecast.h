@@ -8,19 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "U2AWeatherAPIManager.h"
+
 @interface U2AWeatherForecast : NSObject
 
-@property (nonatomic) NSArray *tags;
-@property (nonatomic) NSInteger t;
-@property (nonatomic) NSInteger likeCount;
-@property (nonatomic) NSString *username;
-@property (nonatomic) NSString *fullName;
-@property (nonatomic) NSDictionary *caption;
-@property (nonatomic) NSString *imageUrl;
-@property (nonatomic) NSString *avatarImageUrl;
+@property (nonatomic) double temperatureMin;
+@property (nonatomic) double temperatureMax;
+@property (nonatomic) NSString *icon;
+@property (nonatomic) NSDate *date;
 
 
-- (instancetype)initWithJSON:(NSDictionary *)json;
+
 
 
 @end

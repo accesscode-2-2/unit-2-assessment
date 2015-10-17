@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "U2AWeatherForecast.h"
+
 @interface U2ACustomTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *dayOfTheWeekLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *weaterIconImage;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
-
 
 @end
