@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *chanceOfRainPercent;
 @property (weak, nonatomic) IBOutlet UILabel *humidityPercent;
 @property (weak, nonatomic) IBOutlet UILabel *windRate;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *forecastDesc;
 
 
@@ -30,6 +31,7 @@
        self.humidityPercent.text = self.humidity;
        self.windRate.text = self.windMPH;
        self.forecastDesc.text = self.weatherDetails;
+    self.imageView.image = self.icon;
     
 }
 

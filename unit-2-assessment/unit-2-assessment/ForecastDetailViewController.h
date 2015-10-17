@@ -14,6 +14,7 @@
 @property (nonatomic) NSString *humidity;
 @property (nonatomic) NSString *windMPH;
 @property (nonatomic) NSString *weatherDetails;
+@property (nonatomic) UIImage *icon;
 
 
 

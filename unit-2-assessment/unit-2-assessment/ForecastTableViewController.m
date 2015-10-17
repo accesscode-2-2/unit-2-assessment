@@ -27,6 +27,10 @@
     
      NSURL *urlString = [NSURL URLWithString:@"https://api.forecast.io/forecast/31706003c47eda54bf750cbd568bc9f5/0.6667,90.5500"];
     
+  //   NSURL *urlString = [NSURL URLWithString:@"https://api.forecast.io/forecast/31706003c47eda54bf750cbd568bc9f5/25.7753,80.2089"];
+    
+    
+    
     
 //     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -59,17 +63,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self fetchForecastData];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+ 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 #pragma mark - Table view data source
@@ -102,7 +101,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"preparing...");
+//    NSLog(@"preparing...");
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
@@ -113,12 +112,16 @@
     NSString *mphOfWind = [NSString stringWithFormat:@"%@", post.windSpeed];
     NSString *weatherDetail = [NSString stringWithFormat:@"%@", post.forcastDetail];
     
+    NSString *imageName = [post.icon lowercaseString];
+    UIImage *image =[UIImage imageNamed:imageName];
+
     
     ForecastDetailViewController *detailViewController = segue.destinationViewController;
     detailViewController.chanceOfRain = chanceOfRainPer;
     detailViewController.humidity = humidityPer;
     detailViewController.windMPH = mphOfWind;
     detailViewController.weatherDetails = weatherDetail;
+    detailViewController.icon = image;
     
 }
 

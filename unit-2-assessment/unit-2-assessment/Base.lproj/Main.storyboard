@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Forecast Table View Controller-->
         <scene sceneID="90S-zk-aLP">
             <objects>
                 <tableViewController id="fLE-Rg-FK4" customClass="ForecastTableViewController" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="fLE-Rg-FK4" id="zBb-fM-EFZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="LAW-ty-5Zp"/>
+                    <navigationItem key="navigationItem" id="LAW-ty-5Zp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJd-my-4kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,10 +197,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="AJq-6W-4gJ"/>
+                        <barButtonItem title="Item" id="tY5-in-wAQ"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chanceOfRainPercent" destination="wVX-pW-Jvr" id="Wjj-oi-91B"/>
                         <outlet property="forecastDesc" destination="gHe-UY-4kQ" id="5c5-uN-SK1"/>
                         <outlet property="humidityPercent" destination="UYo-FU-Ufc" id="8TA-AN-dZ3"/>
+                        <outlet property="imageView" destination="Jc2-UM-Csa" id="PgH-sq-APS"/>
                         <outlet property="windRate" destination="ZQM-dT-xWv" id="vk8-WS-2yG"/>
                     </connections>
                 </viewController>
