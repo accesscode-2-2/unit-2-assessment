@@ -17,6 +17,8 @@
 		A81AE2B7B13822CE9B8E88F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192899C0702CF95AE307D158 /* libPods.a */; };
 		DF9BAA161BD29EA100254D60 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA151BD29EA100254D60 /* TableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DF9BAA191BD29EC300254D60 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA181BD29EC300254D60 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA1C1BD2A5F000254D60 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA1B1BD2A5F000254D60 /* Forecast.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA1F1BD2B34200254D60 /* ForcastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA1E1BD2B34200254D60 /* ForcastDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		DF9BAA151BD29EA100254D60 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		DF9BAA171BD29EC300254D60 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DF9BAA181BD29EC300254D60 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		DF9BAA1A1BD2A5F000254D60 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
+		DF9BAA1B1BD2A5F000254D60 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
+		DF9BAA1D1BD2B34200254D60 /* ForcastDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForcastDetailViewController.h; sourceTree = "<group>"; };
+		DF9BAA1E1BD2B34200254D60 /* ForcastDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForcastDetailViewController.m; sourceTree = "<group>"; };
 		F9DD07DD66C387F3D2317FF2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,8 +100,12 @@
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
 				8D6765AA1BD289BC00B30411 /* ViewController.h */,
 				8D6765AB1BD289BC00B30411 /* ViewController.m */,
+				DF9BAA1A1BD2A5F000254D60 /* Forecast.h */,
+				DF9BAA1B1BD2A5F000254D60 /* Forecast.m */,
 				DF9BAA141BD29EA100254D60 /* TableViewController.h */,
 				DF9BAA151BD29EA100254D60 /* TableViewController.m */,
+				DF9BAA1D1BD2B34200254D60 /* ForcastDetailViewController.h */,
+				DF9BAA1E1BD2B34200254D60 /* ForcastDetailViewController.m */,
 				DF9BAA171BD29EC300254D60 /* SettingsViewController.h */,
 				DF9BAA181BD29EC300254D60 /* SettingsViewController.m */,
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
@@ -224,6 +234,8 @@
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
 				8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
+				DF9BAA1C1BD2A5F000254D60 /* Forecast.m in Sources */,
+				DF9BAA1F1BD2B34200254D60 /* ForcastDetailViewController.m in Sources */,
 				DF9BAA191BD29EC300254D60 /* SettingsViewController.m in Sources */,
 				DF9BAA161BD29EA100254D60 /* TableViewController.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
