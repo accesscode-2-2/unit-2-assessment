@@ -10,4 +10,6 @@
 
 @interface WeatherTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
+
 @end

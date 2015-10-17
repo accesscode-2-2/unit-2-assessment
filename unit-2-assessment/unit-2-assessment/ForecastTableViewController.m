@@ -9,6 +9,7 @@
 #import "ForecastTableViewController.h"
 #import "WeatherPost.h"
 #import "APIManager.h"
+#import "WeatherTableViewCell.h"
 #import <AFNetworking/AFNetworking.h>
 
 @interface ForecastTableViewController ()
@@ -21,42 +22,42 @@
 
 
 -(void)fetchForecastData {
-    // create an instagram url
-    NSString *urlString = @"https://api.forecast.io/forecast/31706003c47eda54bf750cbd568bc9f5/0.6667,90.5500";
+  
     
-     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+     NSURL *urlString = [NSURL URLWithString:@"https://api.forecast.io/forecast/31706003c47eda54bf750cbd568bc9f5/0.6667,90.5500"];
     
     
-    [manager GET:urlString
-      parameters:nil
-         success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-             NSArray *results = responseObject[@"daily"];
-             
-             
-             // reset my array
-             self.forecastResults = [[NSMutableArray alloc] init];
-             
-             // loop through all json posts
-             for (NSDictionary *result in results) {
-                 
-                 // create new post from json
-                 WeatherPost *post = [[WeatherPost alloc] initWithJSON:result];
-                 
-                 // add post to array
-                 [self.forecastResults addObject:post];
-             }
-             
-             [self.tableView reloadData];
-             
-         } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-             NSLog(@"%@", error);
-         
-         }];
-             
+//     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    
+    // fetch data from the instagram endpoint and print json response
+    [APIManager GETRequestWithURL:urlString completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        NSArray *dailyForecast = json[@"daily"];
+        
+        // reset my array
+        self.forecastResults = [[NSMutableArray alloc] init];
+        
+        // loop through all json posts
+        for (NSDictionary *daily in dailyForecast) {
+            
+            // create new post from json
+            WeatherPost *post = [[WeatherPost alloc] initWithJSON:daily];
+            
+            // add post to array
+            [self.forecastResults addObject:post];
+        }
+        
+        [self.tableView reloadData];
+    }];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchForecastData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -84,11 +85,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCellIdentifier" forIndexPath:indexPath];
+    WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCellIdentifier" forIndexPath:indexPath];
     
     WeatherPost *post = self.forecastResults[indexPath.section];
     
-    cell.likeCountLabel.text = [NSString stringWithFormat:@"%ld Likes", post.likeCount];
+    cell.minTempLabel.text = [NSString stringWithFormat:@"%f", post.minTemp];
     
     
     return cell;

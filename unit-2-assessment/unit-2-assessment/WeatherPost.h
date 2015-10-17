@@ -10,8 +10,8 @@
 
 @interface WeatherPost : NSObject
 
-@property (nonatomic) float minTemp;
-@property (nonatomic) float maxTemp;
+@property (nonatomic) NSString *minTemp;
+@property (nonatomic) NSString *maxTemp;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

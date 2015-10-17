@@ -12,10 +12,11 @@
 
 
 
-- (instancetype)initWithJSON:(NSDictionary *)json {
+- (instancetype)initWithJSON:(NSDictionary *)daily {
+   
     if (self = [super init]) {
         
-        self.minTemp = [json[@"temperatureMin"] floatValue];
+        self.minTemp = daily[@"summary"];
     
         return self;
     }
