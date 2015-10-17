@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <AFNetworking/AFNetworking.h>
+
+//NSString *const = @"8040fc5b15adaaafabbe7de9c3ff5458";
 
 @interface ViewController ()
 
@@ -16,12 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end
