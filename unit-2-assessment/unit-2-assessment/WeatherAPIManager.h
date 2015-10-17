@@ -11,11 +11,11 @@
 @interface WeatherAPIManager : NSObject
 
 
-//+ (void)searchWeatherBaseOnLatCoordinate:(double)latCoordinate
-//                           LngCoordinate:(double)lngCoordinate
-//                       completionHandler:(void(^)(id response, NSError *error))handler;
++ (void)searchWeatherBaseOnLatCoordinate:(NSString *)latCoordinate
+                           LngCoordinate:(NSString *)lngCoordinate
+                       completionHandler:(void(^)(id response, NSError *error))handler;
 
 
-+ (void)searchWeatherBaseOnLatCoordinatecompletionHandler:(void(^)(id response, NSError *error))handler;
+//+ (void)searchWeatherBaseOnLatCoordinatecompletionHandler:(void(^)(id response, NSError *error))handler;
 
 @end

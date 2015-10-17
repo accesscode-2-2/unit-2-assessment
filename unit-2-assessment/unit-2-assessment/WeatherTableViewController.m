@@ -21,31 +21,44 @@
 
 @implementation WeatherTableViewController
 
+-(void)viewDidAppear:(BOOL)animated {
+    NSString *latValue = [[NSUserDefaults standardUserDefaults]
+                          stringForKey:@"lat"];
+    NSString *lngValue = [[NSUserDefaults standardUserDefaults]
+                          stringForKey:@"lng"];
+    if (latValue && lngValue != nil) {
+        [WeatherAPIManager searchWeatherBaseOnLatCoordinate:latValue LngCoordinate:lngValue completionHandler:^(id response, NSError *error) {
+            self.weeklyWeatherArray = response[@"daily"][@"data"];
+            
+            [self setWeatherInfoForPassing:self.weeklyWeatherArray];
+            
+            [self.tableView reloadData];
+        }];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.weeklyWeatherArray = [[NSMutableArray alloc]init];
     self.weatherInfoArray = [[NSMutableArray alloc]init];
-    
-    [WeatherAPIManager searchWeatherBaseOnLatCoordinatecompletionHandler:^(id response, NSError *error) {
-        
-        self.weeklyWeatherArray = response[@"daily"][@"data"];
-        
-        [self setWeatherInfoForPassing:self.weeklyWeatherArray];
-        
-        [self.tableView reloadData];
-        
-        
-    }];
-    
 }
+
+-(NSString *)formateDate: (NSTimeInterval) time{
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *dateName = [dateFormatter stringFromDate:date];
+    return dateName;
+}
+
 
 -(void)setWeatherInfoForPassing:(NSMutableArray *)data {
     for (NSDictionary *dailyWeather in data) {
         WeatherInfo *info = [[WeatherInfo alloc]init];
         info.iconName = dailyWeather[@"icon"];
         info.summary = dailyWeather[@"summary"];
-        info.chanceOfRain = [NSString stringWithFormat:@"%0.2f%%", [dailyWeather[@"precipProbability"]doubleValue]];
-        info.humidity = [NSString stringWithFormat:@"%0.2f%%", [dailyWeather[@"humidity"]doubleValue]];
+        info.chanceOfRain = [NSString stringWithFormat:@"%0.1f%%", [dailyWeather[@"precipProbability"]doubleValue]*100];
+        info.humidity = [NSString stringWithFormat:@"%0.1f%%", [dailyWeather[@"humidity"]doubleValue]*100];
         info.windSpeed = [NSString stringWithFormat:@"%0.2f mph", [dailyWeather[@"windSpeed"]doubleValue]];
         
         [self.weatherInfoArray addObject:info];
@@ -67,7 +80,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WeatherCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DailyWeatherCellID" forIndexPath:indexPath];
-    cell.dateLabel.text = [NSString stringWithFormat:@"%ld",[self.weeklyWeatherArray[indexPath.row][@"time"]integerValue]];
+    cell.dateLabel.text = [self formateDate:[self.weeklyWeatherArray[indexPath.row][@"time"]integerValue]];
     cell.iconImageView.image = [UIImage imageNamed: [self.weeklyWeatherArray[indexPath.row] objectForKey:@"icon"]];
     cell.highLowTempatureLabel.text = [NSString stringWithFormat:@"%ld - %ld", [self.weeklyWeatherArray[indexPath.row][@"temperatureMax"]integerValue], [self.weeklyWeatherArray[indexPath.row][@"temperatureMin"]integerValue]];
     
@@ -75,10 +88,12 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPathSelected = [self.tableView indexPathForSelectedRow];
-    WeatherInfo *passInfo = [self.weatherInfoArray objectAtIndex:indexPathSelected.row];
-    DetailWeatherViewController *vc = segue.destinationViewController;
-    vc.infoDetail = passInfo;
+    if ([segue.destinationViewController isKindOfClass:[DetailWeatherViewController class]]) {
+        NSIndexPath *indexPathSelected = [self.tableView indexPathForSelectedRow];
+        WeatherInfo *passInfo = [self.weatherInfoArray objectAtIndex:indexPathSelected.row];
+        DetailWeatherViewController *vc = segue.destinationViewController;
+        vc.infoDetail = passInfo;
+    }
 }
 
 

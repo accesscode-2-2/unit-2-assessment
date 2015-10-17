@@ -19,6 +19,7 @@
 		D40676DD1BD2A094003CFB8E /* WeatherAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40676DC1BD2A094003CFB8E /* WeatherAPIManager.m */; settings = {ASSET_TAGS = (); }; };
 		D40676E01BD2A853003CFB8E /* WeatherCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40676DF1BD2A853003CFB8E /* WeatherCustomTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		D40676E31BD2B305003CFB8E /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D40676E21BD2B305003CFB8E /* WeatherInfo.m */; settings = {ASSET_TAGS = (); }; };
+		D40676E61BD2C7BD003CFB8E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40676E51BD2C7BD003CFB8E /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		D40676DF1BD2A853003CFB8E /* WeatherCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCustomTableViewCell.m; sourceTree = "<group>"; };
 		D40676E11BD2B305003CFB8E /* WeatherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherInfo.h; sourceTree = "<group>"; };
 		D40676E21BD2B305003CFB8E /* WeatherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherInfo.m; sourceTree = "<group>"; };
+		D40676E41BD2C7BD003CFB8E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		D40676E51BD2C7BD003CFB8E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		F6678AE12DB755B46300407E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +111,8 @@
 				D40676DF1BD2A853003CFB8E /* WeatherCustomTableViewCell.m */,
 				D40676D81BD29EC0003CFB8E /* DetailWeatherViewController.h */,
 				D40676D91BD29EC0003CFB8E /* DetailWeatherViewController.m */,
+				D40676E41BD2C7BD003CFB8E /* SettingViewController.h */,
+				D40676E51BD2C7BD003CFB8E /* SettingViewController.m */,
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
@@ -253,6 +258,7 @@
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				D40676DD1BD2A094003CFB8E /* WeatherAPIManager.m in Sources */,
 				D40676E31BD2B305003CFB8E /* WeatherInfo.m in Sources */,
+				D40676E61BD2C7BD003CFB8E /* SettingViewController.m in Sources */,
 				D40676D71BD29EA3003CFB8E /* WeatherTableViewController.m in Sources */,
 				D40676E01BD2A853003CFB8E /* WeatherCustomTableViewCell.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
