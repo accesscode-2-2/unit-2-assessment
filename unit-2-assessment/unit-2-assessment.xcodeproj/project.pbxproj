@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298471891BD2A127006282CC /* U2ATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298471881BD2A127006282CC /* U2ATableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2984718C1BD2A13B006282CC /* U2ADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2984718B1BD2A13B006282CC /* U2ADetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2984718F1BD2A14C006282CC /* U2ASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2984718E1BD2A14C006282CC /* U2ASettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
-		8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765AB1BD289BC00B30411 /* ViewController.m */; };
 		8D6765AF1BD289BC00B30411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6765AD1BD289BC00B30411 /* Main.storyboard */; };
 		8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765B01BD289BC00B30411 /* unit_2_assessment.xcdatamodeld */; };
 		8D6765B41BD289BC00B30411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6765B31BD289BC00B30411 /* Assets.xcassets */; };
@@ -17,12 +19,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		298471871BD2A127006282CC /* U2ATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U2ATableViewController.h; sourceTree = "<group>"; };
+		298471881BD2A127006282CC /* U2ATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2ATableViewController.m; sourceTree = "<group>"; };
+		2984718A1BD2A13B006282CC /* U2ADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U2ADetailViewController.h; sourceTree = "<group>"; };
+		2984718B1BD2A13B006282CC /* U2ADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2ADetailViewController.m; sourceTree = "<group>"; };
+		2984718D1BD2A14C006282CC /* U2ASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U2ASettingsViewController.h; sourceTree = "<group>"; };
+		2984718E1BD2A14C006282CC /* U2ASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2ASettingsViewController.m; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D6765A71BD289BC00B30411 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D6765A81BD289BC00B30411 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8D6765AA1BD289BC00B30411 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8D6765AB1BD289BC00B30411 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8D6765AE1BD289BC00B30411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D6765B11BD289BC00B30411 /* unit_2_assessment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = unit_2_assessment.xcdatamodel; sourceTree = "<group>"; };
 		8D6765B31BD289BC00B30411 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,11 +66,15 @@
 		8D6765A31BD289BC00B30411 /* unit-2-assessment */ = {
 			isa = PBXGroup;
 			children = (
+				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765A71BD289BC00B30411 /* AppDelegate.h */,
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
-				8D6765AA1BD289BC00B30411 /* ViewController.h */,
-				8D6765AB1BD289BC00B30411 /* ViewController.m */,
-				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
+				298471871BD2A127006282CC /* U2ATableViewController.h */,
+				298471881BD2A127006282CC /* U2ATableViewController.m */,
+				2984718A1BD2A13B006282CC /* U2ADetailViewController.h */,
+				2984718B1BD2A13B006282CC /* U2ADetailViewController.m */,
+				2984718D1BD2A14C006282CC /* U2ASettingsViewController.h */,
+				2984718E1BD2A14C006282CC /* U2ASettingsViewController.m */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
 				8D6765B81BD289BC00B30411 /* Info.plist */,
@@ -153,8 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
-				8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
+				2984718F1BD2A14C006282CC /* U2ASettingsViewController.m in Sources */,
+				2984718C1BD2A13B006282CC /* U2ADetailViewController.m in Sources */,
+				298471891BD2A127006282CC /* U2ATableViewController.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +314,7 @@
 				8D6765BD1BD289BC00B30411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
