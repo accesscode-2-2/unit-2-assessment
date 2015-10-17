@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="dKm-jg-kHT" customClass="WeatherTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKm-jg-kHT" id="Irf-Ue-0jz">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0op-ck-KL8">
+                        <rect key="frame" x="8" y="24" width="169" height="32"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="169" id="Oeg-Ag-UaG"/>
+                            <constraint firstAttribute="height" constant="32" id="kiL-gm-LWs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pqH-QH-Uei">
+                        <rect key="frame" x="185" y="10" width="60" height="60"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="XlS-vW-Zi1"/>
+                            <constraint firstAttribute="height" constant="60" id="eJL-By-liE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbU-au-oEu">
+                        <rect key="frame" x="253" y="25" width="169" height="29"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="7Jn-DS-oyu"/>
+                            <constraint firstAttribute="width" constant="169" id="Gsm-sL-MAZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="pqH-QH-Uei" firstAttribute="centerX" secondItem="Irf-Ue-0jz" secondAttribute="centerX" id="6NJ-wd-Akd"/>
+                    <constraint firstItem="mbU-au-oEu" firstAttribute="trailing" secondItem="Irf-Ue-0jz" secondAttribute="trailingMargin" id="81s-PZ-jpy"/>
+                    <constraint firstItem="0op-ck-KL8" firstAttribute="centerY" secondItem="Irf-Ue-0jz" secondAttribute="centerY" id="89x-Va-ZXy"/>
+                    <constraint firstItem="mbU-au-oEu" firstAttribute="centerY" secondItem="Irf-Ue-0jz" secondAttribute="centerY" id="Ehp-8f-HYL"/>
+                    <constraint firstItem="pqH-QH-Uei" firstAttribute="centerY" secondItem="Irf-Ue-0jz" secondAttribute="centerY" id="c3t-wJ-ozj"/>
+                    <constraint firstItem="0op-ck-KL8" firstAttribute="leading" secondItem="Irf-Ue-0jz" secondAttribute="leadingMargin" id="qM1-lu-0iQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="dayOfTheWeek" destination="0op-ck-KL8" id="dYe-fK-EnO"/>
+                <outlet property="hiLowTemp" destination="mbU-au-oEu" id="mBF-B2-Sy7"/>
+                <outlet property="weatherIcon" destination="pqH-QH-Uei" id="kOV-fi-nVA"/>
+            </connections>
+            <point key="canvasLocation" x="244" y="183"/>
+        </tableViewCell>
+    </objects>
+</document>
