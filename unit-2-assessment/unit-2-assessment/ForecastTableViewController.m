@@ -25,6 +25,7 @@
 static NSString * const cellIdentifier = @"cellIdentifier";
 static NSString * const detailSegue = @"showDetail";
 static NSString * const locationSegue = @"setLocation";
+static NSString * const apiKey = @"53bac750b0228783a50a48bda0d2d1ce";
 
 #pragma mark - Lifecycle 
 
@@ -60,7 +61,7 @@ static NSString * const locationSegue = @"setLocation";
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     
-    NSString *stringURL = [NSString stringWithFormat:@"https://api.forecast.io/forecast/53bac750b0228783a50a48bda0d2d1ce/%@,%@", self.longitude, self.latitude];
+    NSString *stringURL = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%@,%@", apiKey,self.longitude, self.latitude];
     
     [manager GET:stringURL  parameters: nil success:^(AFHTTPRequestOperation * _Nonnull operation, id _Nonnull responseObject)
      {
