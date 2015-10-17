@@ -14,9 +14,18 @@
 		8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765B01BD289BC00B30411 /* unit_2_assessment.xcdatamodeld */; };
 		8D6765B41BD289BC00B30411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6765B31BD289BC00B30411 /* Assets.xcassets */; };
 		8D6765B71BD289BC00B30411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */; };
+		A81AE2B7B13822CE9B8E88F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192899C0702CF95AE307D158 /* libPods.a */; };
+		DF9BAA161BD29EA100254D60 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA151BD29EA100254D60 /* TableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA191BD29EC300254D60 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA181BD29EC300254D60 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA1C1BD2A5F000254D60 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA1B1BD2A5F000254D60 /* Forecast.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA1F1BD2B34200254D60 /* ForcastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA1E1BD2B34200254D60 /* ForcastDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA221BD2C01400254D60 /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9BAA211BD2C01400254D60 /* ForecastTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		DF9BAA241BD2C04100254D60 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9BAA231BD2C04100254D60 /* ForecastTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192899C0702CF95AE307D158 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		21EC6F3C723EBFED13D61C43 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D6765A71BD289BC00B30411 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +37,18 @@
 		8D6765B31BD289BC00B30411 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6765B61BD289BC00B30411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D6765B81BD289BC00B30411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF9BAA141BD29EA100254D60 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		DF9BAA151BD29EA100254D60 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		DF9BAA171BD29EC300254D60 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		DF9BAA181BD29EC300254D60 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		DF9BAA1A1BD2A5F000254D60 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
+		DF9BAA1B1BD2A5F000254D60 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
+		DF9BAA1D1BD2B34200254D60 /* ForcastDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForcastDetailViewController.h; sourceTree = "<group>"; };
+		DF9BAA1E1BD2B34200254D60 /* ForcastDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForcastDetailViewController.m; sourceTree = "<group>"; };
+		DF9BAA201BD2C01400254D60 /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastTableViewCell.h; sourceTree = "<group>"; };
+		DF9BAA211BD2C01400254D60 /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewCell.m; sourceTree = "<group>"; };
+		DF9BAA231BD2C04100254D60 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
+		F9DD07DD66C387F3D2317FF2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +56,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A81AE2B7B13822CE9B8E88F8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11B80427885E8A6642520927 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9DD07DD66C387F3D2317FF2 /* Pods.debug.xcconfig */,
+				21EC6F3C723EBFED13D61C43 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6256C3A18F06657BCBBD3ABD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				192899C0702CF95AE307D158 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D6765981BD289BC00B30411 = {
 			isa = PBXGroup;
 			children = (
 				8D6765A31BD289BC00B30411 /* unit-2-assessment */,
 				8D6765A21BD289BC00B30411 /* Products */,
+				11B80427885E8A6642520927 /* Pods */,
+				6256C3A18F06657BCBBD3ABD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +105,17 @@
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
 				8D6765AA1BD289BC00B30411 /* ViewController.h */,
 				8D6765AB1BD289BC00B30411 /* ViewController.m */,
+				DF9BAA1A1BD2A5F000254D60 /* Forecast.h */,
+				DF9BAA1B1BD2A5F000254D60 /* Forecast.m */,
+				DF9BAA141BD29EA100254D60 /* TableViewController.h */,
+				DF9BAA151BD29EA100254D60 /* TableViewController.m */,
+				DF9BAA201BD2C01400254D60 /* ForecastTableViewCell.h */,
+				DF9BAA211BD2C01400254D60 /* ForecastTableViewCell.m */,
+				DF9BAA231BD2C04100254D60 /* ForecastTableViewCell.xib */,
+				DF9BAA1D1BD2B34200254D60 /* ForcastDetailViewController.h */,
+				DF9BAA1E1BD2B34200254D60 /* ForcastDetailViewController.m */,
+				DF9BAA171BD29EC300254D60 /* SettingsViewController.h */,
+				DF9BAA181BD29EC300254D60 /* SettingsViewController.m */,
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
@@ -89,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D6765BB1BD289BC00B30411 /* Build configuration list for PBXNativeTarget "unit-2-assessment" */;
 			buildPhases = (
+				4BC11CFB7E1C260270C01C2A /* Check Pods Manifest.lock */,
 				8D67659D1BD289BC00B30411 /* Sources */,
 				8D67659E1BD289BC00B30411 /* Frameworks */,
 				8D67659F1BD289BC00B30411 /* Resources */,
+				18FEA17E1697FC9E7D86789D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9BAA241BD2C04100254D60 /* ForecastTableViewCell.xib in Resources */,
 				8D6765B71BD289BC00B30411 /* LaunchScreen.storyboard in Resources */,
 				8D6765B41BD289BC00B30411 /* Assets.xcassets in Resources */,
 				8D6765AF1BD289BC00B30411 /* Main.storyboard in Resources */,
@@ -146,6 +201,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18FEA17E1697FC9E7D86789D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BC11CFB7E1C260270C01C2A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D67659D1BD289BC00B30411 /* Sources */ = {
@@ -155,6 +243,11 @@
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
 				8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
+				DF9BAA1C1BD2A5F000254D60 /* Forecast.m in Sources */,
+				DF9BAA1F1BD2B34200254D60 /* ForcastDetailViewController.m in Sources */,
+				DF9BAA191BD29EC300254D60 /* SettingsViewController.m in Sources */,
+				DF9BAA221BD2C01400254D60 /* ForecastTableViewCell.m in Sources */,
+				DF9BAA161BD29EA100254D60 /* TableViewController.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +356,7 @@
 		};
 		8D6765BC1BD289BC00B30411 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9DD07DD66C387F3D2317FF2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "unit-2-assessment/Info.plist";
@@ -274,6 +368,7 @@
 		};
 		8D6765BD1BD289BC00B30411 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21EC6F3C723EBFED13D61C43 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "unit-2-assessment/Info.plist";
@@ -302,6 +397,7 @@
 				8D6765BD1BD289BC00B30411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
