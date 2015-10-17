@@ -19,14 +19,17 @@
     self.forecastDays = [[NSMutableArray alloc] init];
     for ( NSDictionary *day in weeklyWeather){
         ForecastDay *forecastDay = [[ForecastDay alloc] init];
-        forecastDay.date = day[@"time"];
+        
+        NSString *stringEpoch = day[@"time"];
+        double doubleEpoch = [stringEpoch doubleValue];
+        forecastDay.date = [NSDate dateWithTimeIntervalSince1970:doubleEpoch];
         forecastDay.summary = day[@"summary"];
         forecastDay.icon = day[@"icon"];
         forecastDay.chanceOfRain = day[@"precipProbability"];
         forecastDay.humidity = day[@"humidity"];
         forecastDay.windSpeed = day[@"windSpeed"];
-        forecastDay.minTemperature = day[@"temperatureMin"];
-        forecastDay.maxTemperature = day[@"temperatureMax"];
+        forecastDay.minTemperature = [day[@"temperatureMin"] doubleValue];
+        forecastDay.maxTemperature = [day[@"temperatureMax"] doubleValue];
         [self.forecastDays addObject:forecastDay];
     }
     

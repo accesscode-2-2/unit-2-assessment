@@ -18,8 +18,8 @@
 @property (nonatomic) NSString *humidity;
 @property (nonatomic) NSString *windSpeed;
 
-@property (nonatomic) NSString *minTemperature;
-@property (nonatomic) NSString *maxTemperature;
+@property (nonatomic) double minTemperature;
+@property (nonatomic) double maxTemperature;
 
 
 

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCellIdentifier" rowHeight="169" id="aTD-9h-YyF" customClass="ForecastDayTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="472" height="169"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aTD-9h-YyF" id="7LX-YX-6Wa">
+                <rect key="frame" x="0.0" y="0.0" width="472" height="168.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEa-ex-sKE" userLabel="day box">
+                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="168.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axd-5v-ege">
+                                <rect key="frame" x="8" y="74" width="47" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Axd-5v-ege" firstAttribute="centerY" secondItem="ZEa-ex-sKE" secondAttribute="centerY" id="K6g-d0-zW6"/>
+                            <constraint firstItem="Axd-5v-ege" firstAttribute="leading" secondItem="ZEa-ex-sKE" secondAttribute="leading" constant="8" id="yfx-M1-XvG"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-qn-DIb" userLabel="range box">
+                        <rect key="frame" x="330" y="0.0" width="141.5" height="168.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 - 212" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zb-Ev-nCc">
+                                <rect key="frame" x="39" y="74" width="64" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2zb-Ev-nCc" firstAttribute="centerX" secondItem="fnf-qn-DIb" secondAttribute="centerX" id="8M6-dp-sSk"/>
+                            <constraint firstItem="2zb-Ev-nCc" firstAttribute="centerY" secondItem="fnf-qn-DIb" secondAttribute="centerY" id="cZm-C3-Vw8"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-mB-j3z" userLabel="icon box">
+                        <rect key="frame" x="141" y="0.0" width="188.5" height="168.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMC-0x-eI4">
+                                <rect key="frame" x="69" y="60" width="50" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vMC-0x-eI4" secondAttribute="height" multiplier="1:1" id="Vma-qw-fhx"/>
+                                    <constraint firstAttribute="width" constant="50" id="hNu-M1-rlh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vMC-0x-eI4" firstAttribute="centerX" secondItem="aQ7-mB-j3z" secondAttribute="centerX" id="37Z-WX-kVj"/>
+                            <constraint firstItem="vMC-0x-eI4" firstAttribute="centerY" secondItem="aQ7-mB-j3z" secondAttribute="centerY" id="6QS-sl-R9c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="fnf-qn-DIb" firstAttribute="top" secondItem="7LX-YX-6Wa" secondAttribute="top" id="A9J-Pl-aRB"/>
+                    <constraint firstItem="ZEa-ex-sKE" firstAttribute="leading" secondItem="7LX-YX-6Wa" secondAttribute="leading" id="Pt6-nD-OD3"/>
+                    <constraint firstAttribute="trailing" secondItem="fnf-qn-DIb" secondAttribute="trailing" id="TCW-6a-obr"/>
+                    <constraint firstAttribute="bottom" secondItem="fnf-qn-DIb" secondAttribute="bottom" id="XQh-B3-r3Y"/>
+                    <constraint firstAttribute="bottom" secondItem="aQ7-mB-j3z" secondAttribute="bottom" id="Yrg-yp-XxU"/>
+                    <constraint firstAttribute="bottom" secondItem="ZEa-ex-sKE" secondAttribute="bottom" id="cAN-rk-sJu"/>
+                    <constraint firstItem="aQ7-mB-j3z" firstAttribute="top" secondItem="7LX-YX-6Wa" secondAttribute="top" id="eow-Ef-CI6"/>
+                    <constraint firstItem="ZEa-ex-sKE" firstAttribute="top" secondItem="7LX-YX-6Wa" secondAttribute="top" id="gFh-0Y-tey"/>
+                    <constraint firstItem="aQ7-mB-j3z" firstAttribute="leading" secondItem="ZEa-ex-sKE" secondAttribute="trailing" id="ldJ-Hw-ecu"/>
+                    <constraint firstItem="fnf-qn-DIb" firstAttribute="leading" secondItem="aQ7-mB-j3z" secondAttribute="trailing" id="n1H-r5-uXo"/>
+                    <constraint firstItem="fnf-qn-DIb" firstAttribute="width" secondItem="ZEa-ex-sKE" secondAttribute="width" id="tq8-Do-r3C"/>
+                    <constraint firstItem="ZEa-ex-sKE" firstAttribute="width" secondItem="7LX-YX-6Wa" secondAttribute="width" multiplier="0.3" id="yTG-YX-02o"/>
+                    <constraint firstItem="fnf-qn-DIb" firstAttribute="width" secondItem="ZEa-ex-sKE" secondAttribute="width" id="z3A-05-Qnu"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="z3A-05-Qnu"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="dayLabel" destination="Axd-5v-ege" id="Oi1-0b-Tmi"/>
+                <outlet property="forecastImageView" destination="vMC-0x-eI4" id="M3n-4O-BIY"/>
+                <outlet property="imageView" destination="vMC-0x-eI4" id="wlC-NF-cFf"/>
+                <outlet property="temperatureRangeLabel" destination="2zb-Ev-nCc" id="3DU-aU-vkr"/>
+            </connections>
+            <point key="canvasLocation" x="348" y="53.5"/>
+        </tableViewCell>
+    </objects>
+</document>

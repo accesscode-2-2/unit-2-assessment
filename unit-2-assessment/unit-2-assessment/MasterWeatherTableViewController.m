@@ -7,7 +7,7 @@
 //
 
 #import "MasterWeatherTableViewController.h"
-#import "ForecastManager.h"
+#import "ForecastDayTableViewCell.h"
 
 @interface MasterWeatherTableViewController ()
 
@@ -17,67 +17,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    ForecastManager *manager = [ForecastManager sharedManager];
-    [manager getWeatherDataWithCallbackBlock:^{
-        NSLog(@"%@",manager.forecastWeatherData);
-        
-        
+    
+    //get weather data from forecast.io
+    self.forecastManager = [ForecastManager sharedManager];
+    [self.forecastManager getWeatherDataWithCallbackBlock:^{
+        [self.tableView reloadData];
     }];
+    
+    //Register Nib for Cell Reuse Identifier
+    [self.tableView registerNib:[UINib nibWithNibName:@"ForecastTableViewCell" bundle:nil] forCellReuseIdentifier:[ForecastDayTableViewCell reuseIdentifier]];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 3;
+    return self.forecastManager.forecastWeatherData.forecastDays.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeatherCellIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
+    ForecastDayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ForecastDayTableViewCell reuseIdentifier]forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[ForecastDayTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[ForecastDayTableViewCell reuseIdentifier]];
+    }
+    
+    [cell setupCellFromForecastDay:[self.forecastManager.forecastWeatherData.forecastDays objectAtIndex:indexPath.row]];
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

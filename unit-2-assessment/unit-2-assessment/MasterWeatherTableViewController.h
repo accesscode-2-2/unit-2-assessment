@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ForecastManager.h"
 
 @interface MasterWeatherTableViewController : UITableViewController
+
+@property (nonatomic) ForecastManager *forecastManager;
 
 @end
