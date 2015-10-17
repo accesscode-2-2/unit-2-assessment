@@ -13,6 +13,7 @@
 @property (nonatomic) NSString *chanceOfRain;
 @property (nonatomic) NSString *humidity;
 @property (nonatomic) NSString *windMPH;
+@property (nonatomic) NSString *weatherDetails;
 
 
 

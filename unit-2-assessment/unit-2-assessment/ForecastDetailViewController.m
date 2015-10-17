@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *chanceOfRainPercent;
 @property (weak, nonatomic) IBOutlet UILabel *humidityPercent;
 @property (weak, nonatomic) IBOutlet UILabel *windRate;
+@property (weak, nonatomic) IBOutlet UILabel *forecastDesc;
+
 
 @end
 
@@ -27,6 +29,7 @@
        self.chanceOfRainPercent.text = self.chanceOfRain;
        self.humidityPercent.text = self.humidity;
        self.windRate.text = self.windMPH;
+       self.forecastDesc.text = self.weatherDetails;
     
 }
 

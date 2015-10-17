@@ -111,16 +111,16 @@
     NSString *chanceOfRainPer = [NSString stringWithFormat:@"%@", post.chanceOfRain];
     NSString *humidityPer = [NSString stringWithFormat:@"%@", post.humid];
     NSString *mphOfWind = [NSString stringWithFormat:@"%@", post.windSpeed];
-    
+    NSString *weatherDetail = [NSString stringWithFormat:@"%@", post.forcastDetail];
     
     
     ForecastDetailViewController *detailViewController = segue.destinationViewController;
     detailViewController.chanceOfRain = chanceOfRainPer;
     detailViewController.humidity = humidityPer;
     detailViewController.windMPH = mphOfWind;
+    detailViewController.weatherDetails = weatherDetail;
     
 }
-
 
 - (NSString *)objectForIndexPath:(NSIndexPath *)indexPath {
    

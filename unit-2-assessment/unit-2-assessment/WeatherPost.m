@@ -37,6 +37,8 @@
         
         self.windSpeed = daily[@"windSpeed"];
         
+        self.forcastDetail = daily[@"summary"];
+        
     
         return self;
     }
