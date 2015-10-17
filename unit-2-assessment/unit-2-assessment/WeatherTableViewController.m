@@ -139,10 +139,11 @@ UITextFieldDelegate
     
     
     
-    
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
     
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
     
     WeatherDetailsViewController *vc = segue.destinationViewController ;
     
@@ -150,7 +151,7 @@ UITextFieldDelegate
     
     vc.detailWeatherData = currentInstagramItem;
     
-    
+    }
     
  }
 

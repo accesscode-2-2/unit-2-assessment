@@ -13,6 +13,7 @@
 		84E6D4621BD2961A00ECAE47 /* WeatherResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6D4611BD2961A00ECAE47 /* WeatherResults.m */; settings = {ASSET_TAGS = (); }; };
 		84E6D4651BD29E1C00ECAE47 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6D4641BD29E1C00ECAE47 /* CustomTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		84E6D46B1BD2B04000ECAE47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6D46A1BD2B04000ECAE47 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		84E6D46E1BD2BF2F00ECAE47 /* UserInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6D46D1BD2BF2F00ECAE47 /* UserInputViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
 		8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765B01BD289BC00B30411 /* unit_2_assessment.xcdatamodeld */; };
@@ -32,6 +33,8 @@
 		84E6D4631BD29E1C00ECAE47 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		84E6D4641BD29E1C00ECAE47 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		84E6D46A1BD2B04000ECAE47 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		84E6D46C1BD2BF2F00ECAE47 /* UserInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputViewController.h; sourceTree = "<group>"; };
+		84E6D46D1BD2BF2F00ECAE47 /* UserInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputViewController.m; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D6765A71BD289BC00B30411 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +94,15 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
+		84E6D46F1BD2BF3300ECAE47 /* UserInput */ = {
+			isa = PBXGroup;
+			children = (
+				84E6D46C1BD2BF2F00ECAE47 /* UserInputViewController.h */,
+				84E6D46D1BD2BF2F00ECAE47 /* UserInputViewController.m */,
+			);
+			name = UserInput;
+			sourceTree = "<group>";
+		};
 		8D6765981BD289BC00B30411 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 			children = (
 				8D6765A71BD289BC00B30411 /* AppDelegate.h */,
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
+				84E6D46F1BD2BF3300ECAE47 /* UserInput */,
 				84E6D4671BD29E3600ECAE47 /* APIManager */,
 				84E6D4681BD29E4600ECAE47 /* Weather */,
 				84E6D4661BD29E2400ECAE47 /* Details */,
@@ -211,6 +224,7 @@
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				84E6D4591BD2943600ECAE47 /* WeatherTableViewController.m in Sources */,
 				84E6D4651BD29E1C00ECAE47 /* CustomTableViewCell.m in Sources */,
+				84E6D46E1BD2BF2F00ECAE47 /* UserInputViewController.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
