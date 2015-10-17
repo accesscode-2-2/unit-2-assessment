@@ -31,7 +31,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCellIdentifier" id="Nle-9m-vSa">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCellIdentifier" id="Nle-9m-vSa" customClass="DailyWeatherTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nle-9m-vSa" id="QXx-gl-Rbx">
@@ -45,6 +45,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="cdD-dk-LPd" id="ihS-Pd-5LS"/>
                             <outlet property="delegate" destination="cdD-dk-LPd" id="ORF-3C-O69"/>
@@ -158,6 +159,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="latTextField" destination="tev-R0-hgT" id="m50-V4-Wy6"/>
+                        <outlet property="longTextField" destination="4Aw-v0-Ebb" id="TFc-mg-mNq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeP-qc-8dN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

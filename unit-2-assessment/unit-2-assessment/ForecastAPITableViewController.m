@@ -9,10 +9,14 @@
 #import "ForecastAPITableViewController.h"
 #import "ForecastJSON.h"
 #import <AFNetworking/AFNetworking.h>
+#import "DailyWeatherTableViewCell.h"
 
 @interface ForecastAPITableViewController ()
 
 @property (nonatomic) NSMutableArray *searchResults;
+
+@property (nonatomic) NSString *lat;
+@property (nonatomic) NSString *lng;
 
 @end
 
@@ -24,12 +28,21 @@
     self.navigationItem.title = @"Weather Forecast For Seoul";
     
     [self fetchForecastData];
+    self.searchResults = [[NSMutableArray alloc] init];
+    
+    
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    
+    self.lat = [[NSUserDefaults standardUserDefaults]
+                stringForKey:@"Latitude"];
+    self.lng = [[NSUserDefaults standardUserDefaults]
+                stringForKey:@"Longitude"];
 }
 
 - (void) fetchForecastData {
@@ -42,24 +55,50 @@
     [manager GET:ForecastURLString
       parameters:nil
          success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-             NSArray *results = responseObject[@"daily"][@"data"];
+             NSDictionary *results = [responseObject objectForKey:@"daily"];
+             NSArray *data= [results objectForKey:@"data"];
              
              // reset my array
              self.searchResults = [[NSMutableArray alloc] init];
              NSLog(@"%@", responseObject);
              
+             
              // loop through all json posts
-             for (NSDictionary *result in results) {
+             for (NSDictionary *result in data) {
                  
-                 // create new post from json
-                 ForecastJSON *forecastEntry = [[ForecastJSON alloc] initWithJSON:result];
+                 // create ForecaseJSON
+//                 ForecastJSON *forecastEntry = [[ForecastJSON alloc] initWithJSON:result];
+                 ForecastJSON *forecastEntry = [[ForecastJSON alloc] init];
+                 
                  //  breaks right after line 55
                  
                  // add post to array
                  [self.searchResults addObject:forecastEntry];
-//                 [responseObject objectForKey:@"data"];
+                 //                 [responseObject objectForKey:@"data"];
                  
              }
+             
+             NSString *summary = [results objectForKey:@"summary"];
+             NSString *icon = [results objectForKey:@"icon"];
+             NSLog(@"%@ %@", summary, icon);
+             
+             NSString *precipProbability = [results objectForKey:@"precipProbability"];
+             float precipProbabilityFloat = [precipProbability floatValue];
+             int precipProbabilityInt = precipProbabilityFloat *= 100;
+             precipProbability = [NSString stringWithFormat:@"%d", precipProbabilityInt];
+             NSLog(@"%@", precipProbability);
+             
+             NSString *humidity = [results objectForKey:@"humidity"];
+             float humidityFloat = [humidity floatValue];
+             int humidityInt = humidityFloat * 100;
+             humidity = [NSString stringWithFormat:@"%d", humidityInt];
+             NSLog(@"%@", humidity);
+             
+             
+             NSString *windSpeed = [results objectForKey:@"windSpeed"];
+             int windSpeedNum = [windSpeed intValue];
+             windSpeed = [NSString stringWithFormat:@"%d", windSpeedNum];
+             NSLog(@"%@", windSpeed);
              
              [self.tableView reloadData];
              
@@ -67,6 +106,9 @@
              NSLog(@"%@", error);
              
          }];
+    
+    UINib *nib = [UINib nibWithNibName:@"DailyWeatherTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"dayOfWeekCellIdentifier"];
     
 }
 
@@ -80,14 +122,29 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.searchResults.count;
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"weatherCellIdentifier" forIndexPath:indexPath];
+    DailyWeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"weatherCellIdentifier" forIndexPath:indexPath];
+    
     ForecastJSON *weatherResult = self.searchResults[indexPath.row];
-    cell.textLabel.text = weatherResult.summary;
+    
+    // unixTimeStampToDayOfWeekConverter
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:weatherResult.time];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *dateName = [dateFormatter stringFromDate:date];
+    
+    cell.dayOfWeek.text = dateName;
+    cell.tempMinMax.text = [NSString stringWithFormat:@"%ld %ld", weatherResult.temperatureMax, weatherResult.temperatureMin];
+    cell.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", weatherResult.iconString]];
+
+    
+//    cell.textLabel.text = weatherResult.summary;
+    
     
     return cell;
 }

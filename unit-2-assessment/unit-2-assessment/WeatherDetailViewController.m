@@ -26,14 +26,12 @@
     UINavigationController *navController = segue.destinationViewController;
     
     WeatherDetailViewController *weatherDetailTVC = (WeatherDetailViewController
-                                                        *)([navController viewControllers][0]);
+                                                     *)([navController viewControllers][0]);
 }
 - (IBAction)backButton:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
-
-    NSLog(@"back button tapped");
-
+    
 }
 
 @end

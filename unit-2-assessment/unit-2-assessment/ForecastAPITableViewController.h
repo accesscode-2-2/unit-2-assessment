@@ -10,5 +10,4 @@
 
 @interface ForecastAPITableViewController : UITableViewController
 
-
 @end

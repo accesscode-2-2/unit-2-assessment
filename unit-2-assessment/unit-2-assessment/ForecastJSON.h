@@ -11,7 +11,7 @@
 @interface ForecastJSON : NSObject
 
 @property (nonatomic) NSString *summary;
-
+@property (nonatomic) NSString *iconString;
 @property (nonatomic) NSInteger latitude;
 @property (nonatomic) NSInteger longitude;
 @property (nonatomic) NSInteger time;
