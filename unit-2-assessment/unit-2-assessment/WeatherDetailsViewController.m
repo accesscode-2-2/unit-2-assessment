@@ -20,22 +20,12 @@
     [self.navigationItem setTitle:@"Details"];
 
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(backClick)];
-    self.navigationItem.leftBarButtonItem = backButton;
-
     
     NSLog(@"dateeee detail %@", self.detailWeatherData);
     
  }
 
-
-
--(void)backClick
-{
-    NSLog(@"goooo away");
-    [self dismissViewControllerAnimated:YES completion:nil ];
-}
-
+ 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

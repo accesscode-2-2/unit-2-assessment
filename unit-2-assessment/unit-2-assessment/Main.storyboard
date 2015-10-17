@@ -86,7 +86,7 @@
                                     <outlet property="iconImageView" destination="k7k-zw-byU" id="Poe-KS-apE"/>
                                     <outlet property="maxTempLabel" destination="vGb-4D-n1C" id="15l-c8-wkP"/>
                                     <outlet property="minTempLabel" destination="9ZG-D1-EzI" id="hDm-hQ-1K0"/>
-                                    <segue destination="vVT-QG-j3f" kind="presentation" id="igO-4u-gf0"/>
+                                    <segue destination="vVT-QG-j3f" kind="show" id="PEe-j0-nru"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

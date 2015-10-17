@@ -19,6 +19,8 @@ UITableViewDelegate,
 UITextFieldDelegate
 >
 @property (nonatomic) NSMutableArray *searchResults;
+@property (nonatomic) NSArray *results;
+
 @end
 
 @implementation WeatherTableViewController
@@ -59,12 +61,12 @@ UITextFieldDelegate
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
             NSDictionary *results2 = [json objectForKey:@"daily"];
-            NSLog(@"results2 %@",results2);
+//            NSLog(@"results2 %@",results2);
             
-            NSArray *results =  [results2 objectForKey:@"data"];
+            self.results =  [results2 objectForKey:@"data"];
             self.searchResults = [[NSMutableArray alloc] init];
             
-            for (NSDictionary *result in results) {
+            for (NSDictionary *result in self.results) {
                 NSString *time = [result objectForKey:@"time"];
                 NSString *iconName = [result objectForKey: @"icon"];
                 NSString *tempMin = [result objectForKey: @"temperatureMin"];
@@ -134,19 +136,17 @@ UITextFieldDelegate
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    
-//    WeatherDetailsViewController *vc = segue.destinationViewController ;
-//    
-//    WeatherResults *currentResult = self.searchResults[indexPath.row];
-//    NSString *ooo = currentResult.minTemp;
-
+    
+    
+    
+    
+    
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
     WeatherDetailsViewController *vc = segue.destinationViewController ;
     
-    NSDictionary *currentInstagramItem = self.searchResults[indexPath.row];
+    NSDictionary *currentInstagramItem = self.results[indexPath.row];
     
     vc.detailWeatherData = currentInstagramItem;
     
