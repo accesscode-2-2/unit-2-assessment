@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Okq-Ax-pXs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -21,18 +23,49 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atp-cy-cBe">
-                                            <rect key="frame" x="37" y="14" width="440" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVt-Xe-jeT">
+                                            <rect key="frame" x="521" y="13" width="51" height="21"/>
                                             <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-HI-VeU">
+                                            <rect key="frame" x="28" y="13" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atp-cy-cBe">
+                                            <rect key="frame" x="466" y="13" width="45" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="MlT-Xr-qBV"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="atp-cy-cBe" firstAttribute="top" secondItem="ibw-Gk-C9V" secondAttribute="topMargin" constant="5" id="7M9-l0-oRm"/>
+                                        <constraint firstItem="YgQ-HI-VeU" firstAttribute="leading" secondItem="ibw-Gk-C9V" secondAttribute="leadingMargin" constant="20" id="B3n-EG-jRC"/>
+                                        <constraint firstItem="YgQ-HI-VeU" firstAttribute="firstBaseline" secondItem="atp-cy-cBe" secondAttribute="firstBaseline" id="MgG-Nv-GSP"/>
+                                        <constraint firstItem="atp-cy-cBe" firstAttribute="firstBaseline" secondItem="kVt-Xe-jeT" secondAttribute="firstBaseline" id="Okj-6C-7og"/>
+                                        <constraint firstItem="atp-cy-cBe" firstAttribute="baseline" secondItem="kVt-Xe-jeT" secondAttribute="baseline" id="Onw-Mv-ROf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="atp-cy-cBe" secondAttribute="bottom" constant="1.5" id="SKF-lT-p9s"/>
+                                        <constraint firstItem="YgQ-HI-VeU" firstAttribute="baseline" secondItem="atp-cy-cBe" secondAttribute="baseline" id="deY-7M-a5N"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kVt-Xe-jeT" secondAttribute="trailing" constant="20" id="mly-yM-O7B"/>
+                                        <constraint firstItem="kVt-Xe-jeT" firstAttribute="leading" secondItem="atp-cy-cBe" secondAttribute="trailing" constant="10" id="mxR-Jg-02Y"/>
+                                        <constraint firstAttribute="trailing" secondItem="atp-cy-cBe" secondAttribute="trailing" constant="89" id="rfz-ZQ-mGh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="dayTempLabel" destination="YgQ-HI-VeU" id="M3E-0M-HFf"/>
+                                    <outlet property="maxTempLabel" destination="kVt-Xe-jeT" id="Swu-ah-xzl"/>
                                     <outlet property="minTempLabel" destination="atp-cy-cBe" id="zLq-EX-UdZ"/>
                                 </connections>
                             </tableViewCell>

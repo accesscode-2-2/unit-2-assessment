@@ -10,8 +10,11 @@
 
 @interface WeatherPost : NSObject
 
-@property (nonatomic) NSString *minTemp;
-@property (nonatomic) NSString *maxTemp;
+@property (nonatomic) NSInteger minTemp;
+@property (nonatomic) NSInteger maxTemp;
+@property (nonatomic) NSDate *forcastedDay;
+@property (nonatomic) NSString *weatherDay;
+
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

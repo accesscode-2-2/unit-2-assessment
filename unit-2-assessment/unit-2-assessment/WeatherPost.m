@@ -16,7 +16,15 @@
    
     if (self = [super init]) {
         
-        self.minTemp = daily[@"temperatureMax"];
+        self.minTemp = [daily[@"temperatureMin"]integerValue];
+        self.maxTemp = [daily[@"temperatureMax"]integerValue];
+        
+        NSNumber *startTime  = daily[@"time"];
+        self.forcastedDay = [NSDate dateWithTimeIntervalSince1970:[startTime doubleValue]];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEEE"];
+        NSString *dateName = [dateFormatter stringFromDate:self.forcastedDay];
+        self.weatherDay= dateName;
     
         return self;
     }

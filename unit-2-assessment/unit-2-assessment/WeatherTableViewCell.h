@@ -11,5 +11,7 @@
 @interface WeatherTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dayTempLabel;
 
 @end

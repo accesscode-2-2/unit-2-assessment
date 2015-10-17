@@ -89,8 +89,9 @@
     
     WeatherPost *post = self.forecastResults[indexPath.section];
     
-    cell.minTempLabel.text = [NSString stringWithFormat:@"%@", post.minTemp];
-    
+    cell.minTempLabel.text = [NSString stringWithFormat:@"%li", (long)post.minTemp];
+    cell.maxTempLabel.text = [NSString stringWithFormat:@"%li", (long)post.maxTemp];
+    cell.dayTempLabel.text = [NSString stringWithFormat:@"%@",post.weatherDay];
     
     return cell;
 }
