@@ -103,6 +103,14 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		42CD1C891BD2EE6600BEDE90 /* Don't Need */ = {
+			isa = PBXGroup;
+			children = (
+				4246ACCB1BD2C43600F4EC91 /* DailyWeatherTableViewCell.xib */,
+			);
+			name = "Don't Need";
+			sourceTree = "<group>";
+		};
 		8D6765981BD289BC00B30411 = {
 			isa = PBXGroup;
 			children = (
@@ -133,11 +141,11 @@
 				4246AC5F1BD297BC00F4EC91 /* ForecastAPITableViewController.m */,
 				4246ACC61BD2C3E200F4EC91 /* DailyWeatherTableViewCell.h */,
 				4246ACC71BD2C3E200F4EC91 /* DailyWeatherTableViewCell.m */,
-				4246ACCB1BD2C43600F4EC91 /* DailyWeatherTableViewCell.xib */,
 				4246ACBF1BD2A77200F4EC91 /* WeatherDetailViewController.h */,
 				4246ACC01BD2A77200F4EC91 /* WeatherDetailViewController.m */,
 				4246ACC31BD2C03F00F4EC91 /* CoordinatesViewController.h */,
 				4246ACC41BD2C03F00F4EC91 /* CoordinatesViewController.m */,
+				42CD1C891BD2EE6600BEDE90 /* Don't Need */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
 				8D6765B81BD289BC00B30411 /* Info.plist */,

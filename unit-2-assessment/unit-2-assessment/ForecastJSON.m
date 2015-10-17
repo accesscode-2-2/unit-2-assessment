@@ -17,7 +17,7 @@
     if (self = [super init]) {
         
         self.summary = json[@"summary"];
-        self.iconString = json[@"icon"];
+        self.icon = json[@"icon"];
         
         self.latitude = [json[@"latitude"]integerValue];
         self.longitude = [json[@"longitude"]integerValue];
@@ -27,7 +27,8 @@
         self.precipProbability = [json[@"precipProbability"] integerValue];
         self.humidity = [json[@"humidity"] integerValue];
         self.windSpeed = [json[@"windSpeed"] integerValue];
-
+        
+        
         
         
         return self;
@@ -35,4 +36,4 @@
     return nil;
 }
 
-    @end
+@end

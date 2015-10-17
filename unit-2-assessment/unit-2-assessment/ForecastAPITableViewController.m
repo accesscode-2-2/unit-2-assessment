@@ -30,8 +30,6 @@
     [self fetchForecastData];
     self.searchResults = [[NSMutableArray alloc] init];
     
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -67,31 +65,34 @@
              for (NSDictionary *result in data) {
                  
                  // create ForecaseJSON
-//                 ForecastJSON *forecastEntry = [[ForecastJSON alloc] initWithJSON:result];
+                 ForecastJSON *weatherResult = [[ForecastJSON alloc] initWithJSON:result];
+                 
+                 // unixTimeStampToDayOfWeekConverter
+                 NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:weatherResult.time];
+                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                 [dateFormatter setDateFormat:@"EEEE"];
                  ForecastJSON *forecastEntry = [[ForecastJSON alloc] init];
                  
-                 //  breaks right after line 55
-                 
                  // add post to array
-                 [self.searchResults addObject:forecastEntry];
+                 [self.searchResults addObject:weatherResult];
                  //                 [responseObject objectForKey:@"data"];
                  
              }
              
-             NSString *summary = [results objectForKey:@"summary"];
              NSString *icon = [results objectForKey:@"icon"];
-             NSLog(@"%@ %@", summary, icon);
+             NSLog(@"%@"
+                   , icon);
              
              NSString *precipProbability = [results objectForKey:@"precipProbability"];
              float precipProbabilityFloat = [precipProbability floatValue];
-             int precipProbabilityInt = precipProbabilityFloat *= 100;
-             precipProbability = [NSString stringWithFormat:@"%d", precipProbabilityInt];
+             int precipProbabilityNum = precipProbabilityFloat *= 100;
+             precipProbability = [NSString stringWithFormat:@"%d", precipProbabilityNum];
              NSLog(@"%@", precipProbability);
              
              NSString *humidity = [results objectForKey:@"humidity"];
              float humidityFloat = [humidity floatValue];
-             int humidityInt = humidityFloat * 100;
-             humidity = [NSString stringWithFormat:@"%d", humidityInt];
+             int humidityNum = humidityFloat * 100;
+             humidity = [NSString stringWithFormat:@"%d", humidityNum];
              NSLog(@"%@", humidity);
              
              
@@ -99,6 +100,7 @@
              int windSpeedNum = [windSpeed intValue];
              windSpeed = [NSString stringWithFormat:@"%d", windSpeedNum];
              NSLog(@"%@", windSpeed);
+             
              
              [self.tableView reloadData];
              
@@ -122,7 +124,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.searchResults.count;
-
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -131,19 +133,18 @@
     DailyWeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"weatherCellIdentifier" forIndexPath:indexPath];
     
     ForecastJSON *weatherResult = self.searchResults[indexPath.row];
+
     
-    // unixTimeStampToDayOfWeekConverter
+    cell.tempMinMax.text = [NSString stringWithFormat:@"%ld - %ld", weatherResult.temperatureMin, weatherResult.temperatureMax];
+    cell.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", weatherResult.icon]];
+    
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:weatherResult.time];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     NSString *dateName = [dateFormatter stringFromDate:date];
     
-    cell.dayOfWeek.text = dateName;
-    cell.tempMinMax.text = [NSString stringWithFormat:@"%ld %ld", weatherResult.temperatureMax, weatherResult.temperatureMin];
-    cell.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", weatherResult.iconString]];
-
+    cell.textLabel.text = dateName;
     
-//    cell.textLabel.text = weatherResult.summary;
     
     
     return cell;

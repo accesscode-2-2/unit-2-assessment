@@ -10,8 +10,9 @@
 
 @interface DailyWeatherTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *dayOfWeek;
 @property (weak, nonatomic) IBOutlet UILabel *tempMinMax;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImage;
+@property (weak, nonatomic) IBOutlet UILabel *dayOfWeek;
+
 
 @end

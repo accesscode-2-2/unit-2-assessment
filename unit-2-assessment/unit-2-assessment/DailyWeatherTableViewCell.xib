@@ -49,11 +49,6 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
-            <connections>
-                <outlet property="dayOfWeek" destination="EDl-SE-S5d" id="KwH-s3-fHl"/>
-                <outlet property="tempMinMax" destination="aWS-S7-mbG" id="Mvm-qz-QBP"/>
-                <outlet property="weatherImage" destination="OOm-8a-8LZ" id="RBg-GZ-ipn"/>
-            </connections>
             <point key="canvasLocation" x="367.5" y="218"/>
         </tableViewCell>
     </objects>
