@@ -13,4 +13,27 @@
 
 @implementation WeatherDetailViewController
 
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title = @"Weather Details";
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    UINavigationController *navController = segue.destinationViewController;
+    
+    WeatherDetailViewController *weatherDetailTVC = (WeatherDetailViewController
+                                                        *)([navController viewControllers][0]);
+}
+- (IBAction)backButton:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
+    NSLog(@"back button tapped");
+
+}
+
 @end

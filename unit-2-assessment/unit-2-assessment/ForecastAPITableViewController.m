@@ -21,13 +21,16 @@
 - (void) viewDidLoad {
     
     [super viewDidLoad];
-    self.navigationItem.title = @"7 Day Weather Forecast";
+    self.navigationItem.title = @"Weather Forecast For Seoul";
     
     [self fetchForecastData];
     
-    
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 - (void) fetchForecastData {
     
@@ -39,7 +42,7 @@
     [manager GET:ForecastURLString
       parameters:nil
          success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-             NSArray *results = responseObject[@"data"];
+             NSArray *results = responseObject[@"daily"][@"data"];
              
              // reset my array
              self.searchResults = [[NSMutableArray alloc] init];
@@ -50,10 +53,14 @@
                  
                  // create new post from json
                  ForecastJSON *forecastEntry = [[ForecastJSON alloc] initWithJSON:result];
+                 //  breaks right after line 55
                  
                  // add post to array
                  [self.searchResults addObject:forecastEntry];
+//                 [responseObject objectForKey:@"data"];
+                 
              }
+             
              [self.tableView reloadData];
              
          } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
@@ -63,12 +70,14 @@
     
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+#pragma mark - Table View Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.searchResults.count;
 }
@@ -77,9 +86,10 @@
 {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"weatherCellIdentifier" forIndexPath:indexPath];
+    ForecastJSON *weatherResult = self.searchResults[indexPath.row];
+    cell.textLabel.text = weatherResult.summary;
     
     return cell;
 }
-
 
 @end

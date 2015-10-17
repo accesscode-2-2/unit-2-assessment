@@ -1,5 +1,5 @@
 //
-//  ForecastAPITableViewController.h
+//  CoordinatesViewController.h
 //  unit-2-assessment
 //
 //  Created by Charles Kang on 10/17/15.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ForecastAPITableViewController : UITableViewController
-
+@interface CoordinatesViewController : UIViewController
 
 @end

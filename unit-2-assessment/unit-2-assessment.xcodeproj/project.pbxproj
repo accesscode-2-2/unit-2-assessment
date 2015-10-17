@@ -23,6 +23,7 @@
 		4246ACBD1BD2A23300F4EC91 /* snow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4246ACB11BD2A23300F4EC91 /* snow@2x.png */; settings = {ASSET_TAGS = (); }; };
 		4246ACBE1BD2A23300F4EC91 /* wind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4246ACB21BD2A23300F4EC91 /* wind@2x.png */; settings = {ASSET_TAGS = (); }; };
 		4246ACC11BD2A77200F4EC91 /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4246ACC01BD2A77200F4EC91 /* WeatherDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4246ACC51BD2C03F00F4EC91 /* CoordinatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4246ACC41BD2C03F00F4EC91 /* CoordinatesViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
 		8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765AB1BD289BC00B30411 /* ViewController.m */; };
@@ -52,6 +53,8 @@
 		4246ACB21BD2A23300F4EC91 /* wind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@2x.png"; sourceTree = "<group>"; };
 		4246ACBF1BD2A77200F4EC91 /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
 		4246ACC01BD2A77200F4EC91 /* WeatherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailViewController.m; sourceTree = "<group>"; };
+		4246ACC31BD2C03F00F4EC91 /* CoordinatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatesViewController.h; sourceTree = "<group>"; };
+		4246ACC41BD2C03F00F4EC91 /* CoordinatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatesViewController.m; sourceTree = "<group>"; };
 		8025C4658303E240C0521CAC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,17 +101,6 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		4246ACC21BD2A78100F4EC91 /* API Related */ = {
-			isa = PBXGroup;
-			children = (
-				4246AC611BD2994E00F4EC91 /* ForecastJSON.h */,
-				4246AC621BD2994E00F4EC91 /* ForecastJSON.m */,
-				4246AC5E1BD297BC00F4EC91 /* ForecastAPITableViewController.h */,
-				4246AC5F1BD297BC00F4EC91 /* ForecastAPITableViewController.m */,
-			);
-			name = "API Related";
-			sourceTree = "<group>";
-		};
 		8D6765981BD289BC00B30411 = {
 			isa = PBXGroup;
 			children = (
@@ -130,14 +122,19 @@
 		8D6765A31BD289BC00B30411 /* unit-2-assessment */ = {
 			isa = PBXGroup;
 			children = (
+				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765A71BD289BC00B30411 /* AppDelegate.h */,
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
 				8D6765AA1BD289BC00B30411 /* ViewController.h */,
 				8D6765AB1BD289BC00B30411 /* ViewController.m */,
-				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
-				4246ACC21BD2A78100F4EC91 /* API Related */,
+				4246AC611BD2994E00F4EC91 /* ForecastJSON.h */,
+				4246AC621BD2994E00F4EC91 /* ForecastJSON.m */,
+				4246AC5E1BD297BC00F4EC91 /* ForecastAPITableViewController.h */,
+				4246AC5F1BD297BC00F4EC91 /* ForecastAPITableViewController.m */,
 				4246ACBF1BD2A77200F4EC91 /* WeatherDetailViewController.h */,
 				4246ACC01BD2A77200F4EC91 /* WeatherDetailViewController.m */,
+				4246ACC31BD2C03F00F4EC91 /* CoordinatesViewController.h */,
+				4246ACC41BD2C03F00F4EC91 /* CoordinatesViewController.m */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
 				8D6765B81BD289BC00B30411 /* Info.plist */,
@@ -290,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4246ACC51BD2C03F00F4EC91 /* CoordinatesViewController.m in Sources */,
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
 				8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */,
 				4246AC631BD2994E00F4EC91 /* ForecastJSON.m in Sources */,

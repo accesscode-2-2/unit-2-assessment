@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherDetailViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *humidityPercent;
 @property (weak, nonatomic) IBOutlet UILabel *chanceOfRain;
 @property (weak, nonatomic) IBOutlet UILabel *windSpeed;
