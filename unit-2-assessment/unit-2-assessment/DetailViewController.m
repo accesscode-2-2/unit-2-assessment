@@ -26,9 +26,9 @@
     
     self.iconImage.image = [UIImage imageNamed:self.detailForecast.icon];
     self.summaryLabel.text = self.detailForecast.summary;
-    self.chanceOfRainLabel.text = [NSString stringWithFormat:@"Chance of rain: %@",self.detailForecast.chanceOfRain];
-    self.humidityLabel.text = [NSString stringWithFormat:@"Humidity: %@", self.detailForecast.humidity];
-    self.windLabel.text = [NSString stringWithFormat:@"Wind: %@",self.detailForecast.wind];
+    self.chanceOfRainLabel.text = [NSString stringWithFormat:@"Chance of rain: %@ %%",self.detailForecast.chanceOfRain];
+    self.humidityLabel.text = [NSString stringWithFormat:@"Humidity: %@ %%", self.detailForecast.humidity];
+    self.windLabel.text = [NSString stringWithFormat:@"Wind: %@ mph",self.detailForecast.wind];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
