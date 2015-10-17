@@ -20,10 +20,12 @@
     [super viewDidLoad];
     self.latTextField.delegate = self;
     self.longTextField.delegate = self;
-    [self.latTextField becomeFirstResponder];
 }
 
 - (IBAction)saveButtonTapped:(id)sender {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.latTextField.text forKey:@"latitude"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.longTextField.text forKey:@"longitude"];
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
@@ -33,7 +35,8 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [textField resignFirstResponder];
+    [textField endEditing:YES];
+    
     return YES;
 }
 

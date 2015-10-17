@@ -36,8 +36,9 @@
     CGFloat humidity = [humidityPercentage floatValue] * 100;
     self.humidityLabel.text = [NSString stringWithFormat:@"Humidity: %g%%", humidity];
     
-    NSNumber *wind = self.weatherResult[@"windSpeed"];
-    self.windLabel.text = [NSString stringWithFormat:@"Wind speed: %@ mph", wind];
+    NSNumber *windSpeed = self.weatherResult[@"windSpeed"];
+    NSInteger wind = [windSpeed integerValue];
+    self.windLabel.text = [NSString stringWithFormat:@"Wind speed: %ld mph", wind];
 }
 
 

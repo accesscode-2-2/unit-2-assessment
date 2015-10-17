@@ -10,12 +10,15 @@
 #import <AFNetworking/AFNetworking.h>
 #import "DetailViewController.h"
 #import "SettingsViewController.h"
+#import "CustomTableViewCell.h"
 
 const NSString *APIKey = @"91c0f0787bcb01510e3745b9cfa8dae1";
 
 @interface WeatherTableViewController ()
 
 @property (nonatomic) NSMutableArray *weatherData;
+@property (nonatomic) NSString *latitude;
+@property (nonatomic) NSString *longitude;
 
 @end
 
@@ -24,15 +27,20 @@ const NSString *APIKey = @"91c0f0787bcb01510e3745b9cfa8dae1";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"7-Day Forecast";
-    [self fetchWeatherData];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"CustomCellIdentifier"];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self fetchWeatherData];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"detailSegue"]) {
-        
+    
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *viewController = [segue destinationViewController];
         viewController.weatherResult = self.weatherData[indexPath.row];
@@ -40,11 +48,17 @@ const NSString *APIKey = @"91c0f0787bcb01510e3745b9cfa8dae1";
 }
 
 -(void) fetchWeatherData {
-    NSString *latitude = @"37.8267";
     
-    NSString *longitude = @"-122.423";
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"] == nil && [[NSUserDefaults standardUserDefaults] objectForKey:@"longitude"] == nil) {
+        self.latitude = @"37.8267";
+        self.longitude = @"-122.423";
+    } else {
+        
+        self.latitude = [[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"];
+        self.longitude = [[NSUserDefaults standardUserDefaults] objectForKey:@"longitude"];
+    }
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%@,%@", APIKey, latitude, longitude];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%@,%@", APIKey, self.latitude, self.longitude];
     
     NSLog(@"%@", urlString);
     
@@ -80,9 +94,12 @@ const NSString *APIKey = @"91c0f0787bcb01510e3745b9cfa8dae1";
     return self.weatherData.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellIdentifier" forIndexPath:indexPath];
     
     NSNumber *time = self.weatherData[indexPath.row][@"time"];
     double timeForDay = [time doubleValue];
@@ -91,12 +108,17 @@ const NSString *APIKey = @"91c0f0787bcb01510e3745b9cfa8dae1";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     NSString *dateName = [dateFormatter stringFromDate:date];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", dateName];
+    cell.dayLabel.text  = [NSString stringWithFormat:@"%@", dateName];
     
     NSNumber *high = self.weatherData[indexPath.row][@"temperatureMax"];
+    NSInteger highInt = [high integerValue];
     NSNumber *low = self.weatherData[indexPath.row][@"temperatureMin"];
+    NSInteger lowInt = [low integerValue];
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", high, low];
+    cell.highLowLabel.text = [NSString stringWithFormat:@"%ld - %ld", highInt, lowInt];
+    
+    NSString *icon = self.weatherData[indexPath.row][@"icon"];
+    cell.iconImageView.image = [UIImage imageNamed:icon];
     
     return cell;
 }
