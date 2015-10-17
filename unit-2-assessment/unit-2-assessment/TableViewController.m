@@ -18,6 +18,10 @@
 // store search results
 @property (nonatomic) NSMutableArray *searchResults;
 
+// store latitude and longitude
+@property (nonatomic) NSString *lat;
+@property (nonatomic) NSString *lng;
+
 @end
 
 @implementation TableViewController
@@ -25,21 +29,32 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self fetchAPIData];
-    
-    
+   
+    [self setupNavigationItiems];
     
     // set up custom cell:
     UINib *nib = [UINib nibWithNibName:@"CustomTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cellIdentifier"];
     
-    // add button to view
-    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc]
+    // load NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.lat = [defaults objectForKey:@"savedLatitude"];
+    self.lng = [defaults objectForKey:@"savedLongitude"];
+    
+    // NSLog(@"saved lat: %@, saved lng: %@", self.lat, self.lng); // test it
+    
+     [self fetchAPIData];
+}
+
+#pragma mark - Navigation Items
+
+- (void)setupNavigationItiems {
+   
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc]  // add button to view
                                     initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                     target:self
                                     action:@selector(editButtonTapped)];
     self.navigationItem.rightBarButtonItem = doneButton;
-    
 }
 
 - (void)editButtonTapped {
@@ -47,18 +62,18 @@
    SettingsViewController *newViewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [self.navigationController pushViewController:newViewController animated:YES];
-
-   
-    
-   // [self.presentingViewController dismissViewControllerAnimated:YES
-                                                    //  completion:nil];
 }
+
+#pragma mark - API Setup
 
 - (void)fetchAPIData {
 
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
     
-    [manager GET:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/40.7,-73.9" parameters:nil success:^(NSURLSessionTask *task, id responseObject) {
+    // add lat and lng to url string
+    NSString *myURLString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/%@,%@", self.lat, self.lng];
+    
+    [manager GET:myURLString parameters:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         // NSLog(@"JSON: %@", responseObject); // test it!
         
@@ -144,7 +159,6 @@
 
 #pragma mark - Navigation
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
    
     [self performSegueWithIdentifier:@"DetailSegue" sender:nil];
@@ -174,6 +188,5 @@
 //    
 //    }
 //}
-
 
 @end

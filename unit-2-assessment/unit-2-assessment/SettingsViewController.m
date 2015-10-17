@@ -43,15 +43,16 @@
 - (void)saveButtonTapped {
     
     // save location data
-    NSString *saveLatitude = self.latitudeTextField.text;
-    NSString *saveLongitude = self.longitudeTextField.text;
+    self.latValue = self.latitudeTextField.text;
+    self.longValue = self.longitudeTextField.text;
+    
+    // setup NSUserDefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   
-    [defaults setObject:saveLatitude forKey:@"savedLatitude"];
-    [defaults setObject:saveLongitude forKey:@"savedLongitude"];
+    [defaults setObject:self.latValue forKey:@"savedLatitude"];
+    [defaults setObject:self.longValue forKey:@"savedLongitude"];
     [defaults synchronize];
  
-    NSLog(@"lat: %@, long: %@", saveLatitude, saveLongitude);
+    NSLog(@"lat: %@, long: %@", self.latValue, self.longValue); // test it!
     
     // transition back to main view controller
     TableViewController *newViewController =
