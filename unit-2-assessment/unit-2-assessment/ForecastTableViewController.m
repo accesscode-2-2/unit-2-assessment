@@ -109,11 +109,15 @@
     WeatherPost *post = self.forecastResults[indexPath.row];
     
     NSString *chanceOfRainPer = [NSString stringWithFormat:@"%@", post.chanceOfRain];
+    NSString *humidityPer = [NSString stringWithFormat:@"%@", post.humid];
+    NSString *mphOfWind = [NSString stringWithFormat:@"%@", post.windSpeed];
     
     
     
     ForecastDetailViewController *detailViewController = segue.destinationViewController;
     detailViewController.chanceOfRain = chanceOfRainPer;
+    detailViewController.humidity = humidityPer;
+    detailViewController.windMPH = mphOfWind;
     
 }
 

@@ -32,6 +32,10 @@
         NSNumber *precipPercent = daily[@"precipProbability"];
         self.chanceOfRain = [NSString stringWithFormat:@"%.1f%%", [precipPercent floatValue]*100];
         
+        NSNumber *humidPercent = daily[@"humidity"];
+        self.humid = [NSString stringWithFormat:@"%.1f%%", [humidPercent floatValue]*100];
+        
+        self.windSpeed = daily[@"windSpeed"];
         
     
         return self;

@@ -199,6 +199,8 @@
                     </view>
                     <connections>
                         <outlet property="chanceOfRainPercent" destination="wVX-pW-Jvr" id="Wjj-oi-91B"/>
+                        <outlet property="humidityPercent" destination="UYo-FU-Ufc" id="8TA-AN-dZ3"/>
+                        <outlet property="windRate" destination="ZQM-dT-xWv" id="vk8-WS-2yG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JE-Wn-vHo" userLabel="First Responder" sceneMemberID="firstResponder"/>

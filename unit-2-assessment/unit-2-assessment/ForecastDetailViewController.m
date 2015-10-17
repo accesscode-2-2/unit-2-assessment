@@ -10,7 +10,10 @@
 #import "WeatherPost.h"
 
 @interface ForecastDetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *chanceOfRainPercent;
+@property (weak, nonatomic) IBOutlet UILabel *humidityPercent;
+@property (weak, nonatomic) IBOutlet UILabel *windRate;
 
 @end
 
@@ -22,7 +25,8 @@
     
     
        self.chanceOfRainPercent.text = self.chanceOfRain;
-    
+       self.humidityPercent.text = self.humidity;
+       self.windRate.text = self.windMPH;
     
 }
 
