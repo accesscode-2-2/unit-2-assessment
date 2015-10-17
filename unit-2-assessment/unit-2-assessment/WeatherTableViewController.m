@@ -119,12 +119,28 @@ UITextFieldDelegate
 
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:convertStringToNSTimeInterval  ];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
     [dateFormatter setDateFormat:@"EEEE"];
-    self.dateName = [dateFormatter stringFromDate:date];
+    NSString *dateName = [dateFormatter stringFromDate:date];
     
-    cell.dayLabel.text = self.dateName;
+ 
+ 
+    
+    //convert to calendar date
+    double unixTimeStamp =[currentResult.weekDay doubleValue];
+    NSTimeInterval _interval=unixTimeStamp;
+    NSDate *date2 = [NSDate dateWithTimeIntervalSince1970:_interval];
+    NSDateFormatter *formatter= [[NSDateFormatter alloc] init];
+    [formatter setLocale:[NSLocale currentLocale]];
+    [formatter setDateFormat:@"MM.dd.YYYY"];
+    NSString *dateString = [formatter stringFromDate:date2];
+    
+    
+    
+    cell.dayLabel.text = dateName;
+    cell.calendarDate.text = [NSString stringWithFormat:@"%@", dateString];
     cell.iconImageView.image = [UIImage imageNamed:currentResult.weatherIcon];
-    cell.minTempLabel.text = [NSString stringWithFormat:@"%@", currentResult.minTemp];
+    cell.minTempLabel.text = [NSString stringWithFormat:@"%@", currentResult.minTemp ];
     cell.maxTempLabel.text = [NSString stringWithFormat:@"%@", currentResult.maxTemp];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 

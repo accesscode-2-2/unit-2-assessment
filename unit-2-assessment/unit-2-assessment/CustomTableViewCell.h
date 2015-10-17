@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *calendarDate;
 
 @end

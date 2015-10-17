@@ -9,7 +9,7 @@
         <scene sceneID="XJT-5o-ftZ">
             <objects>
                 <tableViewController storyboardIdentifier="WeatherID" id="xVk-RM-Etb" customClass="WeatherTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdr-iE-dza">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdr-iE-dza">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,15 +94,15 @@
                             </variation>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherIdentifier" rowHeight="52" id="VSt-hq-C6R" customClass="CustomTableViewCell">
-                                <rect key="frame" x="0.0" y="136" width="600" height="52"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherIdentifier" rowHeight="65" id="VSt-hq-C6R" customClass="CustomTableViewCell">
+                                <rect key="frame" x="0.0" y="136" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VSt-hq-C6R" id="Mkb-eE-EM4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDJ-IF-RaO">
-                                            <rect key="frame" x="18" y="15" width="100" height="21"/>
+                                            <rect key="frame" x="18" y="22" width="100" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="Fb5-Gw-D0S"/>
                                             </constraints>
@@ -111,33 +111,43 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="k7k-zw-byU">
-                                            <rect key="frame" x="275" y="1" width="50" height="50"/>
+                                            <rect key="frame" x="275" y="7" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="Dp7-z8-bd5"/>
                                                 <constraint firstAttribute="height" constant="50" id="mol-bb-D9U"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZG-D1-EzI">
-                                            <rect key="frame" x="478" y="15" width="50" height="21"/>
+                                            <rect key="frame" x="478" y="22" width="60" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="fEU-gN-oC3"/>
+                                                <constraint firstAttribute="width" constant="60" id="fEU-gN-oC3"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGb-4D-n1C">
-                                            <rect key="frame" x="547" y="15" width="60" height="21"/>
+                                            <rect key="frame" x="557" y="22" width="50" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="LIy-Sf-q4a"/>
+                                                <constraint firstAttribute="width" constant="50" id="LIy-Sf-q4a"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGq-Vb-Hmj">
-                                            <rect key="frame" x="529" y="15" width="17" height="21"/>
+                                            <rect key="frame" x="539" y="22" width="17" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cca-hm-Llx">
+                                            <rect key="frame" x="18" y="45" width="90" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="AmH-eq-A0P"/>
+                                                <constraint firstAttribute="width" constant="90" id="lgR-9r-Svc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -145,6 +155,8 @@
                                     <constraints>
                                         <constraint firstItem="tGq-Vb-Hmj" firstAttribute="leading" secondItem="9ZG-D1-EzI" secondAttribute="trailing" constant="1" id="1LZ-Dp-Ylw"/>
                                         <constraint firstItem="k7k-zw-byU" firstAttribute="centerY" secondItem="Mkb-eE-EM4" secondAttribute="centerY" id="3lt-Qa-zd9"/>
+                                        <constraint firstItem="cca-hm-Llx" firstAttribute="top" secondItem="KDJ-IF-RaO" secondAttribute="bottom" constant="2" id="9PM-N8-rps"/>
+                                        <constraint firstItem="cca-hm-Llx" firstAttribute="leading" secondItem="KDJ-IF-RaO" secondAttribute="leading" id="9ao-zo-0Ta"/>
                                         <constraint firstItem="9ZG-D1-EzI" firstAttribute="centerY" secondItem="Mkb-eE-EM4" secondAttribute="centerY" id="EUc-F3-7VW"/>
                                         <constraint firstItem="vGb-4D-n1C" firstAttribute="trailing" secondItem="Mkb-eE-EM4" secondAttribute="trailingMargin" constant="15" id="LUZ-7C-4DU"/>
                                         <constraint firstItem="KDJ-IF-RaO" firstAttribute="centerY" secondItem="Mkb-eE-EM4" secondAttribute="centerY" id="Z8D-XX-egY"/>
@@ -162,6 +174,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="calendarDate" destination="cca-hm-Llx" id="qCt-EQ-vCU"/>
                                     <outlet property="dayLabel" destination="KDJ-IF-RaO" id="OAI-3x-aXt"/>
                                     <outlet property="iconImageView" destination="k7k-zw-byU" id="Poe-KS-apE"/>
                                     <outlet property="maxTempLabel" destination="vGb-4D-n1C" id="15l-c8-wkP"/>
