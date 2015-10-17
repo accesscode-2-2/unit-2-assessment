@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCellIdentifier" rowHeight="200" id="KGk-i7-Jjw" customClass="CustomWeatherTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="510" height="190"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="510" height="189"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHL-BC-ge9">
+                        <rect key="frame" x="8" y="84" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hee-ta-J8h">
+                        <rect key="frame" x="240" y="80" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="EHF-vY-egh"/>
+                            <constraint firstAttribute="height" constant="60" id="RFp-U3-G1f"/>
+                            <constraint firstAttribute="width" constant="30" id="b10-66-FaG"/>
+                            <constraint firstAttribute="width" constant="60" id="sHt-SD-ZzW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RFp-U3-G1f"/>
+                                <exclude reference="sHt-SD-ZzW"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-4u-Avx">
+                        <rect key="frame" x="475" y="87" width="27" height="15"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="hee-ta-J8h" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1BD-5z-hnR"/>
+                    <constraint firstItem="hee-ta-J8h" firstAttribute="leading" secondItem="AHL-BC-ge9" secondAttribute="trailing" constant="32" id="1bi-HH-yBs"/>
+                    <constraint firstItem="hee-ta-J8h" firstAttribute="centerY" secondItem="AHL-BC-ge9" secondAttribute="centerY" id="3iv-x5-fY6"/>
+                    <constraint firstItem="AHL-BC-ge9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="5Mc-yr-7HQ"/>
+                    <constraint firstItem="hee-ta-J8h" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="LCW-JK-tu7"/>
+                    <constraint firstItem="AHL-BC-ge9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZoS-k4-2rA"/>
+                    <constraint firstItem="wDe-4u-Avx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cbR-ey-BlW"/>
+                    <constraint firstItem="hee-ta-J8h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ngw-mf-LEp"/>
+                    <constraint firstItem="wDe-4u-Avx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qn2-j0-goX"/>
+                    <constraint firstAttribute="trailing" secondItem="wDe-4u-Avx" secondAttribute="trailing" constant="8" id="rUU-9Q-iX7"/>
+                    <constraint firstItem="hee-ta-J8h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xU9-Mf-0Kb"/>
+                    <constraint firstAttribute="trailing" secondItem="wDe-4u-Avx" secondAttribute="trailing" constant="8" id="zKX-Wh-X1c"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="1BD-5z-hnR"/>
+                        <exclude reference="1bi-HH-yBs"/>
+                        <exclude reference="3iv-x5-fY6"/>
+                        <exclude reference="ngw-mf-LEp"/>
+                        <exclude reference="qn2-j0-goX"/>
+                        <exclude reference="rUU-9Q-iX7"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="dayLabel" destination="AHL-BC-ge9" id="syl-7s-Vus"/>
+                <outlet property="highLabel" destination="wDe-4u-Avx" id="420-Dx-Hns"/>
+                <outlet property="iconImage" destination="hee-ta-J8h" id="zQe-AH-TT9"/>
+            </connections>
+            <point key="canvasLocation" x="396" y="243"/>
+        </tableViewCell>
+    </objects>
+</document>
