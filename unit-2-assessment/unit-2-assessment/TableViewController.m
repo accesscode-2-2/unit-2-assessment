@@ -10,8 +10,13 @@
 #import "AFNetworking/AFNetworking.h"
 #import "Forecast.h"
 #import "ForcastDetailViewController.h"
+#import "ForecastTableViewCell.h"
+#import "SettingsViewController.h"
 
 @interface TableViewController ()
+<
+UIAlertViewDelegate
+>
 
 @property (nonatomic) NSMutableArray *dailyForecasts;
 
@@ -20,6 +25,8 @@
 @implementation TableViewController
 
 - (void)getWeatherStuff{
+    
+    [self.dailyForecasts removeAllObjects];
     
     NSString *apiKey = @"8040fc5b15adaaafabbe7de9c3ff5458";
     NSString *latitude = [[NSUserDefaults standardUserDefaults] objectForKey:@"Latitude"];
@@ -30,7 +37,6 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"success: %@", responseObject);
         
         NSDictionary *daily = [responseObject objectForKey:@"daily"];
         NSArray *dailyData = [daily objectForKey:@"data"];
@@ -55,14 +61,26 @@
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Coordinates" message:@"Set your latitude and longitude to valid coordinates" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
         NSLog(@"error: %@", error);
+        [self.tableView reloadData];
     }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UINib *nib = [UINib nibWithNibName:@"ForecastTableViewCell" bundle:nil];
+    
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"forecastCellIdentifier"];
+    
     self.dailyForecasts = [[NSMutableArray alloc] init];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
     
     [self getWeatherStuff];
 }
@@ -79,32 +97,38 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
+    ForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"forecastCellIdentifier" forIndexPath:indexPath];
     
     Forecast *forecast = [self.dailyForecasts objectAtIndex:indexPath.row];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     
-    cell.textLabel.text = [dateFormatter stringFromDate:forecast.date];
+    cell.weekdayLabel.text = [dateFormatter stringFromDate:forecast.date];
+    cell.temperatureLabel.text = [NSString stringWithFormat:@"%.1f - %.1f", [forecast.highTemp floatValue], [forecast.lowTemp floatValue]];
+    cell.iconImageView.image = [UIImage imageNamed:forecast.iconTitle];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ForcastDetailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForecastDetailViewController"];
+    
+    Forecast *forecast = [self.dailyForecasts objectAtIndex:indexPath.row];
+    viewController.forecast = forecast;
+    
+    [self presentViewController:viewController animated:YES completion:^{
+        NSLog(@"toot");
+    }];
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    ForcastDetailViewController *viewController = [segue destinationViewController];
-    
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    Forecast *forecast = [self.dailyForecasts objectAtIndex:indexPath.row];
-    
-    viewController.forecast = forecast;
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//
+//}
 
 
 @end
