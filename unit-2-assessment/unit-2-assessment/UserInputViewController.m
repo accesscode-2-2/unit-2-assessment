@@ -18,7 +18,8 @@
     [super viewDidLoad];
     
 
-    
+    self.latRequired.hidden = YES;
+    self.lngRequired.hidden = YES;
     [self setupNavigationBar];
 
     // Do any additional setup after loading the view.
@@ -35,22 +36,47 @@
 
 - (void)save {
     NSLog(@"save");
-//    if ([self.titleTextField.text isEqualToString:@""]) {
-//        
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Ooops!" message:@"Please fill out the title field" preferredStyle: UIAlertControllerStyleAlert];
-//        
-//        UIAlertAction *okAction = [UIAlertAction
-//                                   actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-//                                   style:UIAlertActionStyleDefault
-//                                   handler:^(UIAlertAction *action)
-//                                   {
-//                                       NSLog(@"OK action");
-//                                   }];
-//        
-//        [alert addAction:okAction];
-//        [self presentViewController:alert animated:YES completion:nil];
-//    }
-//    else {
+    if ([self.latLabel.text isEqualToString:@""] || [self.lngLabel.text isEqualToString:@""]) {
+        
+        if ([self.latLabel.text isEqualToString:@""]) {
+        self.latRequired.hidden = NO;
+        }
+        if ([self.lngLabel.text isEqualToString:@""]) {
+        self.lngRequired.hidden = NO;
+        }
+        
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Ooops!" message:@"Please fill out the fields" preferredStyle: UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"OK action");
+                                   }];
+        
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else {
+        
+        
+        
+        //save user's input
+        NSString *saveLatString = self.latLabel.text;
+        NSString *saveLngString = self.lngLabel.text;
+
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:saveLatString forKey:@"savedLatString"];
+        [defaults setObject:saveLngString forKey:@"savedLngString"];
+
+        [defaults synchronize];
+        
+
+        
+        
+        
 //        self.list.title = self.titleTextField.text;
 //        self.list.createdAt = [NSDate date];
 //        
@@ -58,9 +84,27 @@
 //        [delegate.managedObjectContext save:nil];
 //        
 //        [self dismissViewControllerAnimated:YES completion:nil];
-//    }
+    }
 }
 
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *loadLatString =  [defaults objectForKey:@"savedLatString"];
+    NSString *loadLngString =  [defaults objectForKey:@"savedLngString"];
+
+    [self.latLabel setText:loadLatString];
+    [self.lngLabel setText:loadLngString];
+
+    
+    
+    NSLog(@"will appear lat label %@",self.latLabel.text);
+    NSLog(@"will appear lng label %@",self.lngLabel.text);
+
+}
 
 
 

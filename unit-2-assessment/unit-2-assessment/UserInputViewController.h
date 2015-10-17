@@ -11,5 +11,7 @@
 @interface UserInputViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *latLabel;
 @property (weak, nonatomic) IBOutlet UITextField *lngLabel;
+@property (weak, nonatomic) IBOutlet UILabel *latRequired;
+@property (weak, nonatomic) IBOutlet UILabel *lngRequired;
 
 @end

@@ -158,11 +158,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-O0-CsP">
+                                <rect key="frame" x="154" y="129" width="10" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YyW-0x-Smi"/>
+                                    <constraint firstAttribute="width" constant="10" id="euT-Og-2rI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.98950441919999998" green="0.0" blue="0.073243796390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-9f-8wm">
+                                <rect key="frame" x="573" y="128" width="10" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="D6I-Fl-avC"/>
+                                    <constraint firstAttribute="height" constant="21" id="PEv-4L-reF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.98950441919999998" green="0.0" blue="0.073243796390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G05-PT-axh" firstAttribute="centerY" secondItem="ef6-RM-SlI" secondAttribute="centerY" id="3RK-y1-80R"/>
                             <constraint firstItem="fiI-BZ-qYD" firstAttribute="centerY" secondItem="iJC-d5-Juz" secondAttribute="centerY" id="AFX-kM-cuj"/>
+                            <constraint firstItem="gGD-O0-CsP" firstAttribute="centerY" secondItem="fiI-BZ-qYD" secondAttribute="centerY" id="Ib5-GN-BFA"/>
+                            <constraint firstItem="5PI-9f-8wm" firstAttribute="centerY" secondItem="G05-PT-axh" secondAttribute="centerY" id="KKn-mY-SWa"/>
+                            <constraint firstItem="5PI-9f-8wm" firstAttribute="leading" secondItem="G05-PT-axh" secondAttribute="trailing" constant="3" id="Ues-5i-zf1"/>
+                            <constraint firstItem="gGD-O0-CsP" firstAttribute="leading" secondItem="fiI-BZ-qYD" secondAttribute="trailing" constant="3" id="Zfd-q3-fDT"/>
                             <constraint firstItem="fiI-BZ-qYD" firstAttribute="leading" secondItem="iJC-d5-Juz" secondAttribute="trailing" constant="1" id="dpV-KO-1bh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G05-PT-axh" secondAttribute="trailing" constant="10" id="eY4-k0-nKh"/>
                             <constraint firstItem="iJC-d5-Juz" firstAttribute="leading" secondItem="cAs-sl-l3C" secondAttribute="leadingMargin" constant="10" id="iIU-Wt-JMA"/>
@@ -173,7 +197,9 @@
                     </view>
                     <connections>
                         <outlet property="latLabel" destination="fiI-BZ-qYD" id="eI8-gV-JQG"/>
+                        <outlet property="latRequired" destination="gGD-O0-CsP" id="en1-ll-sWX"/>
                         <outlet property="lngLabel" destination="G05-PT-axh" id="M9k-Id-mWA"/>
+                        <outlet property="lngRequired" destination="5PI-9f-8wm" id="VJh-TJ-W3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaK-xx-V4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
