@@ -20,6 +20,7 @@
 #import "WeatherForecastResult.h"
 #import "ForecastTableViewCell.h"
 #import "Location.h"
+#import "NSDate+HumanReadable.h"
 
 @interface WeatherForecastTableViewController ()
 
@@ -46,10 +47,33 @@
     
     NSLog(@"latitude: %ld, longitude: %ld", self.location.latitude, self.location.longitude);
     
-    [self GETWeatherForecastsWithLatitude:self.location.latitude AndLongitude:self.location.longitude];
+    [APIManager GETWeatherForecastWithLatitude:self.location.latitude AndLongitude:self.location.longitude CompletionHandler:^(id results) {
+        
+        if ([results isKindOfClass:[NSDictionary class]]) {
+            
+            self.forecasts = [[NSMutableArray alloc]init];
+            
+            NSArray *searchResults = results[@"daily"][@"data"];
+            
+            
+            for (NSDictionary *result in searchResults){
+                
+                WeatherForecastResult *forecast = [[WeatherForecastResult alloc] initWithJSON:result];
+                
+                [self.forecasts addObject:forecast];
+                
+            }
+            
+            [self.tableView reloadData];
+        }
+
+        
+    }];
     
     [self.tableView reloadData];
 }
+
+#pragma mark - custom cell ui set up
 
 -(void)setUpCustomTableViewCells{
 
@@ -57,39 +81,6 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"ForecastCellIdentifier"];
 }
 
-
--(void)GETWeatherForecastsWithLatitude: (NSInteger)latitude AndLongitude: (NSInteger)longitude{
-    
-    
-    NSString *urlString = [NSString stringWithFormat:@"%@%ld,%ld", ForecastAPIKey, latitude, longitude];
-    
-    NSLog(@"urlString: %@",urlString);
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:urlString parameters:nil success:^(NSURLSessionTask *task, id responseObject) {
-        
-        self.forecasts = [[NSMutableArray alloc]init];
-        
-        NSArray *searchResults = responseObject[@"daily"][@"data"];
-        
-
-        for (NSDictionary *result in searchResults){
-            
-            WeatherForecastResult *forecast = [[WeatherForecastResult alloc] initWithJSON:result];
-            
-            [self.forecasts addObject:forecast];
-            
-        }
-        
-        [self.tableView reloadData];
-        
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        
-        NSLog(@"Error: %@", error);
-        
-    }];
-
-}
 
 #pragma mark - Table View delegate
 
@@ -119,8 +110,8 @@
     
     WeatherForecastResult *forecast = self.forecasts[indexPath.row];
     
-    NSString *dayOfWeek = [APIManager dayOfWeekFromTimestamp:forecast.dayOfWeek];
-    cell.dayOfWeekLabel.text = dayOfWeek;
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:forecast.dayOfWeek];
+    cell.dayOfWeekLabel.text = [date weekdayName];
     
     cell.tempLabel.text = [NSString stringWithFormat:@"Low: %ld, High: %ld",forecast.tempMin, forecast.tempMax];
     cell.iconImageVIew.image = [UIImage imageNamed:forecast.imageName];

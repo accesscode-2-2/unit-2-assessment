@@ -10,6 +10,8 @@
 
 @interface APIManager : NSObject
 
-+(NSString *)dayOfWeekFromTimestamp:(NSInteger)time;
++ (void)GETWeatherForecastWithLatitude: (NSInteger)latitude
+                          AndLongitude: (NSInteger)longitude
+                     CompletionHandler:(void(^)(id results))completionHandler;
 
 @end

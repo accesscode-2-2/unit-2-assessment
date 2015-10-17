@@ -15,6 +15,7 @@
 		6BAE44FA1BD2C8160044F4A0 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BAE44F91BD2C8160044F4A0 /* ForecastTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BAE44FD1BD2C8380044F4A0 /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE44FC1BD2C8380044F4A0 /* ForecastTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6BAE45001BD2D3E30044F4A0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE44FF1BD2D3E30044F4A0 /* Location.m */; settings = {ASSET_TAGS = (); }; };
+		6BAE45031BD2EF880044F4A0 /* NSDate+HumanReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE45021BD2EF880044F4A0 /* NSDate+HumanReadable.m */; settings = {ASSET_TAGS = (); }; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
 		8D6765AF1BD289BC00B30411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6765AD1BD289BC00B30411 /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 		6BAE44FC1BD2C8380044F4A0 /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewCell.m; sourceTree = "<group>"; };
 		6BAE44FE1BD2D3E30044F4A0 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		6BAE44FF1BD2D3E30044F4A0 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		6BAE45011BD2EF880044F4A0 /* NSDate+HumanReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HumanReadable.h"; sourceTree = "<group>"; };
+		6BAE45021BD2EF880044F4A0 /* NSDate+HumanReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HumanReadable.m"; sourceTree = "<group>"; };
 		8597D505227CE63A87384FC6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
 				6BAE44F61BD29A0A0044F4A0 /* APIManager.h */,
 				6BAE44F71BD29A0A0044F4A0 /* APIManager.m */,
+				6BAE45011BD2EF880044F4A0 /* NSDate+HumanReadable.h */,
+				6BAE45021BD2EF880044F4A0 /* NSDate+HumanReadable.m */,
 				6BAE44FE1BD2D3E30044F4A0 /* Location.h */,
 				6BAE44FF1BD2D3E30044F4A0 /* Location.m */,
 				6BAE44FB1BD2C8380044F4A0 /* ForecastTableViewCell.h */,
@@ -255,6 +260,7 @@
 				6BAE44FD1BD2C8380044F4A0 /* ForecastTableViewCell.m in Sources */,
 				6BAE44EF1BD296030044F4A0 /* ForecastDetailViewController.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
+				6BAE45031BD2EF880044F4A0 /* NSDate+HumanReadable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
