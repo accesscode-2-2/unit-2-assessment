@@ -10,28 +10,40 @@
 
 @interface U2ADetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
+@property (weak, nonatomic) IBOutlet UILabel *weatherSummaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rainPercentValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityPercentValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+
+
 @end
 
 @implementation U2ADetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.weatherIcon.image = [UIImage imageNamed:self.dayWeatherForecast.icon];
+    self.weatherSummaryLabel.text = self.dayWeatherForecast.summary;
+    self.rainPercentValueLabel.text = self.dayWeatherForecast.chanceOfRain;
+    self.humidityPercentValueLabel.text = self.dayWeatherForecast.humidity;
+    self.windSpeedLabel.text = self.dayWeatherForecast.windSpeed;
+    
+    
+    // getting values if passing a dictionary object
+//    self.weatherIcon.image = [UIImage imageNamed:[self.dayWeatherForecast objectForKey:@"icon"]];
+//    self.weatherSummaryLabel.text = [self.dayWeatherForecast objectForKey:@"summary"];
+//    self.rainPercentValueLabel.text = [NSString stringWithFormat:@"%.0f%%", [[self.dayWeatherForecast objectForKey:@"chanceOfRain"]doubleValue]];
+//    self.humidityPercentValueLabel.text = [NSString stringWithFormat:@"%.2f%%", [[self.dayWeatherForecast objectForKey:@"humidity"]doubleValue]];
+//    self.windSpeedLabel.text = [NSString stringWithFormat:@"%0.2f% mph", [[self.dayWeatherForecast objectForKey:@"windSpeed"] doubleValue]];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

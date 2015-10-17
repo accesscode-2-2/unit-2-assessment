@@ -11,7 +11,7 @@
 @interface U2ATableViewController : UITableViewController
 
 @property (nonatomic) NSMutableArray *weekWeatherForecast;
-@property (nonatomic) NSMutableArray *dayWeatherForecast;
+@property (nonatomic) NSMutableArray *dayWeatherForecastObjects;
 
 
 

@@ -17,6 +17,10 @@
 @property (nonatomic) NSString *icon;
 @property (nonatomic) NSDate *date;
 
+@property (nonatomic) NSString *summary;
+@property (nonatomic) NSString *chanceOfRain;
+@property (nonatomic) NSString *humidity;
+@property (nonatomic) NSString *windSpeed;
 
 
 

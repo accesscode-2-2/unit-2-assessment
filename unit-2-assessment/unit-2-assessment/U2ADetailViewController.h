@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "U2AWeatherForecast.h"
+
 @interface U2ADetailViewController : UIViewController
+
+@property (nonatomic) U2AWeatherForecast *dayWeatherForecast;
+
 
 @end
