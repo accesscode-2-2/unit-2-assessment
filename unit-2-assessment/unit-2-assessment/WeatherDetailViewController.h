@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ForecastAPITableViewController.h"
 
 @interface WeatherDetailViewController : UIViewController
+
+@property (nonatomic) IBOutlet ForecastAPITableViewController *weatherResult;
 
 @property (weak, nonatomic) IBOutlet UILabel *humidityPercent;
 @property (weak, nonatomic) IBOutlet UILabel *chanceOfRain;
 @property (weak, nonatomic) IBOutlet UILabel *windSpeed;
+@property (weak, nonatomic) IBOutlet UILabel *weatherSummaryLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 
-@property (weak, nonatomic) IBOutlet UILabel *weatherDescriptionLabel;
+
 
 @end

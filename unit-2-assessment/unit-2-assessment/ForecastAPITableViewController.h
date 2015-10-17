@@ -10,4 +10,15 @@
 
 @interface ForecastAPITableViewController : UITableViewController
 
+@property (nonatomic) NSString *summary;
+@property (nonatomic) UIImage *icon;
+@property (nonatomic) NSInteger latitude;
+@property (nonatomic) NSInteger longitude;
+@property (nonatomic) NSInteger time;
+@property (nonatomic) NSInteger temperatureMin;
+@property (nonatomic) NSInteger temperatureMax;
+@property (nonatomic) NSInteger precipProbability;
+@property (nonatomic) NSInteger humidity;
+@property (nonatomic) NSInteger windSpeed;
+
 @end

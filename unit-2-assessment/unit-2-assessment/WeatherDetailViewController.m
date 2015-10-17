@@ -18,16 +18,16 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Weather Details";
     
+    self.weatherIcon.image = self.weatherResult.icon;
+//    self.weatherSummaryLabel.text = self.weatherResult;
+//    self.precipProbability.text = [NSString stringWithFormat:@"%ld@", (long)self.weatherResult.humidity];
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    UINavigationController *navController = segue.destinationViewController;
-    
-    WeatherDetailViewController *weatherDetailTVC = (WeatherDetailViewController
-                                                     *)([navController viewControllers][0]);
-}
+
+
+
+
 - (IBAction)backButton:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];

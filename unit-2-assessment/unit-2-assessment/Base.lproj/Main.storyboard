@@ -266,7 +266,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day.png" translatesAutoresizingMaskIntoConstraints="NO" id="JAQ-8c-IO7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JAQ-8c-IO7">
                                 <rect key="frame" x="250" y="77" width="100" height="100"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.41488774596793376" green="1" blue="0.96905967849669328" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -350,7 +350,8 @@
                     <connections>
                         <outlet property="chanceOfRain" destination="Dqj-bj-TpO" id="ggq-Bv-ksl"/>
                         <outlet property="humidityPercent" destination="WZf-Uw-H1Q" id="F4A-hf-qxD"/>
-                        <outlet property="weatherDescriptionLabel" destination="TNM-gM-q2e" id="rKJ-NN-yHf"/>
+                        <outlet property="weatherIcon" destination="JAQ-8c-IO7" id="IXd-9o-hNA"/>
+                        <outlet property="weatherSummaryLabel" destination="TNM-gM-q2e" id="3XK-ZU-Izk"/>
                         <outlet property="windSpeed" destination="wW5-cp-1Oa" id="IXu-sv-j8X"/>
                     </connections>
                 </viewController>
@@ -360,7 +361,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear-day.png" width="140" height="132"/>
         <image name="settings.png" width="21" height="22"/>
     </resources>
 </document>
