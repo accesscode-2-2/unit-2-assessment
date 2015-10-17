@@ -14,10 +14,14 @@
     
     if (self = [super init]) {
         self.time = [json[@"time"] integerValue];
-        self.summary = json[@"summary"];
         self.iconString = json[@"icon"];
         self.tempMinLow = [json[@"temperatureMin"] integerValue];
         self.tempMaxHigh = [json[@"temperatureMax"] integerValue];
+        
+        self.summary = json[@"summary"];
+        self.precip = [json[@"precipProbability"] floatValue];
+        self.humidity = [json[@"humidity"] floatValue];
+        self.windSpeed = [json[@"windSpeed"] floatValue];
         
         return self;
     }

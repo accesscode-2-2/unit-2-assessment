@@ -10,6 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "WeatherData.h"
 #import "DayOfWeekTableViewCell.h"
+#import "AddLocationViewController.h"
+#import "DetailWeatherViewController.h"
 
 @interface WeatherWeekTVC ()
 
@@ -22,9 +24,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UINib *nib = [UINib nibWithNibName:@"DayOfWeekTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"dayOfWeekCellIdentifier"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
+    NSString *myString = [defaults stringForKey:@"textFieldText"];
+    
+    if (myString != nil) {
+        [self fetchForecaseData:myString callbackBlock:^{
+        }];
+    }
+}
+
+
+#pragma mark - Functions
+
+- (void)fetchForecaseData:(NSString *)searchTerm
+             callbackBlock:(void(^)())block {
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/%@", searchTerm];
+    
+    NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    NSURL *forecastURL = [NSURL URLWithString:encodedString];
+    NSString *myString = [forecastURL absoluteString];
+    
+    
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     
-    [manager GET:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/40.7453,-73.9376" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [manager GET:myString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         
         NSDictionary *results = responseObject[@"daily"][@"data"];
@@ -44,20 +76,10 @@
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
-        
+        block();
     }];
-    
-    
-    
-    UINib *nib = [UINib nibWithNibName:@"DayOfWeekTableViewCell" bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"dayOfWeekCellIdentifier"];
-    
-    
 }
 
-#pragma mark - IBActions
-
-#pragma mark - functions
 
 
 #pragma mark - Table view data source
@@ -90,49 +112,23 @@
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"DetailWeather" sender:nil];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"DetailWeather"]) {
+        NSIndexPath *indexPathSelected = [self.tableView indexPathForSelectedRow];
+        WeatherData *data = [self.searchResults objectAtIndex:indexPathSelected.row];
+        DetailWeatherViewController *detailWeatherVC = segue.destinationViewController;
+        detailWeatherVC.data = data;
+    }
 }
-*/
+
 
 @end
