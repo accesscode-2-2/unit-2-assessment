@@ -22,6 +22,10 @@
 
 @implementation ForecastTableViewController
 
+static NSString * const cellIdentifier = @"cellIdentifier";
+static NSString * const detailSegue = @"showDetail";
+static NSString * const locationSegue = @"setLocation";
+
 #pragma mark - Lifecycle 
 
 - (void)viewDidLoad {
@@ -47,7 +51,7 @@
 
 - (void)setupPrototypeCell {
     UINib *cellNib = [UINib nibWithNibName:@"ForecastCell" bundle:nil];
-    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"cellIdentifier"];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:cellIdentifier];
 }
 
 - (void)fetchData {
@@ -100,7 +104,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     cell.iconImageView.image = [UIImage imageNamed:[self.days[indexPath.row] iconName]];
     cell.tempLabel.text = [NSString stringWithFormat:@"%.2f - %.2f",
@@ -114,20 +118,20 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    [self performSegueWithIdentifier:detailSegue sender:self];
 }
 
 #pragma mark - Nav bar button action
 
 - (IBAction)didTapLocation:(UIBarButtonItem *)sender {
-    [self performSegueWithIdentifier:@"setLocation" sender:self];
+    [self performSegueWithIdentifier:locationSegue sender:self];
 }
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"showDetail"]) {
+    if ([segue.identifier isEqualToString:detailSegue]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         ForecastDetailViewController *vc = [segue destinationViewController];
@@ -138,7 +142,7 @@
         vc.windSpeed = [self.days[indexPath.row] windSpeed];
         vc.summary = [self.days[indexPath.row] summary];
     
-    } else if ([segue.identifier isEqualToString:@"setLocation"]) {
+    } else if ([segue.identifier isEqualToString:locationSegue]) {
         
     }
 }

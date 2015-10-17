@@ -60,6 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B7D1C041BD2D16800406412 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B7D1BF31BD2942000406412 /* ForecastTableViewController.h */,
+				3B7D1BF41BD2942000406412 /* ForecastTableViewController.m */,
+				3B7D1BFE1BD2AB8700406412 /* ForecastDetailViewController.h */,
+				3B7D1BFF1BD2AB8700406412 /* ForecastDetailViewController.m */,
+				3B7D1C011BD2B5A500406412 /* ForecastSettingsViewController.h */,
+				3B7D1C021BD2B5A500406412 /* ForecastSettingsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		50833D3B89E013724F02F965 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +110,7 @@
 				3B7D1BF91BD29E4300406412 /* ForecastCell.xib */,
 				3B7D1BFB1BD2A10C00406412 /* ForecastCell.h */,
 				3B7D1BFC1BD2A10C00406412 /* ForecastCell.m */,
-				3B7D1BF31BD2942000406412 /* ForecastTableViewController.h */,
-				3B7D1BF41BD2942000406412 /* ForecastTableViewController.m */,
-				3B7D1BFE1BD2AB8700406412 /* ForecastDetailViewController.h */,
-				3B7D1BFF1BD2AB8700406412 /* ForecastDetailViewController.m */,
-				3B7D1C011BD2B5A500406412 /* ForecastSettingsViewController.h */,
-				3B7D1C021BD2B5A500406412 /* ForecastSettingsViewController.m */,
+				3B7D1C041BD2D16800406412 /* ViewControllers */,
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
