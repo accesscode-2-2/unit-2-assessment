@@ -14,6 +14,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
 
-
-
 @end

@@ -20,52 +20,45 @@ UITextFieldDelegate
 >
 @property (nonatomic) NSMutableArray *searchResults;
 @property (nonatomic) NSArray *results;
+@property (weak, nonatomic) IBOutlet UIView *weatherView;
 
 @end
 
 @implementation WeatherTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
     [self.navigationItem setTitle:@"Weather"];
     [self reloadInfo];
-    }
+}
 
-
--(void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:YES];
     [self reloadInfo];
-    
 }
 
 
--(void)reloadInfo{
-    
+-(void)reloadInfo
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *loadLatString =  [defaults objectForKey:@"savedLatString"];
     NSString *loadLngString =  [defaults objectForKey:@"savedLngString"];
     
     self.latUserInput = loadLatString;
     self.lngUserInput = loadLngString;
-    
-    
-    NSLog(@"DIDLOAD latUserInput %@ lngUserInput %@", self.latUserInput, self.lngUserInput);
+    NSLog(@"reloadInfo latUserInput %@ lngUserInput %@", self.latUserInput, self.lngUserInput);
     
     [self makeNewiTunesAPIRequestWithCoordinates:self.latUserInput and:self.lngUserInput callBackBlock:^{
         [self.tableView reloadData];
     }];
-
 }
 
 
 -(void) makeNewiTunesAPIRequestWithCoordinates:(NSString *)latitude and:(NSString *)longtitude callBackBlock:(void(^)())block;
 {
-    
-//    latitude = @"42";
-//    longtitude = @"-23";
-    
-    NSString *urlString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/%@,%@",latitude, longtitude];
+     NSString *urlString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/%@,%@",latitude, longtitude];
     
     //encoded url
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -75,17 +68,12 @@ UITextFieldDelegate
     //convert urlString to url
     NSURL *url = [NSURL URLWithString:encodedString];
     
-    
-    
     [APIManager GETRequestWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (data != nil) {
-            //        if data == nil, then this will crash, so add a condition
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
             NSDictionary *results2 = [json objectForKey:@"daily"];
-//            NSLog(@"results2 %@",results2);
-            
             self.results =  [results2 objectForKey:@"data"];
             self.searchResults = [[NSMutableArray alloc] init];
             
@@ -94,8 +82,6 @@ UITextFieldDelegate
                 NSString *iconName = [result objectForKey: @"icon"];
                 NSString *tempMin = [result objectForKey: @"temperatureMin"];
                 NSString *tempMax = [result objectForKey: @"temperatureMax"];
-                
-                
                 
                 WeatherResults *weatherObject = [[WeatherResults alloc] init];
                 weatherObject.weekDay = time;
@@ -111,26 +97,23 @@ UITextFieldDelegate
     }];
 }
 
-
-
-
 #pragma mark - Table view data source
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
-
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.searchResults.count;
 }
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"weatherIdentifier" forIndexPath:indexPath];
     
     WeatherResults *currentResult = self.searchResults[indexPath.row];
-    
     
     NSTimeInterval convertStringToNSTimeInterval = [currentResult.weekDay doubleValue];
 
@@ -145,37 +128,25 @@ UITextFieldDelegate
     cell.maxTempLabel.text = [NSString stringWithFormat:@"%@", currentResult.maxTemp];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
-
-    
     return cell;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    
-    
-    
-    
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"detailSegue"]) {
-    
-    
+
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    
     WeatherDetailsViewController *vc = segue.destinationViewController ;
-    
     NSDictionary *currentInstagramItem = self.results[indexPath.row];
-    
     vc.detailWeatherData = currentInstagramItem;
     
     }
-    
  }
 
 

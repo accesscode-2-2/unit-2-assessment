@@ -21,7 +21,8 @@
 
 @implementation WeatherDetailsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     //set navigation Title
@@ -34,39 +35,19 @@
     
     [self.navigationItem setTitle:dateName];
     
-
-    
-    
-    
-    
-    
     NSLog(@"dateeee detail %@", self.detailWeatherData);
+    
     self.discriptionLabel.text = [self.detailWeatherData objectForKey:@"summary"];
     self.displayIcon.image = [UIImage imageNamed: [self.detailWeatherData objectForKey:@"icon" ]];
     self.chanceOfRainLabel.text = [NSString stringWithFormat:@"%@ %%", [self.detailWeatherData objectForKey:@"precipProbability"]];
     self.humidityLabel.text = [NSString stringWithFormat:@"%@ %%",[self.detailWeatherData objectForKey:@"humidity"]];
     
     self.windLabel.text = [NSString stringWithFormat:@"%@ mph",[self.detailWeatherData objectForKey:@"windSpeed"]];
-    
-    
-    
  }
 
- 
-
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
