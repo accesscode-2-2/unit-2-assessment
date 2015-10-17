@@ -50,7 +50,7 @@
 //    [[NSUserDefaults standardUserDefaults] setFloat:40.745703 forKey:Latitude];
 //    [[NSUserDefaults standardUserDefaults] setFloat:-73.947009 forKey:Longitude];
 //    
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)cancel{
