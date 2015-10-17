@@ -106,11 +106,14 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    NSString *name = [self objectForIndexPath:indexPath];
+    WeatherPost *post = self.forecastResults[indexPath.row];
+    
+    NSString *chanceOfRainPer = [NSString stringWithFormat:@"%@", post.chanceOfRain];
+    
+    
     
     ForecastDetailViewController *detailViewController = segue.destinationViewController;
-    detailViewController.chanceOfRain = [name capitalizedString];
-    
+    detailViewController.chanceOfRain = chanceOfRainPer;
     
 }
 
