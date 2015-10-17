@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		518239311BD2A52C00F44326 /* APIMomager.m in Sources */ = {isa = PBXBuildFile; fileRef = 518239301BD2A52C00F44326 /* APIMomager.m */; settings = {ASSET_TAGS = (); }; };
+		518239341BD2A5F200F44326 /* APIResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 518239331BD2A5F200F44326 /* APIResults.m */; settings = {ASSET_TAGS = (); }; };
+		518239371BD2AB8B00F44326 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 518239361BD2AB8B00F44326 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		5182393A1BD2B11700F44326 /* ForecastTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 518239391BD2B11700F44326 /* ForecastTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
 		8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765AB1BD289BC00B30411 /* ViewController.m */; };
@@ -17,6 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5182392F1BD2A52C00F44326 /* APIMomager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMomager.h; sourceTree = "<group>"; };
+		518239301BD2A52C00F44326 /* APIMomager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIMomager.m; sourceTree = "<group>"; };
+		518239321BD2A5F200F44326 /* APIResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResults.h; sourceTree = "<group>"; };
+		518239331BD2A5F200F44326 /* APIResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResults.m; sourceTree = "<group>"; };
+		518239351BD2AB8B00F44326 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		518239361BD2AB8B00F44326 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		518239381BD2B11700F44326 /* ForecastTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastTableViewController.h; sourceTree = "<group>"; };
+		518239391BD2B11700F44326 /* ForecastTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewController.m; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D6765A71BD289BC00B30411 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +76,14 @@
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
 				8D6765AA1BD289BC00B30411 /* ViewController.h */,
 				8D6765AB1BD289BC00B30411 /* ViewController.m */,
+				5182392F1BD2A52C00F44326 /* APIMomager.h */,
+				518239301BD2A52C00F44326 /* APIMomager.m */,
+				518239321BD2A5F200F44326 /* APIResults.h */,
+				518239331BD2A5F200F44326 /* APIResults.m */,
+				518239351BD2AB8B00F44326 /* SearchViewController.h */,
+				518239361BD2AB8B00F44326 /* SearchViewController.m */,
+				518239381BD2B11700F44326 /* ForecastTableViewController.h */,
+				518239391BD2B11700F44326 /* ForecastTableViewController.m */,
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
@@ -152,10 +172,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518239311BD2A52C00F44326 /* APIMomager.m in Sources */,
+				518239341BD2A5F200F44326 /* APIResults.m in Sources */,
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
 				8D6765AC1BD289BC00B30411 /* ViewController.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
+				5182393A1BD2B11700F44326 /* ForecastTableViewController.m in Sources */,
+				518239371BD2AB8B00F44326 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +326,7 @@
 				8D6765BD1BD289BC00B30411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
