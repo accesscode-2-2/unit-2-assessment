@@ -31,51 +31,32 @@
                                     action:@selector(saveButtonTapped)];
     
     self.navigationItem.rightBarButtonItem = saveButton;
-    
-    self.latitudeTextField.text = self.latValue;
-    self.longitudeTextField.text = self.longValue;
-    NSLog(@"lat: %@, long: %@", self.latValue, self.longValue);
-    
-    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [self.view endEditing:YES];
     
-    
-    
     return YES;
 }
 
 - (void)saveButtonTapped {
     
- 
-    NSLog(@"lat: %@, long: %@", self.latValue, self.longValue);
-    
-    
     // save location data
-    
+    NSString *saveLatitude = self.latitudeTextField.text;
+    NSString *saveLongitude = self.longitudeTextField.text;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   
+    [defaults setObject:saveLatitude forKey:@"savedLatitude"];
+    [defaults setObject:saveLongitude forKey:@"savedLongitude"];
+    [defaults synchronize];
+ 
+    NSLog(@"lat: %@, long: %@", saveLatitude, saveLongitude);
     
     // transition back to main view controller
     TableViewController *newViewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
     [self.navigationController pushViewController:newViewController animated:YES];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
