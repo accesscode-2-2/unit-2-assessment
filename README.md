@@ -17,3 +17,5 @@ Your goal is to make an application that resembles the following
   * On the right is the tempurature (high - low)
 
 * When you tap on a cell, the application should navigate the user to a detail page where they can view more information about that day's weather.
+
+![image](https://github.com/accesscode-2-2/unit-2-assessment/blob/master/images/assessment.gif?raw=true)
