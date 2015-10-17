@@ -7,9 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherData.h"
 
 @interface DetailViewController : UIViewController
 
-@property (nonatomic) NSDictionary *randomArray;
+//these are WeatherData properties, not arrays
+@property (nonatomic) WeatherData *passedImgeArray;
+
+@property (nonatomic) WeatherData *passedTextArray;
+
+@property (nonatomic) WeatherData *passedRainArray;
+
+@property (nonatomic) WeatherData *passedHumidityArray;
+
+@property (nonatomic) WeatherData *passedWindArray;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *weatherViewNice;
+
+@property (weak, nonatomic) IBOutlet UITextView *textFiledSummary;
+
+@property (weak, nonatomic) IBOutlet UILabel *rainLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
 
 @end

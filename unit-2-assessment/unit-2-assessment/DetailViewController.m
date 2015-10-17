@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "WeatherTableViewController.h"
 
 @interface DetailViewController ()
 
@@ -16,7 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString *imageName = self.passedImgeArray.weatherImage;
+    self.weatherViewNice.image = [UIImage imageNamed:imageName];
+
+    self.textFiledSummary.text = [self.passedTextArray valueForKey:@"summary"];
+    
+    NSString *stringOne = [NSString stringWithFormat:@"%@", self.passedRainArray.rain];
+    self.rainLabel.text = stringOne;
+    
+    NSString *stringTwo = [NSString stringWithFormat:@"%@", self.passedHumidityArray.humidity];
+    self.humidityLabel.text = stringTwo;
+
+    NSString *stringThree = [NSString stringWithFormat:@"%@", self.passedWindArray.wind];
+    self.windLabel.text = stringThree;
+
 }
 
 - (void)didReceiveMemoryWarning {

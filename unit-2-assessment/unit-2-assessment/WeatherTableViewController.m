@@ -11,6 +11,7 @@
 #import "WeatherData.h"
 #import "CustomTableViewCell.h"
 #import "DetailViewController.h"
+#import "DetailViewController.h"
 
 @interface WeatherTableViewController ()  <UITableViewDataSource>
 
@@ -18,7 +19,10 @@
 //@property (nonatomic) NSMutableArray *timeArray;
 @property (nonatomic) NSMutableArray *imageArray;
 @property (nonatomic) NSMutableArray *rangeArray;
-//@property (nonatomic) NSDictionary *json;
+@property (nonatomic) NSMutableArray *summaryArray;
+@property (nonatomic) NSMutableArray *rainArray;
+@property (nonatomic) NSMutableArray *humidityArray;
+@property (nonatomic) NSMutableArray *windArray;
 
 @end
 
@@ -54,7 +58,7 @@
         
 
 
-        
+        //array to pass
                 NSArray *results = [json objectForKey:@"daily"][@"data"];
         
         
@@ -83,7 +87,12 @@
             
             rightRangeLabel.maxTemp = [resultTwo objectForKey:@"temperatureMin"];
             
+            rightRangeLabel.minTemp = [resultTwo objectForKey:@"temperatureMax"];
+
+            
             NSLog(@"%@", rightRangeLabel.maxTemp);
+            NSLog(@"%@", rightRangeLabel.minTemp);
+
             
             [self.rangeArray addObject:rightRangeLabel];
             
@@ -106,7 +115,69 @@
             
         }
         
+        self.summaryArray = [[NSMutableArray alloc] init];
+
         
+        for (NSDictionary *resultFour in results) {
+            
+            WeatherData *summaryObj = [[WeatherData alloc]init];
+            
+            summaryObj.summary = [resultFour objectForKey:@"summary"];
+            
+            NSLog(@"%@", summaryObj.summary);
+            
+            [self.summaryArray addObject:summaryObj];
+            
+            
+        }
+        
+        self.rainArray = [[NSMutableArray alloc] init];
+
+        
+        for (NSDictionary *resultFive in results) {
+            
+            WeatherData *rainObj = [[WeatherData alloc]init];
+            
+            rainObj.rain = [resultFive objectForKey:@"precipProbability"];
+            
+            NSLog(@"%@", rainObj.rain);
+            
+            [self.rainArray addObject:rainObj];
+            
+            
+        }
+        
+        self.humidityArray = [[NSMutableArray alloc] init];
+
+        
+        for (NSDictionary *resultSix in results) {
+            
+            WeatherData *humidityObj = [[WeatherData alloc]init];
+            
+            humidityObj.humidity = [resultSix objectForKey:@"humidity"];
+            
+            NSLog(@"%@", humidityObj.humidity);
+            
+            [self.humidityArray addObject:humidityObj];
+            
+            
+        }
+        
+        self.windArray = [[NSMutableArray alloc] init];
+
+        
+        for (NSDictionary *resultSeven in results) {
+            
+            WeatherData *windObj = [[WeatherData alloc]init];
+            
+            windObj.wind = [resultSeven objectForKey:@"windSpeed"];
+            
+            NSLog(@"%@", windObj.wind);
+            
+            [self.windArray addObject:windObj];
+            
+            
+        }
         
         [self.tableView reloadData];
 
@@ -142,7 +213,7 @@
     WeatherData * resultThree = [self.imageArray objectAtIndex:indexPath.row];
     
     NSString *string = [NSString stringWithFormat:@"%@", result.time];
-    NSString *stringTwo = [NSString stringWithFormat:@"%@",resultTwo.maxTemp];
+    NSString *stringTwo = [NSString stringWithFormat:@"%@ - %@",resultTwo.minTemp, resultTwo.maxTemp];
 
     customCell.leftTimeLabel.text = string;
     customCell.rightRangeLabel.text = stringTwo;
@@ -153,20 +224,48 @@
 
     return customCell;
 }
-//
-//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    
-//    NSIndexPath *indexpath = [self.tableView indexPathForSelectedRow];
-//    
-//    NSDictionary *dictionaryToPass = [self.json objectForKey:@"daily"][@"data"];
-//    
-//    NSLog(@"%@", [self.json objectForKey:@"daily"][@"data"]);
-//    
-//    DetailViewController *vc = segue.destinationViewController;
-//    
-//    vc.randomArray = dictionaryToPass;
-//
-//}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSIndexPath *indexpath = [self.tableView indexPathForSelectedRow];
+    
+    NSArray *arrayToPass = [self.imageArray objectAtIndex:indexpath.row];
+    
+    DetailViewController *vc = segue.destinationViewController;
+
+//    vc.passedImgeArray = arrayToPass;
+    
+    
+    //this is not an array, it is one item from an array
+    NSArray *arrayToPassTwo = [self.summaryArray objectAtIndex:indexpath.row];
+    
+//    DetailViewController *vcTwo = segue.destinationViewController;
+    
+    vc.passedTextArray = arrayToPassTwo;
+
+    
+    //third array
+    NSArray *arrayToPassThree = [self.rainArray objectAtIndex:indexpath.row];
+    
+//    DetailViewController *vcThree = segue.destinationViewController;
+    
+    vc.passedRainArray = arrayToPassThree;
+
+    //fourth array
+    NSArray *arrayToPassFour = [self.humidityArray objectAtIndex:indexpath.row];
+    
+//    DetailViewController *vcFour = segue.destinationViewController;
+    
+    vc.passedHumidityArray = arrayToPassFour;
+
+    
+    //fifth array
+    NSArray *arrayToPassFive = [self.windArray objectAtIndex:indexpath.row];
+    
+//    DetailViewController *vcFive = segue.destinationViewController;
+    
+    vc.passedWindArray = arrayToPassFive;
+}
 
 /*
 // Override to support conditional editing of the table view.
