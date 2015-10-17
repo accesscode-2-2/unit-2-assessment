@@ -135,18 +135,17 @@
     ForecastJSON *weatherResult = self.searchResults[indexPath.row];
 
     
-    cell.tempMinMax.text = [NSString stringWithFormat:@"%ld - %ld", weatherResult.temperatureMin, weatherResult.temperatureMax];
-    cell.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", weatherResult.icon]];
-    
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:weatherResult.time];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     NSString *dateName = [dateFormatter stringFromDate:date];
     
-    cell.textLabel.text = dateName;
-    
-    
-    
+    cell.tempMinMax.text = [NSString stringWithFormat:@"%ld - %ld", weatherResult.temperatureMin, weatherResult.temperatureMax];
+    cell.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", weatherResult.icon]];
+//    cell.textLabel.text = dateName;
+
+    cell.time.text = dateName;
+
     return cell;
 }
 
