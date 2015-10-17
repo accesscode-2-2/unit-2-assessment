@@ -182,7 +182,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4o-h3-n75">
-                                <rect key="frame" x="279" y="263" width="42" height="21"/>
+                                <rect key="frame" x="28" y="263" width="544" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -264,12 +264,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sTq-ai-wk0" firstAttribute="top" secondItem="c4o-h3-n75" secondAttribute="bottom" constant="15" id="40b-7s-o1a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c4o-h3-n75" secondAttribute="trailing" constant="8" id="AU1-iB-Fth"/>
+                            <constraint firstItem="c4o-h3-n75" firstAttribute="leading" secondItem="hJj-xE-4cs" secondAttribute="leadingMargin" constant="8" id="Fzx-9g-AWr"/>
                             <constraint firstItem="VRP-fQ-Ta7" firstAttribute="centerX" secondItem="hJj-xE-4cs" secondAttribute="centerX" id="G7l-en-Vvh"/>
                             <constraint firstItem="c4o-h3-n75" firstAttribute="centerX" secondItem="hJj-xE-4cs" secondAttribute="centerX" id="K9L-pR-vDr"/>
                             <constraint firstItem="VRP-fQ-Ta7" firstAttribute="top" secondItem="78v-6W-ziR" secondAttribute="bottom" constant="47" id="d2d-yJ-j05"/>
                             <constraint firstItem="sTq-ai-wk0" firstAttribute="centerX" secondItem="hJj-xE-4cs" secondAttribute="centerX" id="pqe-im-uIr"/>
                             <constraint firstItem="c4o-h3-n75" firstAttribute="top" secondItem="VRP-fQ-Ta7" secondAttribute="bottom" constant="32" id="xhc-te-nny"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="K9L-pR-vDr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="humidityPercentLabel" destination="F4A-xE-1n8" id="Lfk-aH-wRy"/>
