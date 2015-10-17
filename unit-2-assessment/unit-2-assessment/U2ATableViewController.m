@@ -5,8 +5,13 @@
 //  Created by Ayuna Vogel on 10/17/15.
 //  Copyright © 2015 Michael Kavouras. All rights reserved.
 //
+#import <AFNetworking/AFNetworking.h>
 
 #import "U2ATableViewController.h"
+
+#define APIKEY @"8040fc5b15adaaafabbe7de9c3ff5458"
+
+
 
 @interface U2ATableViewController ()
 
@@ -16,6 +21,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // manages API requests
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc]init];
+    [manager GET:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/40.745703,-73.947009"
+      parameters:nil
+         success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+             
+             NSLog(@"%@", responseObject);
+//             NSDictionary *pages = responseObject[@"query"][@"pages"];
+//             NSDictionary *firstPage;
+//             for (NSDictionary *page in pages) {
+//                 firstPage = pages[page];
+//                 break;
+//             }
+//             NSLog(@"%@", firstPage);
+             
+         } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+             
+             NSLog(@"%@", error);
+         }];
     
 }
 
