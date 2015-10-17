@@ -8,7 +8,7 @@
         <!--Whether you care or not, it's the weather-->
         <scene sceneID="4sV-xh-Lbw">
             <objects>
-                <tableViewController id="bN4-Mk-ign" sceneMemberID="viewController">
+                <tableViewController id="bN4-Mk-ign" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mRx-HC-cH9">
                         <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,33 +93,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsu-xZ-w3e">
-                                <rect key="frame" x="300" y="52" width="280" height="548"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-pS-DUz">
-                                        <rect key="frame" x="50" y="8" width="222" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lng:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBt-NL-67R">
-                                        <rect key="frame" x="8" y="12" width="34" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="i9G-pS-DUz" firstAttribute="leading" secondItem="RBt-NL-67R" secondAttribute="trailing" constant="8" id="4Mu-Dd-oBb"/>
-                                    <constraint firstItem="RBt-NL-67R" firstAttribute="top" secondItem="Fsu-xZ-w3e" secondAttribute="top" constant="12" id="Fya-Ff-nYI"/>
-                                    <constraint firstItem="i9G-pS-DUz" firstAttribute="top" secondItem="Fsu-xZ-w3e" secondAttribute="top" constant="8" id="TrS-ap-x12"/>
-                                    <constraint firstItem="RBt-NL-67R" firstAttribute="leading" secondItem="Fsu-xZ-w3e" secondAttribute="leading" constant="8" id="cT7-8m-6dI"/>
-                                    <constraint firstAttribute="trailing" secondItem="i9G-pS-DUz" secondAttribute="trailing" constant="8" id="ptD-tm-Mhc"/>
-                                    <constraint firstItem="i9G-pS-DUz" firstAttribute="leading" secondItem="RBt-NL-67R" secondAttribute="trailing" constant="8" id="w5Y-zs-Pg0"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-Sg-6OH">
                                 <rect key="frame" x="20" y="52" width="280" height="548"/>
                                 <subviews>
@@ -145,6 +118,33 @@
                                     <constraint firstAttribute="trailing" secondItem="MwW-1L-o4a" secondAttribute="trailing" constant="8" id="JMk-w4-aHU"/>
                                     <constraint firstItem="MwW-1L-o4a" firstAttribute="leading" secondItem="44g-31-dtt" secondAttribute="trailing" constant="8" id="lm9-XF-1OK"/>
                                     <constraint firstItem="MwW-1L-o4a" firstAttribute="leading" secondItem="44g-31-dtt" secondAttribute="trailing" constant="8" id="mD8-sm-6Um"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsu-xZ-w3e">
+                                <rect key="frame" x="300" y="52" width="280" height="548"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-pS-DUz">
+                                        <rect key="frame" x="50" y="8" width="222" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lng:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBt-NL-67R">
+                                        <rect key="frame" x="8" y="12" width="34" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="i9G-pS-DUz" firstAttribute="leading" secondItem="RBt-NL-67R" secondAttribute="trailing" constant="8" id="4Mu-Dd-oBb"/>
+                                    <constraint firstItem="RBt-NL-67R" firstAttribute="top" secondItem="Fsu-xZ-w3e" secondAttribute="top" constant="12" id="Fya-Ff-nYI"/>
+                                    <constraint firstItem="i9G-pS-DUz" firstAttribute="top" secondItem="Fsu-xZ-w3e" secondAttribute="top" constant="8" id="TrS-ap-x12"/>
+                                    <constraint firstItem="RBt-NL-67R" firstAttribute="leading" secondItem="Fsu-xZ-w3e" secondAttribute="leading" constant="8" id="cT7-8m-6dI"/>
+                                    <constraint firstAttribute="trailing" secondItem="i9G-pS-DUz" secondAttribute="trailing" constant="8" id="ptD-tm-Mhc"/>
+                                    <constraint firstItem="i9G-pS-DUz" firstAttribute="leading" secondItem="RBt-NL-67R" secondAttribute="trailing" constant="8" id="w5Y-zs-Pg0"/>
                                 </constraints>
                             </view>
                         </subviews>

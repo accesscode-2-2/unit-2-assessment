@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "AFNetworking/AFNetworking.h"
 
 @interface TableViewController ()
 
@@ -14,8 +15,30 @@
 
 @implementation TableViewController
 
+- (void)getWeatherStuff{
+    
+    NSString *apiKey = @"8040fc5b15adaaafabbe7de9c3ff5458";
+    NSString *latitude = [[NSUserDefaults standardUserDefaults] objectForKey:@"Latitude"];
+    NSString *longitude = [[NSUserDefaults standardUserDefaults] objectForKey:@"Longitude"];
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%@,%@", apiKey, latitude, longitude ];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"success: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"error: %@", error);
+    }];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self getWeatherStuff];
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
