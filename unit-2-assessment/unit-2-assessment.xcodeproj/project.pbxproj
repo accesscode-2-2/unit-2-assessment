@@ -10,6 +10,9 @@
 		298471891BD2A127006282CC /* U2ATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298471881BD2A127006282CC /* U2ATableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2984718C1BD2A13B006282CC /* U2ADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2984718B1BD2A13B006282CC /* U2ADetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2984718F1BD2A14C006282CC /* U2ASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2984718E1BD2A14C006282CC /* U2ASettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		298471931BD2B27B006282CC /* U2ACustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298471911BD2B27B006282CC /* U2ACustomTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		298471941BD2B27B006282CC /* U2ACustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298471921BD2B27B006282CC /* U2ACustomTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		298471971BD2B72D006282CC /* U2AWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 298471961BD2B72D006282CC /* U2AWeatherForecast.m */; settings = {ASSET_TAGS = (); }; };
 		6A0DDB1D1EFDC9C6B251BB9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 105088157546EFAC54E79B10 /* libPods.a */; };
 		8D6765A61BD289BC00B30411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A51BD289BC00B30411 /* main.m */; };
 		8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6765A81BD289BC00B30411 /* AppDelegate.m */; };
@@ -27,6 +30,11 @@
 		2984718B1BD2A13B006282CC /* U2ADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2ADetailViewController.m; sourceTree = "<group>"; };
 		2984718D1BD2A14C006282CC /* U2ASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U2ASettingsViewController.h; sourceTree = "<group>"; };
 		2984718E1BD2A14C006282CC /* U2ASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2ASettingsViewController.m; sourceTree = "<group>"; };
+		298471901BD2B27B006282CC /* U2ACustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U2ACustomTableViewCell.h; sourceTree = "<group>"; };
+		298471911BD2B27B006282CC /* U2ACustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2ACustomTableViewCell.m; sourceTree = "<group>"; };
+		298471921BD2B27B006282CC /* U2ACustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = U2ACustomTableViewCell.xib; sourceTree = "<group>"; };
+		298471951BD2B72D006282CC /* U2AWeatherForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U2AWeatherForecast.h; sourceTree = "<group>"; };
+		298471961BD2B72D006282CC /* U2AWeatherForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U2AWeatherForecast.m; sourceTree = "<group>"; };
 		5A54E19E38BF3F6F773E0906 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8D6765A11BD289BC00B30411 /* unit-2-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-2-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6765A51BD289BC00B30411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,10 +82,15 @@
 			isa = PBXGroup;
 			children = (
 				8D6765AD1BD289BC00B30411 /* Main.storyboard */,
+				298471921BD2B27B006282CC /* U2ACustomTableViewCell.xib */,
 				8D6765A71BD289BC00B30411 /* AppDelegate.h */,
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
+				298471951BD2B72D006282CC /* U2AWeatherForecast.h */,
+				298471961BD2B72D006282CC /* U2AWeatherForecast.m */,
 				298471871BD2A127006282CC /* U2ATableViewController.h */,
 				298471881BD2A127006282CC /* U2ATableViewController.m */,
+				298471901BD2B27B006282CC /* U2ACustomTableViewCell.h */,
+				298471911BD2B27B006282CC /* U2ACustomTableViewCell.m */,
 				2984718A1BD2A13B006282CC /* U2ADetailViewController.h */,
 				2984718B1BD2A13B006282CC /* U2ADetailViewController.m */,
 				2984718D1BD2A14C006282CC /* U2ASettingsViewController.h */,
@@ -177,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D6765B71BD289BC00B30411 /* LaunchScreen.storyboard in Resources */,
+				298471941BD2B27B006282CC /* U2ACustomTableViewCell.xib in Resources */,
 				8D6765B41BD289BC00B30411 /* Assets.xcassets in Resources */,
 				8D6765AF1BD289BC00B30411 /* Main.storyboard in Resources */,
 			);
@@ -238,10 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
+				298471931BD2B27B006282CC /* U2ACustomTableViewCell.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				2984718F1BD2A14C006282CC /* U2ASettingsViewController.m in Sources */,
 				2984718C1BD2A13B006282CC /* U2ADetailViewController.m in Sources */,
 				298471891BD2A127006282CC /* U2ATableViewController.m in Sources */,
+				298471971BD2B72D006282CC /* U2AWeatherForecast.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "U2ATableViewController.h"
+#import "U2ACustomTableViewCell.h"
 
 #define APIKEY @"8040fc5b15adaaafabbe7de9c3ff5458"
 
@@ -19,8 +20,7 @@
 
 @implementation U2ATableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)fetchWeatherForecastAPIData {
     
     // manages API requests
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc]init];
@@ -29,13 +29,13 @@
          success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
              
              NSLog(@"%@", responseObject);
-//             NSDictionary *pages = responseObject[@"query"][@"pages"];
-//             NSDictionary *firstPage;
-//             for (NSDictionary *page in pages) {
-//                 firstPage = pages[page];
-//                 break;
-//             }
-//             NSLog(@"%@", firstPage);
+             //             NSDictionary *pages = responseObject[@"query"][@"pages"];
+             //             NSDictionary *firstPage;
+             //             for (NSDictionary *page in pages) {
+             //                 firstPage = pages[page];
+             //                 break;
+             //             }
+             //             NSLog(@"%@", firstPage);
              
          } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
              
@@ -44,6 +44,35 @@
     
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self fetchWeatherForecastAPIData];
+    
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(pulledToRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    // tell the table view to auto adjust the height of each cell
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    //self.tableView.estimatedRowHeight = 44.0;
+    
+    UINib *nib = [UINib nibWithNibName:@"U2ACustomTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"TableVCCellIdentifier"];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self fetchWeatherForecastAPIData];
+    
+}
+
+- (void)pulledToRefresh:(UIRefreshControl *)sender {
+    [self fetchWeatherForecastAPIData];
+    [sender endRefreshing];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -63,43 +92,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableVCCellIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
+    //InstagramPost *post = self.searchResults[indexPath.section];
+    
+//    cell.userNameLabel.text = [NSString stringWithFormat:@"@%@", post.username];
+//    cell.likeCountLabel.text = [NSString stringWithFormat:@"Likes: %ld", post.likeCount];
+//    cell.tagCountLabel.text = [NSString stringWithFormat:@"Tags: %ld", post.tags.count];
+//    cell.captionLabel.text = post.caption[@"text"];
+//    
+//    NSURL *url = [NSURL URLWithString:post.imageUrl];
+//    //NSData *data = [NSData dataWithContentsOfURL:url];
+//    //UIImage *image = [UIImage imageWithData:data];
+//    //cell.userMediaImageView.image = image;
+//    
+//    [cell.userMediaImageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        
+//        cell.userMediaImageView.image = image;
+//    }];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
