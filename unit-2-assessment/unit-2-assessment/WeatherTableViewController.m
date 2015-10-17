@@ -28,13 +28,34 @@ UITextFieldDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"latUserInput %@ lngUserInput %@", self.latUserInput, self.lngUserInput);
-    
-    
     [self.navigationItem setTitle:@"Weather"];
-    [self makeNewiTunesAPIRequestWithCoordinates:@"42" and:@"-23" callBackBlock:^{
+    [self reloadInfo];
+    }
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self reloadInfo];
+    
+}
+
+
+-(void)reloadInfo{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *loadLatString =  [defaults objectForKey:@"savedLatString"];
+    NSString *loadLngString =  [defaults objectForKey:@"savedLngString"];
+    
+    self.latUserInput = loadLatString;
+    self.lngUserInput = loadLngString;
+    
+    
+    NSLog(@"DIDLOAD latUserInput %@ lngUserInput %@", self.latUserInput, self.lngUserInput);
+    
+    [self makeNewiTunesAPIRequestWithCoordinates:self.latUserInput and:self.lngUserInput callBackBlock:^{
         [self.tableView reloadData];
     }];
+
 }
 
 

@@ -75,12 +75,10 @@
         [defaults setObject:saveLatString forKey:@"savedLatString"];
         [defaults setObject:saveLngString forKey:@"savedLngString"];
         [defaults synchronize];
-        
-//        WeatherTableViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherID"];
-//        vc.city = self.searchBar.text;
-        
-        
+         
         [self.navigationController popViewControllerAnimated:YES];
+
+        
     }
 }
 
