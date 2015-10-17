@@ -28,6 +28,8 @@ UITextFieldDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"latUserInput %@ lngUserInput %@", self.latUserInput, self.lngUserInput);
+    
     
     [self.navigationItem setTitle:@"Weather"];
     [self makeNewiTunesAPIRequestWithCoordinates:@"42" and:@"-23" callBackBlock:^{

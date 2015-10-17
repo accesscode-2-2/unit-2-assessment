@@ -8,7 +8,7 @@
         <!--Root View Controller-->
         <scene sceneID="XJT-5o-ftZ">
             <objects>
-                <tableViewController id="xVk-RM-Etb" customClass="WeatherTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WeatherID" id="xVk-RM-Etb" customClass="WeatherTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdr-iE-dza">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,4 +10,9 @@
 
 @interface WeatherTableViewController : UITableViewController
 @property (nonatomic) NSString *dateName;
+@property (nonatomic) NSString *latUserInput;
+@property (nonatomic) NSString *lngUserInput;
+
+
+
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "UserInputViewController.h"
+#import "WeatherTableViewController.h"
+
 
 @interface UserInputViewController ()
 
@@ -59,10 +61,12 @@
         [alert addAction:okAction];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    else {
+    else
+    {
         
-        
-        
+        NSLog(@"save lat label****** %@", self.latLabel.text);
+        NSLog(@"save lng label****** %@", self.lngLabel.text);
+
         //save user's input
         NSString *saveLatString = self.latLabel.text;
         NSString *saveLngString = self.lngLabel.text;
@@ -70,20 +74,13 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:saveLatString forKey:@"savedLatString"];
         [defaults setObject:saveLngString forKey:@"savedLngString"];
-
         [defaults synchronize];
         
-
+//        WeatherTableViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherID"];
+//        vc.city = self.searchBar.text;
         
         
-        
-//        self.list.title = self.titleTextField.text;
-//        self.list.createdAt = [NSDate date];
-//        
-//        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-//        [delegate.managedObjectContext save:nil];
-//        
-//        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
