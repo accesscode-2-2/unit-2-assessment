@@ -10,6 +10,7 @@
 #import "WeatherPost.h"
 #import "APIManager.h"
 #import "WeatherTableViewCell.h"
+#import "ForecastDetailViewController.h"
 #import <AFNetworking/AFNetworking.h>
 
 @interface ForecastTableViewController ()
@@ -99,6 +100,30 @@
     
     return cell;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"preparing...");
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    NSString *name = [self objectForIndexPath:indexPath];
+    
+    ForecastDetailViewController *detailViewController = segue.destinationViewController;
+    detailViewController.chanceOfRain = [name capitalizedString];
+    
+    
+}
+
+
+- (NSString *)objectForIndexPath:(NSIndexPath *)indexPath {
+   
+        
+        return self.forecastResults[indexPath.row];
+   
+}
+
+
+
 
 
 

@@ -10,6 +10,9 @@
 
 @interface ForecastDetailViewController : UIViewController
 
+@property (nonatomic) NSString *chanceOfRain;
+
+
 
 //chance of rain
 //humidity

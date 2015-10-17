@@ -19,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-       
+    
+    
+       self.chanceOfRainPercent.text = self.chanceOfRain;
     
     
 }
