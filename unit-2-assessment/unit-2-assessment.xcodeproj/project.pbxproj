@@ -17,6 +17,7 @@
 		F711973F1BD299D5009DAAA5 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F711973E1BD299D5009DAAA5 /* APIManager.m */; settings = {ASSET_TAGS = (); }; };
 		F71197421BD29EF1009DAAA5 /* WeatherPost.m in Sources */ = {isa = PBXBuildFile; fileRef = F71197411BD29EF1009DAAA5 /* WeatherPost.m */; settings = {ASSET_TAGS = (); }; };
 		F71197451BD2A97E009DAAA5 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F71197441BD2A97E009DAAA5 /* WeatherTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F71197481BD2D591009DAAA5 /* ForecastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F71197471BD2D591009DAAA5 /* ForecastDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F71C8B4F1BD2950F00DAEE5D /* ForecastTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F71C8B4E1BD2950F00DAEE5D /* ForecastTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		F71197411BD29EF1009DAAA5 /* WeatherPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherPost.m; sourceTree = "<group>"; };
 		F71197431BD2A97E009DAAA5 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
 		F71197441BD2A97E009DAAA5 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
+		F71197461BD2D591009DAAA5 /* ForecastDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastDetailViewController.h; sourceTree = "<group>"; };
+		F71197471BD2D591009DAAA5 /* ForecastDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastDetailViewController.m; sourceTree = "<group>"; };
 		F71C8B4D1BD2950F00DAEE5D /* ForecastTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastTableViewController.h; sourceTree = "<group>"; };
 		F71C8B4E1BD2950F00DAEE5D /* ForecastTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +85,8 @@
 				8D6765A81BD289BC00B30411 /* AppDelegate.m */,
 				F71197401BD29EF1009DAAA5 /* WeatherPost.h */,
 				F71197411BD29EF1009DAAA5 /* WeatherPost.m */,
+				F71197461BD2D591009DAAA5 /* ForecastDetailViewController.h */,
+				F71197471BD2D591009DAAA5 /* ForecastDetailViewController.m */,
 				F71C8B4D1BD2950F00DAEE5D /* ForecastTableViewController.h */,
 				F71C8B4E1BD2950F00DAEE5D /* ForecastTableViewController.m */,
 				F71197431BD2A97E009DAAA5 /* WeatherTableViewCell.h */,
@@ -228,6 +233,7 @@
 			files = (
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
 				F71197451BD2A97E009DAAA5 /* WeatherTableViewCell.m in Sources */,
+				F71197481BD2D591009DAAA5 /* ForecastDetailViewController.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				F71C8B4F1BD2950F00DAEE5D /* ForecastTableViewController.m in Sources */,
 				8D6765A61BD289BC00B30411 /* main.m in Sources */,

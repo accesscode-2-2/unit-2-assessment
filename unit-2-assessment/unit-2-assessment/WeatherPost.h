@@ -15,6 +15,7 @@
 @property (nonatomic) NSDate *forcastedDay;
 @property (nonatomic) NSString *weatherDay;
 @property (nonatomic) NSString *icon;
+@property (nonatomic) NSString *chanceOfRain;
 
 
 - (instancetype)initWithJSON:(NSDictionary *)json;

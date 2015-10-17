@@ -87,7 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCellIdentifier" forIndexPath:indexPath];
     
-    WeatherPost *post = self.forecastResults[indexPath.section];
+    WeatherPost *post = self.forecastResults[indexPath.row];
     
     cell.minTempLabel.text = [NSString stringWithFormat:@"%li", (long)post.minTemp];
     cell.maxTempLabel.text = [NSString stringWithFormat:@"%li", (long)post.maxTemp];
@@ -99,6 +99,10 @@
     
     return cell;
 }
+
+
+
+
 
 
 @end

@@ -28,6 +28,11 @@
         
         self.icon = daily[@"icon"];
         
+        //on detail view
+        NSNumber *precipPercent = daily[@"precipProbability"];
+        self.chanceOfRain = [NSString stringWithFormat:@"%.1f%%", [precipPercent floatValue]*100];
+        
+        
     
         return self;
     }
