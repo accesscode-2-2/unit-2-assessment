@@ -25,11 +25,24 @@
 
 - (IBAction)saveButton:(id)sender {
     
+//    if (self.latTextField.text == nil){
+//    self.latTextField.text = @"40.71";
+//    }
+//    if (self.lngTextField.text == nil){
+//    self.lngTextField.text = @"-74.00";
+//    }
+    
+    
     self.latLngString = [NSString stringWithFormat:@"%@,%@",self.latTextField.text,self.lngTextField.text];
+ 
+    if ([self.latLngString isEqualToString:@","]){
+        self.latLngString = @"40.71,-74.00";
+    }
     
     NSLog(@"LAT LNG String: %@",self.latLngString);
     
     [self dismissViewControllerAnimated:YES completion:nil];
+
     
     [[NSUserDefaults standardUserDefaults] setObject:self.latLngString forKey:@"latLngString"];
     [[NSUserDefaults standardUserDefaults] synchronize];
