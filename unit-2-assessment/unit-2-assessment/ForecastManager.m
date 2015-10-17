@@ -22,7 +22,17 @@
 
 - (void)getWeatherDataWithCallbackBlock:(void(^)())block{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/40.7454,-73.9377" parameters:nil success:^(NSURLSessionTask *task, id JSON) {
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"] == nil){
+        [[NSUserDefaults standardUserDefaults] setObject:@"40.7454" forKey:@"latitude"];
+    }
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"longitude"] == nil){
+        [[NSUserDefaults standardUserDefaults] setObject:@"-73.9377"forKey:@"longitude"];
+    }
+    
+    NSString *urlString = [[[@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/" stringByAppendingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"]] stringByAppendingString:@","] stringByAppendingString:[[NSUserDefaults standardUserDefaults] objectForKey:@"longitude"]];
+    
+    [manager GET:urlString parameters:nil success:^(NSURLSessionTask *task, id JSON) {
         
         self.forecastWeatherData = [[ForecastWeatherData alloc] initWithWeatherJSON:JSON];
         

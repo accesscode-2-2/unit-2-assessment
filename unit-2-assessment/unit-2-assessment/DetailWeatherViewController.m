@@ -8,30 +8,26 @@
 
 #import "DetailWeatherViewController.h"
 
-@interface DetailWeatherViewController ()
 
+@interface DetailWeatherViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewIcon;
+@property (weak, nonatomic) IBOutlet UILabel *changeOfRainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @end
 
 @implementation DetailWeatherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.imageViewIcon.image = [UIImage imageNamed:self.forecastDay.icon];
+    self.summaryLabel.text = self.forecastDay.summary;
+    
+    self.changeOfRainLabel.text = [[NSString stringWithFormat:@"%.f",(self.forecastDay.chanceOfRain *100)] stringByAppendingString:@"%"];
+    self.humidityLabel.text = [[NSString stringWithFormat:@"%.f",(self.forecastDay.humidity *100)] stringByAppendingString:@"%"];
+    self.windSpeedLabel.text = [[NSString stringWithFormat:@"%.f",self.forecastDay.windSpeed] stringByAppendingString:@" mph"];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

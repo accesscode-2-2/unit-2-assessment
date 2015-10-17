@@ -25,9 +25,9 @@
         forecastDay.date = [NSDate dateWithTimeIntervalSince1970:doubleEpoch];
         forecastDay.summary = day[@"summary"];
         forecastDay.icon = day[@"icon"];
-        forecastDay.chanceOfRain = day[@"precipProbability"];
-        forecastDay.humidity = day[@"humidity"];
-        forecastDay.windSpeed = day[@"windSpeed"];
+        forecastDay.chanceOfRain = [day[@"precipProbability"] doubleValue];
+        forecastDay.humidity = [day[@"humidity"] doubleValue];
+        forecastDay.windSpeed = [day[@"windSpeed"] doubleValue];
         forecastDay.minTemperature = [day[@"temperatureMin"] doubleValue];
         forecastDay.maxTemperature = [day[@"temperatureMax"] doubleValue];
         [self.forecastDays addObject:forecastDay];

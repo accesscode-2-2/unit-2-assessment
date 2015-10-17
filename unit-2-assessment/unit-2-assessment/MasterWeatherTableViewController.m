@@ -8,6 +8,7 @@
 
 #import "MasterWeatherTableViewController.h"
 #import "ForecastDayTableViewCell.h"
+#import "DetailWeatherViewController.h"
 
 @interface MasterWeatherTableViewController ()
 
@@ -18,14 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Register Nib for Cell Reuse Identifier
+    [self.tableView registerNib:[UINib nibWithNibName:@"ForecastTableViewCell" bundle:nil] forCellReuseIdentifier:[ForecastDayTableViewCell reuseIdentifier]];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    animated = YES;
+    
     //get weather data from forecast.io
     self.forecastManager = [ForecastManager sharedManager];
     [self.forecastManager getWeatherDataWithCallbackBlock:^{
         [self.tableView reloadData];
     }];
     
-    //Register Nib for Cell Reuse Identifier
-    [self.tableView registerNib:[UINib nibWithNibName:@"ForecastTableViewCell" bundle:nil] forCellReuseIdentifier:[ForecastDayTableViewCell reuseIdentifier]];
+    
 }
 
 #pragma mark - Table view data source
@@ -51,14 +58,22 @@
     return cell;
 }
 
-/*
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"DetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        DetailWeatherViewController *detailVC = [segue destinationViewController];
+        detailVC.forecastDay = [self.forecastManager.forecastWeatherData.forecastDays objectAtIndex:indexPath.row];
+    }
+
 }
-*/
 
 @end

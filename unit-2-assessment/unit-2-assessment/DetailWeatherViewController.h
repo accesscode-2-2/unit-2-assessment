@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ForecastDay.h"
+
 
 @interface DetailWeatherViewController : UIViewController
+
+@property (nonatomic) ForecastDay *forecastDay;
 
 @end

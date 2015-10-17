@@ -9,6 +9,9 @@
 #import "OptionsViewController.h"
 
 @interface OptionsViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *latitudeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *longitudeTextField;
+
 
 @end
 
@@ -16,22 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)saveButtonTouched:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[NSUserDefaults standardUserDefaults] setObject:self.latitudeTextField.text forKey:@"latitude"];
+        [[NSUserDefaults standardUserDefaults] setObject:self.longitudeTextField.text forKey:@"longitude"];
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)cancelButtonTouched:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
 }
-*/
 
 @end

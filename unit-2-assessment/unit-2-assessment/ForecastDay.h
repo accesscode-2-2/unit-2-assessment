@@ -14,9 +14,9 @@
 @property (nonatomic) NSString *summary;
 @property (nonatomic) NSString *icon;
 
-@property (nonatomic) NSString *chanceOfRain;
-@property (nonatomic) NSString *humidity;
-@property (nonatomic) NSString *windSpeed;
+@property (nonatomic) double chanceOfRain;
+@property (nonatomic) double humidity;
+@property (nonatomic) double windSpeed;
 
 @property (nonatomic) double minTemperature;
 @property (nonatomic) double maxTemperature;

@@ -12,6 +12,8 @@
 @interface ForecastManager : NSObject
 
 @property (nonatomic) ForecastWeatherData *forecastWeatherData;
+@property (nonatomic) NSString *latitude;
+@property (nonatomic) NSString *longitude;
 
 + (id)sharedManager;
 
