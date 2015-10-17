@@ -10,35 +10,35 @@
         <scene sceneID="90S-zk-aLP">
             <objects>
                 <tableViewController id="fLE-Rg-FK4" customClass="ForecastTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyi-jM-Ehq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyi-jM-Ehq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCellIdentifier" id="zMe-N3-m0B" customClass="WeatherTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCellIdentifier" rowHeight="109" id="zMe-N3-m0B" customClass="WeatherTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zMe-N3-m0B" id="ibw-Gk-C9V">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="108.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVt-Xe-jeT">
-                                            <rect key="frame" x="521" y="13" width="51" height="21"/>
+                                            <rect key="frame" x="521" y="13" width="51" height="86"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-HI-VeU">
-                                            <rect key="frame" x="28" y="13" width="42" height="21"/>
+                                            <rect key="frame" x="28" y="13" width="42" height="86"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atp-cy-cBe">
-                                            <rect key="frame" x="466" y="13" width="45" height="21"/>
+                                            <rect key="frame" x="466" y="13" width="45" height="86"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="MlT-Xr-qBV"/>
@@ -47,16 +47,26 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5N4-hK-pc7">
+                                            <rect key="frame" x="263" y="17" width="75" height="75"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="SCL-k5-jSe"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="5N4-hK-pc7" firstAttribute="centerX" secondItem="ibw-Gk-C9V" secondAttribute="centerX" id="6Ry-Kh-HNX"/>
                                         <constraint firstItem="atp-cy-cBe" firstAttribute="top" secondItem="ibw-Gk-C9V" secondAttribute="topMargin" constant="5" id="7M9-l0-oRm"/>
                                         <constraint firstItem="YgQ-HI-VeU" firstAttribute="leading" secondItem="ibw-Gk-C9V" secondAttribute="leadingMargin" constant="20" id="B3n-EG-jRC"/>
                                         <constraint firstItem="YgQ-HI-VeU" firstAttribute="firstBaseline" secondItem="atp-cy-cBe" secondAttribute="firstBaseline" id="MgG-Nv-GSP"/>
                                         <constraint firstItem="atp-cy-cBe" firstAttribute="firstBaseline" secondItem="kVt-Xe-jeT" secondAttribute="firstBaseline" id="Okj-6C-7og"/>
                                         <constraint firstItem="atp-cy-cBe" firstAttribute="baseline" secondItem="kVt-Xe-jeT" secondAttribute="baseline" id="Onw-Mv-ROf"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="atp-cy-cBe" secondAttribute="bottom" constant="1.5" id="SKF-lT-p9s"/>
+                                        <constraint firstItem="5N4-hK-pc7" firstAttribute="centerY" secondItem="ibw-Gk-C9V" secondAttribute="centerY" id="XTT-pS-kUn"/>
                                         <constraint firstItem="YgQ-HI-VeU" firstAttribute="baseline" secondItem="atp-cy-cBe" secondAttribute="baseline" id="deY-7M-a5N"/>
+                                        <constraint firstItem="5N4-hK-pc7" firstAttribute="top" secondItem="ibw-Gk-C9V" secondAttribute="top" constant="17" id="gKM-E6-0my"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kVt-Xe-jeT" secondAttribute="trailing" constant="20" id="mly-yM-O7B"/>
                                         <constraint firstItem="kVt-Xe-jeT" firstAttribute="leading" secondItem="atp-cy-cBe" secondAttribute="trailing" constant="10" id="mxR-Jg-02Y"/>
                                         <constraint firstAttribute="trailing" secondItem="atp-cy-cBe" secondAttribute="trailing" constant="89" id="rfz-ZQ-mGh"/>
@@ -67,6 +77,7 @@
                                     <outlet property="dayTempLabel" destination="YgQ-HI-VeU" id="M3E-0M-HFf"/>
                                     <outlet property="maxTempLabel" destination="kVt-Xe-jeT" id="Swu-ah-xzl"/>
                                     <outlet property="minTempLabel" destination="atp-cy-cBe" id="zLq-EX-UdZ"/>
+                                    <outlet property="weatherIconImage" destination="5N4-hK-pc7" id="mbl-Cd-cQA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

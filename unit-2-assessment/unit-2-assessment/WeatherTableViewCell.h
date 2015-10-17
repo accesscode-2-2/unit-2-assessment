@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dayTempLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIconImage;
 
 @end

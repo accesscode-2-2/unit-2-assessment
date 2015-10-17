@@ -25,6 +25,9 @@
         [dateFormatter setDateFormat:@"EEEE"];
         NSString *dateName = [dateFormatter stringFromDate:self.forcastedDay];
         self.weatherDay= dateName;
+        
+        self.icon = daily[@"icon"];
+        
     
         return self;
     }

@@ -93,6 +93,10 @@
     cell.maxTempLabel.text = [NSString stringWithFormat:@"%li", (long)post.maxTemp];
     cell.dayTempLabel.text = [NSString stringWithFormat:@"%@",post.weatherDay];
     
+    NSString *imageName = [post.icon lowercaseString];
+    
+    cell.weatherIconImage.image = [UIImage imageNamed:imageName];
+    
     return cell;
 }
 

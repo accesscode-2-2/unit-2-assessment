@@ -14,6 +14,7 @@
 @property (nonatomic) NSInteger maxTemp;
 @property (nonatomic) NSDate *forcastedDay;
 @property (nonatomic) NSString *weatherDay;
+@property (nonatomic) NSString *icon;
 
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
