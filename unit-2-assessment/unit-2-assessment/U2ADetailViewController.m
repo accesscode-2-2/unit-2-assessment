@@ -32,6 +32,7 @@
     
     
     // getting values if passing a dictionary object
+    
 //    self.weatherIcon.image = [UIImage imageNamed:[self.dayWeatherForecast objectForKey:@"icon"]];
 //    self.weatherSummaryLabel.text = [self.dayWeatherForecast objectForKey:@"summary"];
 //    self.rainPercentValueLabel.text = [NSString stringWithFormat:@"%.0f%%", [[self.dayWeatherForecast objectForKey:@"chanceOfRain"]doubleValue]];

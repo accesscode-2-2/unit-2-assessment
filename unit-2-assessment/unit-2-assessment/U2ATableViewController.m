@@ -66,11 +66,6 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-}
-
 - (void)pulledToRefresh:(UIRefreshControl *)sender {
     [sender endRefreshing];
 }
@@ -90,9 +85,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    U2ACustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableVCCellIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
+    U2ACustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableVCCellIdentifier" forIndexPath:indexPath];
     
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[self.weekWeatherForecast[indexPath.row][@"time"]integerValue]];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -114,6 +108,9 @@
     [self performSegueWithIdentifier:@"DetailSegueIdentifier" sender:nil];
 }
 
+- (IBAction)settingsButtonTapped:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"SettingsSegueIdentifier" sender:nil];
+}
 
 
 #pragma mark - Navigation

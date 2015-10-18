@@ -65,7 +65,8 @@
                     <navigationItem key="navigationItem" id="aj6-wv-dtS">
                         <barButtonItem key="rightBarButtonItem" image="settings" id="3Dt-1y-U5a">
                             <connections>
-                                <segue destination="wCp-jg-1mT" kind="show" id="vEY-7O-gBu"/>
+                                <action selector="settingsButtonTapped:" destination="We2-ZA-Lph" id="WRV-M8-Yep"/>
+                                <segue destination="wCp-jg-1mT" kind="show" identifier="SettingsSegueIdentifier" id="vEY-7O-gBu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

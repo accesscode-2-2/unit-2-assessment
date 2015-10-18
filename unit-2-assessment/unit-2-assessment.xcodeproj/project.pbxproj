@@ -168,6 +168,7 @@
 				TargetAttributes = {
 					8D6765A01BD289BC00B30411 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = N48NM3R37Q;
 					};
 				};
 			};
@@ -375,10 +376,13 @@
 			baseConfigurationReference = 5A54E19E38BF3F6F773E0906 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "unit-2-assessment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.unit-2-assessment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayunavogel.unit-2-assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -387,10 +391,13 @@
 			baseConfigurationReference = E727B7578B9D32F2B54EF59A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "unit-2-assessment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.unit-2-assessment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayunavogel.unit-2-assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
