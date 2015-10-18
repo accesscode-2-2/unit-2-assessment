@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  WeatherTableViewController.h
 //  unit-2-assessment
 //
 //  Created by Henna on 10/17/15.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface WeatherTableViewController : UITableViewController
 
 @end
-
