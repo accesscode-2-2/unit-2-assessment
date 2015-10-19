@@ -16,8 +16,9 @@
 @property (nonatomic) NSString *chanceOfRain;
 @property (nonatomic) NSString *humidity;
 @property (nonatomic) NSString *windSpeed;
-@property (nonatomic) NSString *icon;
+@property (nonatomic) NSString *wIcon;
 @property (nonatomic) NSInteger time;
+@property (nonatomic) NSString *timezone;
 
 - (instancetype)initWithJSON: (NSDictionary *)json;
 

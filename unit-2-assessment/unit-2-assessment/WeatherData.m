@@ -19,12 +19,12 @@
         self.maxTemp = json[@"apparentTemperatureMax"];
         self.lowTemp = json[@"apparentTemperatureMin"];
         self.humidity = json[@"humidity"];
-        self.icon = json[@"icon"];
+        self.wIcon = json[@"icon"];
         self.chanceOfRain = json[@"precipProbability"];
-        self.summary =json[@"daily"][@"summary"];
+        self.summary =json[@"summary"];
         self.time = [json[@"time"] integerValue];
         self.windSpeed = json[@"windSpeed"];
-        
+        self.timezone = json[@"timezone"];
         
         return self;
     }

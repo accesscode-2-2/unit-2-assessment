@@ -14,7 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 @property (weak, nonatomic) IBOutlet UILabel *weatherDescription;
+@property (weak, nonatomic) IBOutlet UILabel *chanceOfRain;
+@property (weak, nonatomic) IBOutlet UILabel *humidity;
+@property (weak, nonatomic) IBOutlet UILabel *windSpeed;
 @property (weak, nonatomic) WeatherData *allData;
+
 
 
 @end

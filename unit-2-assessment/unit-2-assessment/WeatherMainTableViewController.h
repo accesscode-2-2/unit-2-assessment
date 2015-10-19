@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationSettingsViewController.h"
 
 @interface WeatherMainTableViewController : UITableViewController
+
 
 
 

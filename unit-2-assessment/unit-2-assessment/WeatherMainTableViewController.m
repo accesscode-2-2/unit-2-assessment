@@ -16,6 +16,9 @@
 
 @property (nonatomic) NSMutableArray *weatherDataResults;
 
+@property (nonatomic) NSString *lat;
+@property (nonatomic) NSString *longi;
+
 @end
 
 @implementation WeatherMainTableViewController
@@ -23,10 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.lat = [[NSUserDefaults standardUserDefaults] objectForKey:@"lat"];
+    self.longi = [[NSUserDefaults standardUserDefaults] objectForKey:@"long"];
+    
     [self fetchWeatherData];
     
     UINib *nib = [UINib nibWithNibName:@"WeatherTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"WeatherDataCell"];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,13 +43,14 @@
 
 - (void)fetchWeatherData
 {
-    NSString *url = @"https://api.forecast.io/forecast/a192f5631a3c9e68fe7cf15fa1659868/40.764357,-73.923462";
+    NSString *url =[NSString stringWithFormat:@"https://api.forecast.io/forecast/a192f5631a3c9e68fe7cf15fa1659868/%@,%@", self.lat, self.longi];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url
       parameters:nil
          success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject)
     {
-        //NSLog(@"%@", responseObject);
+        
+        NSLog(@"%@", responseObject);
         
         NSArray *allData = responseObject[@"daily"][@"data"];
         
@@ -72,19 +80,6 @@
 }
 
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([[segue identifier] isEqualToString:@"WeatherDetail"]) {
-//        
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        WeatherData *allWeatherData = [self.weatherDataResults objectAtIndex:indexPath.row];
-//        WeatherDetailViewController *detailViewController = segue.destinationViewController;
-//        detailViewController.weatherDescription.text = allWeatherData.summary;
-//        
-//        
-//    }
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeatherDataCell" forIndexPath:indexPath];
@@ -104,20 +99,21 @@
     
     cell.dayOfTheWeek.text = [NSString stringWithFormat:@"%@", dateName];
     cell.hiLowTemp.text = [NSString stringWithFormat:@"%.f - %.f", temperatureHigh,temperatureLow];
-    cell.weatherIcon.image = [UIImage imageNamed:allWeatherData.icon];
+    cell.weatherIcon.image = [UIImage imageNamed:allWeatherData.wIcon];
+    
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    [self performSegueWithIdentifier:@"WeatherDetail" sender:nil];
-    
     WeatherData *allWeatherData = self.weatherDataResults[indexPath.row];
-    WeatherDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherDetail"];
-    detailViewController.allData.summary = allWeatherData.summary;
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    WeatherDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherDetailController"];
+    
+    detailViewController.allData = allWeatherData;
+
+    
+   [self.navigationController pushViewController:detailViewController animated:YES];
     
     
 }
