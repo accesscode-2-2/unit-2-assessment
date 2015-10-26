@@ -242,7 +242,6 @@
 //    DetailViewController *vcTwo = segue.destinationViewController;
     
     vc.passedTextArray = arrayToPassTwo;
-
     
     //third array
     NSArray *arrayToPassThree = [self.rainArray objectAtIndex:indexpath.row];
