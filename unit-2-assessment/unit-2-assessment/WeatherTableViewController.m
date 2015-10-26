@@ -24,6 +24,8 @@
 @property (nonatomic) NSMutableArray *humidityArray;
 @property (nonatomic) NSMutableArray *windArray;
 
+//comment
+
 @end
 
 @implementation WeatherTableViewController
