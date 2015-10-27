@@ -7,16 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WeatherData : NSObject
 
-@property (strong,nonatomic) NSString * maxTemp;
-@property (strong,nonatomic) NSString * minTemp;
+@property (nonatomic, readonly) NSString *dayOfWeek;
+@property (nonatomic) CGFloat maxTemp;
+@property (nonatomic) CGFloat minTemp;
 @property (strong, nonatomic) NSString *time;
 @property (strong, nonatomic) NSString *weatherImage;
 @property (strong, nonatomic) NSString *summary;
-@property (strong, nonatomic) NSString *rain;
-@property (strong, nonatomic) NSString *humidity;
-@property (strong, nonatomic) NSString *wind;
+@property (nonatomic) CGFloat rain;
+@property (nonatomic) CGFloat humidity;
+@property (nonatomic) CGFloat wind;
+- (instancetype) initWithSecondsSince1970:(NSTimeInterval)seconds;
 
 @end

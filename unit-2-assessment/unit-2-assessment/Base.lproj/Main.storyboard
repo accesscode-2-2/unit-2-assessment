@@ -30,17 +30,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xdT-ey-Xv6" kind="relationship" relationship="rootViewController" id="PTP-Vq-SKe"/>
+                        <segue destination="xdT-ey-Xv6" kind="relationship" relationship="rootViewController" id="ick-8F-3aq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bp7-gJ-jQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636" y="-387"/>
+            <point key="canvasLocation" x="60" y="1116"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="06l-uU-Bb5">
             <objects>
-                <viewController id="xdT-ey-Xv6" sceneMemberID="viewController">
+                <viewController id="xdT-ey-Xv6" customClass="EntryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Whx-9C-njd"/>
                         <viewControllerLayoutGuide type="bottom" id="FYp-7s-w9i"/>
@@ -48,13 +48,52 @@
                     <view key="view" contentMode="scaleToFill" id="sSL-Pz-knD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGz-3U-aIO">
+                                <rect key="frame" x="250" y="285" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9j4-ee-vl1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dy7-Gq-FMH">
+                                <rect key="frame" x="250" y="335" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="i68-sF-PWB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dy7-Gq-FMH" firstAttribute="top" secondItem="qGz-3U-aIO" secondAttribute="bottom" constant="20" id="hpH-l6-rqs"/>
+                            <constraint firstItem="dy7-Gq-FMH" firstAttribute="centerX" secondItem="sSL-Pz-knD" secondAttribute="centerX" id="rVD-NP-9N6"/>
+                            <constraint firstItem="qGz-3U-aIO" firstAttribute="centerX" secondItem="sSL-Pz-knD" secondAttribute="centerX" id="sHd-fQ-6G7"/>
+                            <constraint firstItem="qGz-3U-aIO" firstAttribute="centerY" secondItem="sSL-Pz-knD" secondAttribute="centerY" id="vS9-Jf-ezq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="M7o-0o-4yq"/>
+                    <navigationItem key="navigationItem" id="M7o-0o-4yq">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="x1B-xD-fg4">
+                            <connections>
+                                <action selector="cancelTapped:" destination="xdT-ey-Xv6" id="z34-no-haP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="12n-fg-WSc">
+                            <connections>
+                                <action selector="saveTapped:" destination="xdT-ey-Xv6" id="XfS-LP-1kA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lat" destination="qGz-3U-aIO" id="HXz-Da-njh"/>
+                        <outlet property="longitude" destination="dy7-Gq-FMH" id="7vE-V6-PYE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuQ-zH-UjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69" y="-387"/>
+            <point key="canvasLocation" x="784" y="1087"/>
         </scene>
         <!--Weather Table View Controller-->
         <scene sceneID="GCF-BS-Yue">
@@ -107,7 +146,7 @@
                                     <outlet property="leftTimeLabel" destination="aUI-IE-amr" id="nXk-f8-hjY"/>
                                     <outlet property="rightRangeLabel" destination="e6Z-Xq-VpF" id="0KD-Xu-K1d"/>
                                     <outlet property="weatherImageView" destination="byH-ye-8Or" id="oAR-lt-r0H"/>
-                                    <segue destination="A1M-5t-cm3" kind="show" id="wxq-ZQ-FhA"/>
+                                    <segue destination="A1M-5t-cm3" kind="show" identifier="detail" id="mef-JC-ws1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,18 +156,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0sq-sB-2Um">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="HY0-Ik-nou">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VOm-bI-CIS">
-                                <rect key="frame" x="447" y="7" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Enter Location" id="YUI-Fe-mQC">
+                            <connections>
+                                <segue destination="8gh-Zk-D6c" kind="presentation" identifier="location" id="9rZ-Br-HRS"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrm-bb-Sul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="356"/>
+            <point key="canvasLocation" x="60" y="402"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="QQw-uf-vNV">
@@ -202,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIP-fr-qt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="356"/>
+            <point key="canvasLocation" x="882" y="356"/>
         </scene>
     </scenes>
 </document>

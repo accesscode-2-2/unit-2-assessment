@@ -22,6 +22,12 @@
 
 @property (nonatomic) WeatherData *passedWindArray;
 
+@property (nonatomic) NSString *image;
+@property (nonatomic) NSString *summary;
+@property (nonatomic) CGFloat humidity;
+@property (nonatomic) CGFloat rain;
+@property (nonatomic) CGFloat wind;
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherViewNice;
 

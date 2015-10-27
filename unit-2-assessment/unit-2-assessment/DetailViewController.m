@@ -18,19 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *imageName = self.passedImgeArray.weatherImage;
-    self.weatherViewNice.image = [UIImage imageNamed:imageName];
-
-    self.textFiledSummary.text = [self.passedTextArray valueForKey:@"summary"];
+//    NSString *imageName = self.passedImgeArray.weatherImage;
+//    self.weatherViewNice.image = [UIImage imageNamed:imageName];
+//
+//    self.textFiledSummary.text = [self.passedTextArray valueForKey:@"summary"];
+//    
+//    NSString *stringOne = [NSString stringWithFormat:@"%@", self.passedRainArray.rain];
+//    self.rainLabel.text = stringOne;
+//    
+//    NSString *stringTwo = [NSString stringWithFormat:@"%@", self.passedHumidityArray.humidity];
+//    self.humidityLabel.text = stringTwo;
+//
+//    NSString *stringThree = [NSString stringWithFormat:@"%@", self.passedWindArray.wind];
+//    self.windLabel.text = stringThree;
     
-    NSString *stringOne = [NSString stringWithFormat:@"%@", self.passedRainArray.rain];
-    self.rainLabel.text = stringOne;
-    
-    NSString *stringTwo = [NSString stringWithFormat:@"%@", self.passedHumidityArray.humidity];
-    self.humidityLabel.text = stringTwo;
-
-    NSString *stringThree = [NSString stringWithFormat:@"%@", self.passedWindArray.wind];
-    self.windLabel.text = stringThree;
+    self.weatherViewNice.image = [UIImage imageNamed:self.image];
+    self.textFiledSummary.text = self.summary;
+    self.rainLabel.text = [NSString stringWithFormat:@"Chance of rain: %.0f%%", (100 * self.rain)];
+    self.humidityLabel.text = [NSString stringWithFormat:@"Humidity: %.0f%%", (100 * self.humidity)];
+    self.windLabel.text = [NSString stringWithFormat:@"Wind: %.2f mph", self.wind];
 
 }
 

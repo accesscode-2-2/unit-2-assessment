@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D47823A1BDF6F5B009223C0 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4782391BDF6F5B009223C0 /* EntryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1DAAF2941BD29A89005AD867 /* WeatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAF2931BD29A89005AD867 /* WeatherTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1DAAF2971BD29A9F005AD867 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAF2961BD29A9F005AD867 /* DetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1DAAF29A1BD29E08005AD867 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAF2991BD29E08005AD867 /* CustomTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D4782381BDF6F5B009223C0 /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		1D4782391BDF6F5B009223C0 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
 		1DAAF2921BD29A89005AD867 /* WeatherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewController.h; sourceTree = "<group>"; };
 		1DAAF2931BD29A89005AD867 /* WeatherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewController.m; sourceTree = "<group>"; };
 		1DAAF2951BD29A9F005AD867 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				1DAAF2B31BD2A64A005AD867 /* WeatherData.h */,
 				1DAAF2B41BD2A64A005AD867 /* WeatherData.m */,
 				1DAAF2B61BD2CF03005AD867 /* JSONdata.h */,
+				1D4782381BDF6F5B009223C0 /* EntryViewController.h */,
+				1D4782391BDF6F5B009223C0 /* EntryViewController.m */,
 				1DAAF2B71BD2CF03005AD867 /* JSONdata.m */,
 				8D6765B31BD289BC00B30411 /* Assets.xcassets */,
 				8D6765B51BD289BC00B30411 /* LaunchScreen.storyboard */,
@@ -283,6 +288,7 @@
 				1DAAF2B81BD2CF03005AD867 /* JSONdata.m in Sources */,
 				8D6765B21BD289BC00B30411 /* unit_2_assessment.xcdatamodeld in Sources */,
 				1DAAF29A1BD29E08005AD867 /* CustomTableViewCell.m in Sources */,
+				1D47823A1BDF6F5B009223C0 /* EntryViewController.m in Sources */,
 				8D6765A91BD289BC00B30411 /* AppDelegate.m in Sources */,
 				1DAAF2941BD29A89005AD867 /* WeatherTableViewController.m in Sources */,
 				1DAAF2B51BD2A64A005AD867 /* WeatherData.m in Sources */,
