@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCellIdentifier" rowHeight="161" id="4cU-9F-gQo" customClass="WeatherCell">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="164"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4cU-9F-gQo" id="VPJ-Uz-QXa">
+                <rect key="frame" x="0.0" y="0.0" width="440" height="163"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ba-S0-FVo">
+                        <rect key="frame" x="18" y="71" width="95" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="95" id="qxq-GC-TGO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EvP-mq-WFz">
+                        <rect key="frame" x="200" y="62" width="40" height="40"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="AMD-oX-8oe"/>
+                            <constraint firstAttribute="width" constant="40" id="tK4-4V-9ml"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tw6-fa-687">
+                        <rect key="frame" x="380" y="71" width="42" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="1lg-Hq-U9I"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1lg-Hq-U9I"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-yX-epr">
+                        <rect key="frame" x="374" y="71" width="5" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="EhX-Hy-cy0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOa-jd-7Y8">
+                        <rect key="frame" x="331" y="71" width="42" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="Vzw-LG-nmw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Vzw-LG-nmw"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="Tw6-fa-687" firstAttribute="leading" secondItem="dSt-yX-epr" secondAttribute="trailing" constant="1" id="2ZQ-fn-Afe"/>
+                    <constraint firstItem="7ba-S0-FVo" firstAttribute="leading" secondItem="VPJ-Uz-QXa" secondAttribute="leadingMargin" constant="10" id="2tO-CF-V5x"/>
+                    <constraint firstItem="7ba-S0-FVo" firstAttribute="centerY" secondItem="VPJ-Uz-QXa" secondAttribute="centerY" id="8F5-wn-nny"/>
+                    <constraint firstItem="Tw6-fa-687" firstAttribute="centerY" secondItem="VPJ-Uz-QXa" secondAttribute="centerY" id="GML-7h-g2P"/>
+                    <constraint firstItem="EvP-mq-WFz" firstAttribute="centerX" secondItem="VPJ-Uz-QXa" secondAttribute="centerX" id="S6z-8C-tnO"/>
+                    <constraint firstItem="pOa-jd-7Y8" firstAttribute="centerY" secondItem="VPJ-Uz-QXa" secondAttribute="centerY" id="X6d-qe-ywG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Tw6-fa-687" secondAttribute="trailing" constant="10" id="YsG-0W-2BB"/>
+                    <constraint firstItem="Tw6-fa-687" firstAttribute="leading" secondItem="pOa-jd-7Y8" secondAttribute="trailing" constant="5" id="b3h-g3-cXe"/>
+                    <constraint firstItem="EvP-mq-WFz" firstAttribute="centerY" secondItem="VPJ-Uz-QXa" secondAttribute="centerY" id="eAK-fy-dll"/>
+                    <constraint firstItem="dSt-yX-epr" firstAttribute="leading" secondItem="pOa-jd-7Y8" secondAttribute="trailing" constant="1" id="kBD-nC-9Ig"/>
+                    <constraint firstItem="dSt-yX-epr" firstAttribute="centerY" secondItem="VPJ-Uz-QXa" secondAttribute="centerY" id="q49-Ha-pxz"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="b3h-g3-cXe"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="LowTempLabel" destination="Tw6-fa-687" id="7jb-wJ-Qvy"/>
+                <outlet property="dayLabel" destination="7ba-S0-FVo" id="Ld6-Pf-qcf"/>
+                <outlet property="highTempLabel" destination="pOa-jd-7Y8" id="unq-ju-gMg"/>
+                <outlet property="weatherImage" destination="EvP-mq-WFz" id="NcJ-Sj-N73"/>
+            </connections>
+            <point key="canvasLocation" x="-122" y="-553"/>
+        </tableViewCell>
+    </objects>
+</document>
