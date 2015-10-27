@@ -34,7 +34,7 @@
     
     self.weatherViewNice.image = [UIImage imageNamed:self.image];
     self.textFiledSummary.text = self.summary;
-    self.rainLabel.text = [NSString stringWithFormat:@"Chance of rain: %.0f%%", (100 * self.rain)];
+    self.rainLabel.text = [NSString stringWithFormat:@"Chance of rain: %.0f%%", (100* self.rain)];
     self.humidityLabel.text = [NSString stringWithFormat:@"Humidity: %.0f%%", (100 * self.humidity)];
     self.windLabel.text = [NSString stringWithFormat:@"Wind: %.2f mph", self.wind];
 
