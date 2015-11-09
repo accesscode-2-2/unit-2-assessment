@@ -25,6 +25,10 @@
 {
     [super viewDidLoad];
     
+     
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"TableViewBackground"]]];
+
+    
     //set navigation Title
     NSString *dayString = [self.detailWeatherData objectForKey:@"time"];
     NSTimeInterval convertStringToNSTimeInterval = [dayString doubleValue];

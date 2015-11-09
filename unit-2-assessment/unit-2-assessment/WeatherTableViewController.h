@@ -11,5 +11,4 @@
 @interface WeatherTableViewController : UITableViewController
 @property (nonatomic) NSString *latUserInput;
 @property (nonatomic) NSString *lngUserInput;
-
 @end

@@ -21,7 +21,7 @@ UITextFieldDelegate
 @property (nonatomic) NSMutableArray *searchResults;
 @property (nonatomic) NSArray *results;
 @property (weak, nonatomic) IBOutlet UIView *weatherView;
-
+@property (nonatomic) UIView *backView;
 @end
 
 @implementation WeatherTableViewController
@@ -29,6 +29,22 @@ UITextFieldDelegate
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.backView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.backView.backgroundColor = [UIColor clearColor];
+    
+    
+    
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBackground"]];
+    [tempImageView setFrame:self.tableView.frame];
+    
+    self.tableView.backgroundView = tempImageView;
+    
+    
+    
+    
+    
     [self.navigationItem setTitle:@"Weather"];
     [self reloadInfo];
 }
@@ -48,15 +64,16 @@ UITextFieldDelegate
     
     self.latUserInput = loadLatString;
     self.lngUserInput = loadLngString;
+    
     NSLog(@"reloadInfo latUserInput %@ lngUserInput %@", self.latUserInput, self.lngUserInput);
     
-    [self makeNewiTunesAPIRequestWithCoordinates:self.latUserInput and:self.lngUserInput callBackBlock:^{
+    [self makeNewAPIRequestWithCoordinates:self.latUserInput and:self.lngUserInput callBackBlock:^{
         [self.tableView reloadData];
     }];
 }
 
 
--(void) makeNewiTunesAPIRequestWithCoordinates:(NSString *)latitude and:(NSString *)longtitude callBackBlock:(void(^)())block;
+-(void) makeNewAPIRequestWithCoordinates:(NSString *)latitude and:(NSString *)longtitude callBackBlock:(void(^)())block;
 {
      NSString *urlString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/8040fc5b15adaaafabbe7de9c3ff5458/%@,%@",latitude, longtitude];
     
@@ -112,6 +129,12 @@ UITextFieldDelegate
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"weatherIdentifier" forIndexPath:indexPath];
+    
+//    cell.backgroundView = self.backView;
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor clearColor];
+    tableView.backgroundColor = [UIColor clearColor];
+    
     
     WeatherResults *currentResult = self.searchResults[indexPath.row];
     
