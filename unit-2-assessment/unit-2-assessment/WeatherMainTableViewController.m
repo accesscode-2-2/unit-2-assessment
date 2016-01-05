@@ -105,7 +105,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WeatherData *allWeatherData = self.weatherDataResults[indexPath.row];
     WeatherDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherDetailController"];
