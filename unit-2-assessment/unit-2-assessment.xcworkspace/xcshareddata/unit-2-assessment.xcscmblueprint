@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A63E15DDAB9BB2CC9A09AD9A8D0EC189EF6BB370",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8ECD69FDC65196609C26047F6D172695B38F0BC0" : 0,
+    "A63E15DDAB9BB2CC9A09AD9A8D0EC189EF6BB370" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A97B0064-454D-4BCC-8E7A-343DE6CCE190",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8ECD69FDC65196609C26047F6D172695B38F0BC0" : "code-samples\/code-samples\/",
+    "A63E15DDAB9BB2CC9A09AD9A8D0EC189EF6BB370" : "unit-2-assessment\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "unit-2-assessment",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "unit-2-assessment\/unit-2-assessment.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:accesscode-2-2\/code-samples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8ECD69FDC65196609C26047F6D172695B38F0BC0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:cdolm92\/unit-2-assessment.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A63E15DDAB9BB2CC9A09AD9A8D0EC189EF6BB370"
+    }
+  ]
+}
